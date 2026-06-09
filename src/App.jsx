@@ -62,10 +62,9 @@ export default function App() {
       // Google Apps Script CORS kısıtlaması nedeniyle no-cors kullanılır.
       // İstek Apps Script'e ulaşır (email + sheet çalışır), yanıt okunamaz — bu normaldir.
       await fetch(SCRIPT_URL, {
-        method:  'POST',
-        mode:    'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({
+        method: 'POST',
+        mode:   'no-cors',
+        body:   new URLSearchParams({
           name:    form.name.trim(),
           phone:   form.phone.trim(),
           email:   form.email.trim(),
