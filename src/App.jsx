@@ -123,8 +123,8 @@ export default function App() {
       </div>
 
       {/* ── Sağ: Form ── */}
-      <div className="flex-1 bg-white flex items-center justify-center
-                      px-6 py-6 lg:px-10 overflow-y-auto">
+      <div className="flex-1 bg-wafil-green flex items-center justify-center
+                      px-6 py-6 lg:px-10 overflow-y-auto border-l border-white/10">
         <div className="w-full max-w-md">
 
           {status === 'success' ? (
@@ -150,7 +150,7 @@ export default function App() {
 
               <div>
                 <label htmlFor="message"
-                       className="mb-1 block font-heading text-xs font-semibold text-wafil-green">
+                       className="mb-1 block font-heading text-xs font-semibold text-white/80">
                   Mesaj
                 </label>
                 <textarea
@@ -166,18 +166,18 @@ export default function App() {
 
               {status === 'error' && (
                 <div role="alert"
-                     className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs font-medium text-red-700">
+                     className="rounded-lg border border-red-400/40 bg-red-500/10 px-3 py-2 text-xs font-medium text-red-300">
                   Başvuru gönderilemedi. Lütfen tekrar deneyin.
                 </div>
               )}
 
               <button
                 type="submit" disabled={isSending}
-                className="w-full rounded-xl bg-wafil-green px-6 py-3.5
-                           font-heading text-sm font-bold uppercase tracking-wide text-white
+                className="w-full rounded-xl bg-wafil-yellow px-6 py-3.5
+                           font-heading text-sm font-bold uppercase tracking-wide text-wafil-green
                            transition-all duration-200
-                           hover:bg-[#0f3d29] hover:shadow-lg hover:shadow-wafil-green/30
-                           focus:outline-none focus:ring-4 focus:ring-wafil-yellow/50
+                           hover:bg-yellow-300 hover:shadow-lg hover:shadow-black/20
+                           focus:outline-none focus:ring-4 focus:ring-wafil-yellow/30
                            active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60">
                 {isSending ? 'Gönderiliyor...' : 'Başvuruyu Gönder'}
               </button>
@@ -194,7 +194,7 @@ function Field({ field, value, error, onChange, disabled }) {
   return (
     <div>
       <label htmlFor={field.name}
-             className="mb-1 block font-heading text-xs font-semibold text-wafil-green">
+             className="mb-1 block font-heading text-xs font-semibold text-white/80">
         {field.label}
       </label>
       <input
@@ -211,17 +211,17 @@ function Field({ field, value, error, onChange, disabled }) {
 
 function fieldClasses(error) {
   const base =
-    'w-full rounded-xl border bg-wafil-green/[0.03] px-3 py-2.5 font-body text-sm text-wafil-green ' +
-    'placeholder:text-wafil-green/35 transition-colors duration-150 ' +
-    'focus:outline-none focus:ring-2 disabled:opacity-60'
+    'w-full rounded-xl border bg-white/10 px-3 py-2.5 font-body text-sm text-white ' +
+    'placeholder:text-white/30 transition-colors duration-150 ' +
+    'focus:outline-none focus:ring-2 focus:bg-white/15 disabled:opacity-60'
   const state = error
-    ? 'border-red-400 focus:border-red-400 focus:ring-red-200'
-    : 'border-wafil-green/15 focus:border-wafil-green focus:ring-wafil-yellow/40'
+    ? 'border-red-400 focus:border-red-400 focus:ring-red-400/30'
+    : 'border-white/20 focus:border-wafil-yellow focus:ring-wafil-yellow/20'
   return `${base} ${state}`
 }
 
 function ErrorText({ children }) {
-  return <p className="mt-1 text-xs font-medium text-red-600">{children}</p>
+  return <p className="mt-1 text-xs font-medium text-red-400">{children}</p>
 }
 
 function SuccessMessage({ onReset }) {
@@ -234,18 +234,18 @@ function SuccessMessage({ onReset }) {
           <path d="M20 6 9 17l-5-5" />
         </svg>
       </div>
-      <h2 className="mt-5 font-heading text-2xl font-extrabold uppercase text-wafil-green">
+      <h2 className="mt-5 font-heading text-2xl font-extrabold uppercase text-white">
         Başvurunuz Alındı!
       </h2>
-      <p className="mt-2 font-body text-sm text-wafil-green/70">
+      <p className="mt-2 font-body text-sm text-white/60">
         En kısa sürede sizinle iletişime geçeceğiz. Teşekkür ederiz.
       </p>
       <button
         type="button" onClick={onReset}
-        className="mt-6 rounded-xl border-2 border-wafil-green px-6 py-3
-                   font-heading text-sm font-bold uppercase tracking-wide text-wafil-green
-                   transition-colors duration-200 hover:bg-wafil-green hover:text-white
-                   focus:outline-none focus:ring-4 focus:ring-wafil-yellow/50">
+        className="mt-6 rounded-xl border-2 border-wafil-yellow px-6 py-3
+                   font-heading text-sm font-bold uppercase tracking-wide text-wafil-yellow
+                   transition-colors duration-200 hover:bg-wafil-yellow hover:text-wafil-green
+                   focus:outline-none focus:ring-4 focus:ring-wafil-yellow/30">
         Yeni Başvuru
       </button>
     </div>
