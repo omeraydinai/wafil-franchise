@@ -11,9 +11,8 @@ var CONFIG = {
   BRAND_NAME   : "WAFIL",
 };
 
-function doPost(e) {
+function doGet(e) {
   try {
-    // URLSearchParams ile gelen veriyi e.parameter'dan oku
     var data = {
       name:    (e.parameter.name    || "").trim(),
       phone:   (e.parameter.phone   || "").trim(),
@@ -22,9 +21,13 @@ function doPost(e) {
       message: (e.parameter.message || "").trim(),
     };
 
+    // Sadece ping isteği (parametre yok)
+    if (!data.name && !data.email) {
+      return jsonResponse({ status: "WAFIL Franchise API çalışıyor." });
+    }
+
     Logger.log("Başvuru alındı: " + JSON.stringify(data));
 
-    // Zorunlu alan kontrolü
     var required = ["name", "phone", "email", "city", "message"];
     for (var i = 0; i < required.length; i++) {
       if (!data[required[i]]) {
@@ -33,7 +36,6 @@ function doPost(e) {
       }
     }
 
-    // E-mail format kontrolü
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(data.email)) {
       return jsonResponse({ success: false, error: "Geçersiz e-mail formatı." });
@@ -53,8 +55,8 @@ function doPost(e) {
   }
 }
 
-function doGet(e) {
-  return jsonResponse({ status: "WAFIL Franchise API çalışıyor." });
+function doPost(e) {
+  return doGet(e);
 }
 
 function saveToSheet(data, timestamp) {
