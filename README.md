@@ -1,7 +1,7 @@
 # WAFIL Franchise Başvuru Formu
 
 React + Vite + Tailwind CSS ile yapılmış, mobile-first franchise başvuru formu.
-Başvurular EmailJS üzerinden **omersametaydin@gmail.com** adresine gönderilir.
+Başvurular Google Apps Script üzerinden **wafil.turkiye@gmail.com** adresine gönderilir.
 
 ## Özellikler
 
@@ -24,7 +24,7 @@ npm install
 1. [emailjs.com](https://www.emailjs.com) üzerinde ücretsiz hesap açın.
 2. Bir **Email Service** ekleyin (örn. Gmail) → `Service ID` alın.
 3. Bir **Email Template** oluşturun. Şablonda **To Email** alanına
-   `omersametaydin@gmail.com` (veya `{{to_email}}`) yazın. Şu değişkenleri kullanın:
+   `wafil.turkiye@gmail.com` yazın. Şu değişkenleri kullanın:
    - `{{from_name}}` — İsim
    - `{{phone}}` — Telefon
    - `{{email}}` — E-mail

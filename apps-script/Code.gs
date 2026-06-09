@@ -1,13 +1,13 @@
 // ============================================================
 //  WAFIL Franchise Başvuru — Google Apps Script Backend
 //  • Başvuruları Google Sheet'e kaydeder
-//  • omersametaydin@gmail.com'a bildirim emaili gönderir
+//  • wafil.turkiye@gmail.com'a bildirim emaili gönderir
 //  • Başvurucuya otomatik yanıt (auto-reply) gönderir
 // ============================================================
 
 // ── Ayarlar ─────────────────────────────────────────────────
 var CONFIG = {
-  NOTIFY_EMAIL : "omersametaydin@gmail.com",
+  NOTIFY_EMAIL : "wafil.turkiye@gmail.com",
   SHEET_NAME   : "Başvurular",
   BRAND_NAME   : "WAFIL",
 };
