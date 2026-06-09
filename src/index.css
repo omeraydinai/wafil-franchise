@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-body bg-wafil-green text-wafil-green;
+  }
+
+  /* Remove number/auto-fill styling clashes */
+  input:-webkit-autofill,
+  textarea:-webkit-autofill {
+    -webkit-text-fill-color: #0b2e1f;
+    transition: background-color 9999s ease-in-out 0s;
+  }
+}
