@@ -50,13 +50,20 @@ export default function App() {
     setErrors(nextErrors)
     if (Object.keys(nextErrors).length > 0) return
 
+    if (!SCRIPT_URL || SCRIPT_URL.includes('BURAYA')) {
+      console.error('VITE_SCRIPT_URL tanımlı değil!')
+      setStatus('error')
+      return
+    }
+
     setStatus('sending')
 
     try {
-      // Apps Script no-cors mode ile çağrılır; yanıt opaque olur ama istek ulaşır.
-      // Daha güvenilir yöntem: redirect follow ile JSON yanıt almak.
-      const res = await fetch(SCRIPT_URL, {
-        method: 'POST',
+      // Google Apps Script CORS kısıtlaması nedeniyle no-cors kullanılır.
+      // İstek Apps Script'e ulaşır (email + sheet çalışır), yanıt okunamaz — bu normaldir.
+      await fetch(SCRIPT_URL, {
+        method:  'POST',
+        mode:    'no-cors',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify({
           name:    form.name.trim(),
@@ -67,10 +74,7 @@ export default function App() {
         }),
       })
 
-      const json = await res.json()
-
-      if (!res.ok || !json.success) throw new Error(json.error || 'Hata')
-
+      // no-cors'ta response okunamaz; hata yoksa başarı kabul edilir.
       setStatus('success')
       setForm(INITIAL_FORM)
       setErrors({})
