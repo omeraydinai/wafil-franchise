@@ -1,10 +1,8 @@
 import { useState } from 'react'
-import emailjs from '@emailjs/browser'
 
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-const RECIPIENT = 'omersametaydin@gmail.com'
+// Google Apps Script Web App URL'ini buraya yapıştır
+// (Deploy → Web App → URL kopyala)
+const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL
 
 const INITIAL_FORM = {
   name: '',
@@ -37,7 +35,7 @@ function validate(form) {
 export default function App() {
   const [form, setForm]     = useState(INITIAL_FORM)
   const [errors, setErrors] = useState({})
-  const [status, setStatus] = useState('idle')
+  const [status, setStatus] = useState('idle') // idle | sending | success | error
 
   function handleChange(e) {
     const { name, value } = e.target
@@ -52,24 +50,32 @@ export default function App() {
     setErrors(nextErrors)
     if (Object.keys(nextErrors).length > 0) return
 
-    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-      setStatus('error')
-      return
-    }
-
     setStatus('sending')
+
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        { from_name: form.name, phone: form.phone, email: form.email, city: form.city, message: form.message, to_email: RECIPIENT, reply_to: form.email },
-        { publicKey: EMAILJS_PUBLIC_KEY },
-      )
+      // Apps Script no-cors mode ile çağrılır; yanıt opaque olur ama istek ulaşır.
+      // Daha güvenilir yöntem: redirect follow ile JSON yanıt almak.
+      const res = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          name:    form.name.trim(),
+          phone:   form.phone.trim(),
+          email:   form.email.trim(),
+          city:    form.city.trim(),
+          message: form.message.trim(),
+        }),
+      })
+
+      const json = await res.json()
+
+      if (!res.ok || !json.success) throw new Error(json.error || 'Hata')
+
       setStatus('success')
       setForm(INITIAL_FORM)
       setErrors({})
     } catch (err) {
-      console.error('Başvuru gönderilemedi:', err)
+      console.error('Gönderim hatası:', err)
       setStatus('error')
     }
   }
@@ -81,12 +87,10 @@ export default function App() {
 
       {/* ── Sol: Branding ── */}
       <div className="flex flex-col justify-center items-center lg:items-start
-                      lg:w-[42%] px-8 py-6 lg:px-16 text-center lg:text-left
-                      shrink-0">
+                      lg:w-[42%] px-8 py-6 lg:px-16 text-center lg:text-left shrink-0">
 
         <span className="inline-block rounded-full bg-wafil-yellow px-4 py-1
-                         font-heading text-xs font-bold uppercase tracking-[0.2em]
-                         text-wafil-green">
+                         font-heading text-xs font-bold uppercase tracking-[0.2em] text-wafil-green">
           WAFIL
         </span>
 
@@ -102,7 +106,6 @@ export default function App() {
           Kendi işini kur.
         </p>
 
-        {/* Dekoratif çizgi */}
         <div className="mt-6 h-px w-12 bg-wafil-yellow/40 hidden lg:block" />
 
         <p className="mt-4 hidden lg:block font-body text-sm text-white/35 leading-relaxed max-w-xs">
@@ -125,7 +128,6 @@ export default function App() {
           ) : (
             <form noValidate onSubmit={handleSubmit} className="space-y-3">
 
-              {/* İsim + Telefon yan yana */}
               <div className="grid grid-cols-2 gap-3">
                 {FIELDS.slice(0, 2).map((field) => (
                   <Field key={field.name} field={field}
@@ -134,7 +136,6 @@ export default function App() {
                 ))}
               </div>
 
-              {/* E-mail + Şehir yan yana */}
               <div className="grid grid-cols-2 gap-3">
                 {FIELDS.slice(2, 4).map((field) => (
                   <Field key={field.name} field={field}
@@ -143,7 +144,6 @@ export default function App() {
                 ))}
               </div>
 
-              {/* Mesaj */}
               <div>
                 <label htmlFor="message"
                        className="mb-1 block font-heading text-xs font-semibold text-wafil-green">
@@ -177,6 +177,7 @@ export default function App() {
                            active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60">
                 {isSending ? 'Gönderiliyor...' : 'Başvuruyu Gönder'}
               </button>
+
             </form>
           )}
         </div>
@@ -239,8 +240,7 @@ function SuccessMessage({ onReset }) {
         type="button" onClick={onReset}
         className="mt-6 rounded-xl border-2 border-wafil-green px-6 py-3
                    font-heading text-sm font-bold uppercase tracking-wide text-wafil-green
-                   transition-colors duration-200
-                   hover:bg-wafil-green hover:text-white
+                   transition-colors duration-200 hover:bg-wafil-green hover:text-white
                    focus:outline-none focus:ring-4 focus:ring-wafil-yellow/50">
         Yeni Başvuru
       </button>
