@@ -7,6 +7,9 @@ node_modules
 dist
 dist-ssr
 
+# Stitch export (source of landing HTML; not deployed)
+stitch_wafil_franchise_landing_page_conversion_redesign/
+
 # Local env files
 .env
 .env.local
