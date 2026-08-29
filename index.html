@@ -77,25 +77,37 @@
 <!-- Hero -->
 <section class="relative min-h-[85vh] flex items-center justify-center px-6 md:px-margin-x py-20 md:py-section-gap overflow-hidden">
 <div class="absolute inset-0 z-0">
-<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent z-10"></div>
 <picture>
 <source type="image/webp" sizes="100vw" srcset="/wafil-hero-waffle-768.webp 768w, /wafil-hero-waffle-1280.webp 1280w, /wafil-hero-waffle-1600.webp 1600w">
-<img alt="WAFIL waffle" class="w-full h-full object-cover object-center" src="/wafil-hero-waffle-1280.jpg" width="1536" height="1024" fetchpriority="high" decoding="async">
+<img alt="Meyveli ve çikolata soslu WAFIL waffle" class="w-full h-full object-cover object-center saturate-[1.18] contrast-[1.04] brightness-[1.06]" src="/wafil-hero-waffle-1280.jpg" width="1536" height="1024" fetchpriority="high" decoding="async">
 </picture>
+<!-- Ölçülü karartma: metin okunsun ama ürün görünür kalsın.
+     Önceki gradient (from-background via-background/80) fotoğrafı neredeyse
+     siyaha indiriyordu — bir tatlı markası için en iştah açıcı varlık kayboluyordu. -->
+<div class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,23,15,0.48)_0%,rgba(0,23,15,0.64)_45%,rgba(0,23,15,0.88)_100%)]"></div>
+<!-- Başlığın arkasına sıcak amber ışık -->
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_44%,rgba(255,186,60,0.20),transparent_72%)]"></div>
 </div>
-<div class="relative z-10 max-w-container-max mx-auto w-full flex flex-col items-center text-center gap-stack-lg">
-<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-on-surface max-w-4xl drop-shadow-2xl">
-<span class="text-secondary block mb-2">WAFIL ile</span>
-kendi işini kur.
-</h1>
-<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl bg-surface/40 backdrop-blur-sm p-6 rounded-lg border border-outline-variant/30">
-  Tezgâh, makine ve ekipmanlar, eğitim ve açılış desteği tek pakette.
-  Anahtar teslim mobil büfe modeliyle hızlıca satışa başla.
+<div class="relative z-10 max-w-container-max mx-auto w-full flex flex-col items-center text-center gap-6">
+<p class="text-label-bold font-label-bold uppercase tracking-[0.28em] text-secondary [text-shadow:0_2px_10px_rgba(0,0,0,0.6)]">
+  Franchise fırsatı
 </p>
-<div class="mt-stack-md flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-<a class="inline-flex items-center justify-center px-8 py-4 bg-secondary text-on-secondary text-label-bold font-label-bold uppercase rounded shadow-[0_0_20px_rgba(255,207,52,0.15)] hover:bg-secondary-fixed transition-colors hover:scale-105 duration-200" href="#iletisim">
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg max-w-4xl [text-shadow:0_3px_24px_rgba(0,0,0,0.55)]">
+<span class="text-secondary block mb-2">WAFIL ile</span>
+<span class="text-[#fff4dd]">kendi işini kur.</span>
+</h1>
+<p class="text-body-lg font-body-lg text-[#f4e9d4] max-w-xl [text-shadow:0_2px_16px_rgba(0,0,0,0.85)]">
+  Sıcacık waffle kokusu, senin tezgâhında. Ekipmandan eğitime kadar
+  her şey hazır — sen sadece kepengi aç.
+</p>
+<div class="mt-2 flex flex-col items-center gap-3 w-full sm:w-auto">
+<a class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-on-secondary text-label-bold font-label-bold uppercase rounded shadow-[0_8px_30px_rgba(255,207,52,0.35)] hover:bg-secondary-fixed hover:shadow-[0_8px_38px_rgba(255,207,52,0.5)] transition-all hover:scale-105 duration-200" href="#iletisim">
   Franchise Başvurusu
+<span aria-hidden="true">→</span>
 </a>
+<p class="text-label-sm font-label-sm text-[#e8dcc4]/90 [text-shadow:0_2px_10px_rgba(0,0,0,0.8)]">
+  İlk 5 franchise noktasına özel lansman fiyatı
+</p>
 </div>
 </div>
 </section>
