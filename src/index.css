@@ -7,15 +7,52 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+}
 
-  body {
-    @apply font-body bg-wafil-green text-wafil-green;
-  }
+/* Material Symbols ikon fontu.
+   font-display: block — swap yerine block kullanılıyor; swap ile ikon fontu
+   inene kadar ligature'ın ham metni ("countertops", "blender", "payments")
+   ekranda görünüyordu. */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.icon-fill {
+  font-variation-settings: 'FILL' 1;
+}
 
-  /* Remove number/auto-fill styling clashes */
-  input:-webkit-autofill,
-  textarea:-webkit-autofill {
-    -webkit-text-fill-color: #0b2e1f;
-    transition: background-color 9999s ease-in-out 0s;
-  }
+/* SSS akordeonu */
+.accordion-content {
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+  opacity: 1;
+}
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* Sticky nav yüksekliği kadar boşluk bırak, başlıklar altında kalmasın */
+#lansman,
+#iletisim,
+#paket,
+#surec,
+#sss {
+  scroll-margin-top: 5.5rem;
+}
+
+.price-display {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+}
+
+/* Otomatik doldurmada tarayıcının beyaz arkaplan basmasını engelle */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: #c4ebd8;
+  -webkit-box-shadow: 0 0 0 1000px #0b3023 inset;
+  transition: background-color 9999s ease-in-out 0s;
 }

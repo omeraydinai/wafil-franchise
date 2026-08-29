@@ -1,3 +1,5 @@
+import './index.css'
+
 const SCRIPT_URL =
   import.meta.env.VITE_SCRIPT_URL ||
   'https://script.google.com/macros/s/AKfycbyUcHNGlLsU-j1DEdjtn5kRtEbhL0qoUTWD_hCRktEGxBj2VrdMRpj_N6SXPgpp5iRrYA/exec'
@@ -45,6 +47,25 @@ function showSuccess(form) {
       </button>
     </div>
   `
+  panel.querySelector('[data-new-application]')?.addEventListener('click', () => location.reload())
+}
+
+/**
+ * Başvuruyu Apps Script'e gönderir.
+ *
+ * Eskiden `mode: 'no-cors'` kullanılıyordu; o modda yanıt okunamadığı için
+ * fetch HER ZAMAN başarılı görünüyordu. Apps Script kotası dolsa veya deploy
+ * bozulsa kullanıcı yine "Başvurunuz alındı" ekranını görüyor, başvuru ise
+ * hiçbir yere ulaşmıyordu. Endpoint `Access-Control-Allow-Origin: *`
+ * döndürdüğü için normal CORS isteği atıp yanıtı gerçekten doğrulayabiliyoruz.
+ */
+async function submitApplication(params) {
+  const res = await fetch(`${SCRIPT_URL}?${params.toString()}`, { method: 'GET' })
+  if (!res.ok) throw new Error(`Sunucu ${res.status} döndü`)
+
+  const body = await res.json()
+  if (!body?.success) throw new Error(body?.error || 'Sunucu başvuruyu kaydetmedi')
+  return body
 }
 
 export function initFranchiseForm() {
@@ -61,12 +82,13 @@ export function initFranchiseForm() {
     const district = (data.district || '').trim()
     const note = (data.note || '').trim()
 
-    if (!name || !phone || !email || !city) {
-      setStatus(form, 'error', 'Lütfen zorunlu alanları doldurun.')
+    // E-posta artık zorunlu değil — sadece doldurulmuşsa formatı kontrol edilir.
+    if (!name || !phone || !city) {
+      setStatus(form, 'error', 'Lütfen ad soyad, telefon ve şehir alanlarını doldurun.')
       return
     }
-    if (!EMAIL_REGEX.test(email)) {
-      setStatus(form, 'error', 'Geçerli bir e-posta adresi girin.')
+    if (email && !EMAIL_REGEX.test(email)) {
+      setStatus(form, 'error', 'Geçerli bir e-posta adresi girin veya alanı boş bırakın.')
       return
     }
     if (!SCRIPT_URL || SCRIPT_URL.includes('BURAYA')) {
@@ -75,7 +97,6 @@ export function initFranchiseForm() {
       return
     }
 
-    const panel = form.parentElement
     const submit = form.querySelector('[type="submit"]')
     const previous = submit.textContent
     submit.disabled = true
@@ -83,28 +104,29 @@ export function initFranchiseForm() {
     setStatus(form, 'success', '')
 
     try {
-      const params = new URLSearchParams({
-        name,
-        phone,
-        email,
-        city,
-        message: composeMessage({ district, note }),
-      })
+      await submitApplication(
+        new URLSearchParams({
+          name,
+          phone,
+          email,
+          city,
+          message: composeMessage({ district, note }),
+        }),
+      )
 
-      await fetch(`${SCRIPT_URL}?${params.toString()}`, {
-        method: 'GET',
-        mode: 'no-cors',
-      })
+      // Meta Pixel'e dönüşümü bildir (Pixel ID boşsa fbq tanımlı değildir).
+      window.fbq?.('track', 'Lead')
 
       showSuccess(form)
-      panel
-        ?.querySelector('[data-new-application]')
-        ?.addEventListener('click', () => location.reload())
     } catch (err) {
-      console.error(err)
+      console.error('Başvuru gönderilemedi:', err)
       submit.disabled = false
       submit.textContent = previous
-      setStatus(form, 'error', 'Başvuru gönderilemedi. Lütfen tekrar deneyin.')
+      setStatus(
+        form,
+        'error',
+        'Başvuru gönderilemedi. Lütfen tekrar deneyin veya @wafil.tr üzerinden bize yazın.',
+      )
     }
   })
 }
@@ -113,11 +135,21 @@ function initMobileNav() {
   const toggle = document.getElementById('mobile-menu-toggle')
   const panel = document.getElementById('mobile-menu')
   if (!toggle || !panel) return
-  toggle.addEventListener('click', () => {
-    panel.classList.toggle('hidden')
-  })
-  panel.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => panel.classList.add('hidden'))
+
+  const setOpen = (open) => {
+    panel.classList.toggle('hidden', !open)
+    toggle.setAttribute('aria-expanded', String(open))
+  }
+
+  toggle.addEventListener('click', () => setOpen(panel.classList.contains('hidden')))
+  panel.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)))
+}
+
+function initAccordion() {
+  document.querySelectorAll('.accordion-toggle').forEach((button) => {
+    button.addEventListener('click', () => {
+      button.closest('.accordion-item')?.classList.toggle('active')
+    })
   })
 }
 
@@ -136,4 +168,5 @@ function initSmoothScroll() {
 
 initFranchiseForm()
 initMobileNav()
+initAccordion()
 initSmoothScroll()

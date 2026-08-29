@@ -34,3 +34,6 @@ pnpm-debug.log*
 *.sln
 *.sw?
 Thumbs.db
+
+# Claude Code yerel ayarlari
+.claude/
