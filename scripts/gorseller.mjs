@@ -2,7 +2,7 @@
 //
 // Kaynak: assets-src/gorsel/<ad>.(jpg|jpeg|png|webp)  — deploy EDİLMEZ
 // Çıktı:  public/gorsel/<ad>-800.webp ve <ad>-1600.webp
-//         og-paylasim için ayrıca public/gorsel/og-paylasim.jpg (1200×630)
+//         og-paylasim burada işlenmez; Remotion "Site-OG" ile başlıklı basılır
 // Adlar ve hangi bölümde kullanıldıkları: docs/flow-gorseller.md
 import sharp from 'sharp'
 import { mkdirSync, readdirSync, statSync } from 'node:fs'
@@ -21,15 +21,24 @@ for (const file of files) {
   const name = basename(file, extname(file))
   console.log(`\n${src} → ${kb(src)}`)
 
+  // Paylaşım görseli başlıkla birlikte Remotion'da basılır (marka fontları orada):
+  // wafıl-insta/remotion → Site-OG kompozisyonu, zemin public/site/og-paylasim-zemin.jpg
+  if (name === 'og-paylasim') {
+    console.log('  atlandı: wafıl-insta/remotion içinde "Site-OG" ile render edilir (bkz. src/site/OgPaylasim.tsx)')
+    continue
+  }
+
+  // Giriş görseli sayfanın beyazına oturmalı: Flow'un ~#F0–#F7 "beyaz" zemini
+  // saf beyaza çekilir (açık tonlar hafifçe aydınlatılır), yoksa kutu gibi görünür.
+  const prep = () => {
+    const img = sharp(src).rotate()
+    return name === 'hero-bardak' ? img.linear(1.075, 0) : img
+  }
+
   for (const width of [800, 1600]) {
     const out = `${OUT}/${name}-${width}.webp`
-    await sharp(src).rotate().resize({ width, withoutEnlargement: true }).webp({ quality: 74 }).toFile(out)
+    await prep().resize({ width, withoutEnlargement: true }).webp({ quality: 74 }).toFile(out)
     console.log(`  ${out.padEnd(42)} ${kb(out)}`)
   }
 
-  if (name === 'og-paylasim') {
-    const out = `${OUT}/og-paylasim.jpg`
-    await sharp(src).rotate().resize(1200, 630, { fit: 'cover', position: 'right' }).jpeg({ quality: 80, mozjpeg: true }).toFile(out)
-    console.log(`  ${out.padEnd(42)} ${kb(out)}`)
-  }
 }

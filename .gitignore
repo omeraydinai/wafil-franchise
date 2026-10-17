@@ -37,3 +37,6 @@ Thumbs.db
 
 # Claude Code yerel ayarlari
 .claude/
+
+# Flow kaynak görselleri (büyük; siteye giren boyutlar public/gorsel/ içinde)
+assets-src/gorsel/
