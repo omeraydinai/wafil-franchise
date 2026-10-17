@@ -61,7 +61,7 @@ Metin seçimi sarı/`ink`, imleç `ink`, odak halkası 2px `ink` (3px boşluk), 
 
 ## Görseller
 
-Yalnız AI (Google Flow), promptlar `docs/flow-gorseller.md`. Tezgâh/kiosk görseli üretilmez; tezgâhı anlatan yerde kat planı çizimi var. Doldurulmamış bilgi `data-todo` ile çizgili işaretlenir ve yayına çıkmaz.
+Yalnız AI (Google Flow), promptlar `docs/flow-gorseller.md`. Tezgâh/kiosk görseli AI ile üretilmez. Model bölümünde ilk tezgâhın gerçek fotoğrafı (`public/wafil-kiosk-512.*`, "İlk tezgâhımız · Gerçek fotoğraf") var; kat planı çizimi bunun yerine kaldırıldı. Doldurulmamış bilgi `data-todo` ile çizgili işaretlenir ve yayına çıkmaz.
 
 ### Görsel yerleri (`slot`)
 

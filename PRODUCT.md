@@ -48,7 +48,7 @@ WAFIL bir franchise markasıdır: yatırımcı, büyük bir dükkân yerine tek 
 ## Evidence on Hand
 
 - Web sitesindeki paket, süreç, SSS ve bedel bilgileri (yukarıda).
-- Görseller: yalnız AI (Google Flow) ile üretilecek. Mevcut `public/wafil-hero-waffle-*` kare petekli Belçika waffle'ı gösterdiği için ürünle uyuşmuyor; `public/wafil-kiosk-*` genel bir kiosk görseli.
+- Görseller: yalnız AI (Google Flow) ile üretilecek. Mevcut `public/wafil-hero-waffle-*` kare petekli Belçika waffle'ı gösterdiği için ürünle uyuşmuyor; `public/wafil-kiosk-*` ilk tezgâhın gerçek fotoğrafı (kullanıcı onayı 2026-10-17; yalnız 512×382 px, büyük hâli bekleniyor). Model bölümünde "İlk tezgâhımız" olarak kullanılıyor.
 - **Yok, uydurulmaz:** müşteri yorumu, yatırımcı referansı, şube fotoğrafı, basın, rakamsal başarı verisi. "Bizim tezgâhımız" diye sunulan hiçbir görsel AI olamaz; gerçek fotoğraf gelene kadar orada görsel yerine tipografi kullanılır.
 
 ## Product Principles
