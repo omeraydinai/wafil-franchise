@@ -39,11 +39,11 @@ Editoryal minimal bir yatırım broşürü: açık ve ferah, sakin, açık sözl
 
 ## Düzen
 
-- **Her bölüm bir ekran:**  =  (sabit menü düşülür), içerik dikeyde ortalı. Yazı ve boşluklar  ile ekran yüksekliğine göre ölçeklenir. Telefonda alt boşluğa "Hemen başvur" çubuğunun yeri (4.75rem) eklenir; alçak telefonlar (≤740 px yükseklik) için ayrı sıkılaştırma var. Kayan şerit giriş bölümünün en altında.
+- **Her bölüm bir ekran:** `.sec` = `min-height: calc(100svh - 4rem)` (sabit menü düşülür), içerik dikeyde ortalı. Yazı ve boşluklar `clamp(…, svh, …)` ile ekran yüksekliğine göre ölçeklenir. Telefonda alt boşluğa "Hemen başvur" çubuğunun yeri (4.75rem) eklenir; alçak telefonlar (≤740 px yükseklik) için ayrı sıkılaştırma var. Kayan şerit giriş bölümünün en altında.
 - Doğrulanan ölçüler: 1440×900, 1280×720, 1024×768, 375×812, 375×667; her bölüm tam bir ekran, yatay taşma yok.
-- **Telefonda yana kaydırma ():** pakette olanlar, tezgâh + lokasyonlar ve ürün adımları kart şeritleri; kenardan kenara, snap'li, kaydırma çubuğu gizli.
-- Çerçeve  (1360px), yan boşluk 20px (mobil) / 40px. Izgaralar mobilde  (kaydırmalı şeritler sütunu genişletmesin diye şart), masaüstünde 12 kolon.
-- Bölüm başlıkları ortak  sınıfı. Beyaz ve  bantlar sırayla, lansman  ile tek dolu blok. Alt bilgide sayfa genişliğinde dev "WAFIL" yazısı.
+- **Telefonda yana kaydırma (`.swipe`):** pakette olanlar, tezgâh + lokasyonlar ve ürün adımları kart şeritleri; kenardan kenara, snap'li, kaydırma çubuğu gizli.
+- Çerçeve `max-w-frame` (1360px), yan boşluk 20px (mobil) / 40px. Izgaralar mobilde `grid-cols-1` (kaydırmalı şeritler sütunu genişletmesin diye şart), masaüstünde 12 kolon.
+- Bölüm başlıkları ortak `.h-sec` sınıfı. Beyaz ve `mist` bantlar sırayla, lansman `ink` ile tek dolu blok. Alt bilgide sayfa genişliğinde dev "WAFIL" yazısı.
 
 ## Hareket
 
@@ -51,7 +51,7 @@ Tek eğri: `cubic-bezier(0.16, 1, 0.3, 1)` (yaylanma/sekme yok).
 
 - Giriş: başlık satırları maskeden sırayla yükselir; bardak illüstrasyonu belirir, kabarcıklar tek tek dolar, çikolata sosu çizilir.
 - Kaydırma: `data-reveal` blokları yukarı kayarak belirir (JS yoksa görünür kalır).
-- Süreç ekseni ve sayaç kaydırmaya bağlı.
+- Süreç ekseni bölüm ekrana girince bir kez dolar; adımlar 0,3 sn arayla belirir.
 - Kayan şerit 38 sn'de bir tur, üzerine gelince durur.
 - Masaüstünde Lenis ile yumuşak kaydırma; dokunmatikte kapalı.
 - `prefers-reduced-motion`: hepsi kapanır.
