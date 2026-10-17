@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="tr">
+<html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -10,16 +10,12 @@
 <meta property="og:description" content="Mobil büfe franchise modeli. Tezgâh, ekipman, eğitim ve açılış desteği tek pakette.">
 <meta property="og:image" content="/wafil-hero-waffle-1280.jpg">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#00170f">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet">
-<!-- display=block: swap ile ikon fontu inene kadar ligature'ın ham metni
-     ("countertops", "blender") ekranda görünüyordu. -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+<meta name="theme-color" content="#FFFFFF">
 
 <script>
+  // Hareket katmanı yalnız JS çalışıyorsa devreye girer; aksi hâlde içerik olduğu gibi görünür.
+  document.documentElement.classList.add('js');
+
   // ── Meta (Facebook) Pixel ────────────────────────────────────────────────
   // ID boşken hiçbir şey yüklenmez, hiçbir istek atılmaz.
   // Events Manager → Veri Kaynakları → Pixel'iniz → ID'yi buraya yapıştırın.
@@ -44,498 +40,499 @@
 <script type="module" src="/src/form.js"></script>
 </head>
 
-<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased selection:bg-secondary selection:text-on-secondary pb-20 md:pb-0">
+<body class="min-h-screen bg-paper font-sans text-ink antialiased pb-24 md:pb-0">
+<!--
+THESIS: Tek tezgâhlı yeni bir franchise markasının yatırım broşürü; kategori varsayılanı olan koyu, parlak, "fırsat" bağıran tanıtım sayfasını reddeder, sakin ve açık sözlü bir prospektüs gibi konuşur.
+OWN-WORLD: Beyaz kâğıt ve açık yeşil-gri bantlar, koyu yeşil mürekkep, sarı yalnız başvuruya giden yolda. League Spartan büyük başlıklar, Hanken Grotesk metin, ince çizgiler, noktalı öncülerle "dahil / sana ait" paket fişi, çizgi illüstrasyon bardak.
+STORY: Ziyaretçi ne satıldığını (bardakta bubble waffle, tek tezgâh), pakette ne olup ne olmadığını, süreci ve bedeli anlar; yeni bir marka olduğumuzu bilerek güvenir ve formu doldurur.
+FIRST VIEWPORT: Solda üç satırlık dev başlık "Kendi işini / tek tezgâhla / kur.", altında tek cümle ve sarı "Başvur" düğmesi; sağda çizgi bardak illüstrasyonu kabarcık kabarcık dolar; altta ince çizgiyle ayrılmış dört paket gerçeği.
+FORM: Editoryal minimal prospektüs, kullanıcının sabitlediği yön (çekiliş 6. adayı yerine); imza etkileşimi: başvurudan açılışa dikey süreç ekseni ve sayaç. Seed key 8b552ce4.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
 
-<!-- TopNavBar -->
-<nav class="bg-surface/90 backdrop-blur-md top-0 sticky z-50 border-b border-outline-variant/30 w-full">
-<div class="flex justify-between items-center w-full px-6 md:px-margin-x py-4 max-w-container-max mx-auto">
-<a href="/" class="text-headline-md font-headline-md font-black text-secondary tracking-tighter">WAFIL</a>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-on-surface-variant hover:text-secondary transition-colors text-label-bold font-label-bold" href="#paket">Paket İçeriği</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors text-label-bold font-label-bold" href="#surec">Süreç</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors text-label-bold font-label-bold" href="#sss">SSS</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors text-label-bold font-label-bold" href="#iletisim">İletişim</a>
-</div>
-<a class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-secondary text-on-secondary text-label-bold font-label-bold uppercase rounded hover:bg-secondary-fixed transition-colors" href="#iletisim">
-  Franchise Başvurusu
-</a>
-<button id="mobile-menu-toggle" class="md:hidden text-on-surface p-2" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mobile-menu">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-<div id="mobile-menu" class="hidden md:hidden border-t border-outline-variant/30 px-6 py-4 flex flex-col gap-3 bg-surface">
-<a class="text-on-surface-variant hover:text-secondary text-label-bold font-label-bold" href="#paket">Paket İçeriği</a>
-<a class="text-on-surface-variant hover:text-secondary text-label-bold font-label-bold" href="#surec">Süreç</a>
-<a class="text-on-surface-variant hover:text-secondary text-label-bold font-label-bold" href="#sss">SSS</a>
-<a class="text-on-surface-variant hover:text-secondary text-label-bold font-label-bold" href="#iletisim">İletişim</a>
-<a class="inline-flex items-center justify-center px-6 py-3 bg-secondary text-on-secondary text-label-bold font-label-bold uppercase rounded" href="#iletisim">Franchise Başvurusu</a>
-</div>
-</nav>
+<!-- Menü -->
+<header class="sticky top-0 z-50 border-b border-line bg-paper/85 backdrop-blur-md">
+  <div class="mx-auto flex max-w-frame items-center justify-between px-5 py-3.5 md:px-10">
+    <a href="/" class="font-display text-[1.65rem] font-bold leading-none tracking-[0.04em] text-ink" aria-label="WAFIL ana sayfa">WAFIL</a>
+    <nav class="hidden items-center gap-9 text-[15px] font-medium md:flex" aria-label="Bölümler">
+      <a class="text-ink-soft transition-colors hover:text-ink" href="#paket">Paket</a>
+      <a class="text-ink-soft transition-colors hover:text-ink" href="#surec">Süreç</a>
+      <a class="text-ink-soft transition-colors hover:text-ink" href="#lansman">Bedel</a>
+      <a class="text-ink-soft transition-colors hover:text-ink" href="#sss">SSS</a>
+    </nav>
+    <a class="btn-sun hidden !py-2.5 !px-5 text-[15px] md:inline-flex" href="#iletisim">
+      Başvur
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <button id="mobile-menu-toggle" class="-mr-2 p-2 text-ink md:hidden" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mobile-menu">
+      <svg class="ic !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden border-t border-line bg-paper px-5 pb-6 pt-2 md:hidden">
+    <a class="block border-b border-line py-4 font-display text-2xl font-semibold" href="#paket">Paket</a>
+    <a class="block border-b border-line py-4 font-display text-2xl font-semibold" href="#surec">Süreç</a>
+    <a class="block border-b border-line py-4 font-display text-2xl font-semibold" href="#lansman">Bedel</a>
+    <a class="block border-b border-line py-4 font-display text-2xl font-semibold" href="#sss">SSS</a>
+    <a class="btn-sun mt-6 w-full" href="#iletisim">Başvur</a>
+  </div>
+</header>
 
-<main class="flex-grow">
+<main>
 
-<!-- Hero -->
-<section class="relative min-h-[85vh] flex items-center justify-center px-6 md:px-margin-x py-20 md:py-section-gap overflow-hidden">
-<div class="absolute inset-0 z-0">
-<picture>
-<source type="image/webp" sizes="100vw" srcset="/wafil-hero-waffle-768.webp 768w, /wafil-hero-waffle-1280.webp 1280w, /wafil-hero-waffle-1600.webp 1600w">
-<img alt="Meyveli ve çikolata soslu WAFIL waffle" class="w-full h-full object-cover object-center saturate-[1.18] contrast-[1.04] brightness-[1.06]" src="/wafil-hero-waffle-1280.jpg" width="1536" height="1024" fetchpriority="high" decoding="async">
-</picture>
-<!-- Ölçülü karartma: metin okunsun ama ürün görünür kalsın.
-     Önceki gradient (from-background via-background/80) fotoğrafı neredeyse
-     siyaha indiriyordu — bir tatlı markası için en iştah açıcı varlık kayboluyordu. -->
-<div class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,23,15,0.48)_0%,rgba(0,23,15,0.64)_45%,rgba(0,23,15,0.88)_100%)]"></div>
-<!-- Başlığın arkasına sıcak amber ışık -->
-<div class="absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_44%,rgba(255,186,60,0.20),transparent_72%)]"></div>
-</div>
-<div class="relative z-10 max-w-container-max mx-auto w-full flex flex-col items-center text-center gap-6">
-<p class="text-label-bold font-label-bold uppercase tracking-[0.28em] text-secondary [text-shadow:0_2px_10px_rgba(0,0,0,0.6)]">
-  Franchise fırsatı
-</p>
-<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg max-w-4xl [text-shadow:0_3px_24px_rgba(0,0,0,0.55)]">
-<span class="text-secondary block mb-2">WAFIL ile</span>
-<span class="text-[#fff4dd]">kendi işini kur.</span>
-</h1>
-<p class="text-body-lg font-body-lg text-[#f4e9d4] max-w-xl [text-shadow:0_2px_16px_rgba(0,0,0,0.85)]">
-  Sıcacık waffle kokusu, senin tezgâhında. Tezgâhtan eğitime kadar
-  başlangıç için gerekenler tek pakette.
-</p>
-<div class="mt-2 flex flex-col items-center gap-3 w-full sm:w-auto">
-<a class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-on-secondary text-label-bold font-label-bold uppercase rounded shadow-[0_8px_30px_rgba(255,207,52,0.35)] hover:bg-secondary-fixed hover:shadow-[0_8px_38px_rgba(255,207,52,0.5)] transition-all hover:scale-105 duration-200" href="#iletisim">
-  Franchise Başvurusu
-<span aria-hidden="true">→</span>
-</a>
-<p class="text-label-sm font-label-sm text-[#e8dcc4]/90 [text-shadow:0_2px_10px_rgba(0,0,0,0.8)]">
-  İlk 5 franchise noktasına özel lansman fiyatı
-</p>
-</div>
-</div>
+<!-- Giriş -->
+<section class="mx-auto max-w-frame px-5 pt-10 md:px-10 md:pt-16">
+  <div class="grid items-end gap-x-10 gap-y-10 lg:grid-cols-12">
+    <div class="lg:col-span-7 lg:pb-6">
+      <h1 class="font-display text-[clamp(3.1rem,8.6vw,6rem)] font-semibold leading-[0.92] tracking-[-0.04em]">
+        <span class="line-mask"><span>Kendi işini</span></span>
+        <span class="line-mask"><span class="font-light">tek tezgâhla</span></span>
+        <span class="line-mask"><span>kur.</span></span>
+      </h1>
+      <p class="mt-8 max-w-[34rem] text-lg leading-relaxed text-ink-soft md:text-xl" data-reveal style="--d:3">
+        Sıcacık waffle kokusu, senin tezgâhında. Tezgâhtan eğitime kadar başlangıç için gerekenler tek pakette.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-x-8 gap-y-5" data-reveal style="--d:4">
+        <a class="btn-sun text-[17px]" href="#iletisim">
+          Franchise başvurusu
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="link-line text-[17px] text-ink" href="#paket">Pakette ne var?</a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5">
+      <svg class="mx-auto block h-auto w-full max-w-[25rem] lg:max-w-none" viewBox="0 0 480 620" role="img" aria-labelledby="cup-title">
+        <title id="cup-title">Kâğıt bardakta bubble waffle: üstünde dondurma, meyve ve çikolata sosu (illüstrasyon)</title>
+        <defs>
+          <clipPath id="waffle-clip">
+            <path d="M112 372C104 318 116 270 150 250C176 236 204 242 226 230C252 216 284 224 306 238C340 258 372 292 370 372Z"/>
+          </clipPath>
+        </defs>
+        <g class="cup-rise">
+          <ellipse cx="240" cy="606" rx="112" ry="9" fill="#0B2E1F" opacity=".07"/>
+          <path d="M112 372C104 318 116 270 150 250C176 236 204 242 226 230C252 216 284 224 306 238C340 258 372 292 370 372Z" fill="#F4C85A" stroke="#0B2E1F" stroke-width="2.5"/>
+          <g clip-path="url(#waffle-clip)" fill="#FBE19A" stroke="#D49E2C" stroke-width="1.5">
+            <circle class="bubble" style="--i:0" cx="134" cy="250" r="14"/><circle class="bubble" style="--i:1" cx="160" cy="250" r="14"/><circle class="bubble" style="--i:2" cx="186" cy="250" r="14"/><circle class="bubble" style="--i:3" cx="212" cy="250" r="14"/><circle class="bubble" style="--i:4" cx="238" cy="250" r="14"/><circle class="bubble" style="--i:5" cx="264" cy="250" r="14"/><circle class="bubble" style="--i:6" cx="290" cy="250" r="14"/><circle class="bubble" style="--i:7" cx="316" cy="250" r="14"/><circle class="bubble" style="--i:8" cx="342" cy="250" r="14"/>
+            <circle class="bubble" style="--i:9" cx="121" cy="275" r="14"/><circle class="bubble" style="--i:10" cx="147" cy="275" r="14"/><circle class="bubble" style="--i:11" cx="173" cy="275" r="14"/><circle class="bubble" style="--i:12" cx="199" cy="275" r="14"/><circle class="bubble" style="--i:13" cx="225" cy="275" r="14"/><circle class="bubble" style="--i:14" cx="251" cy="275" r="14"/><circle class="bubble" style="--i:15" cx="277" cy="275" r="14"/><circle class="bubble" style="--i:16" cx="303" cy="275" r="14"/><circle class="bubble" style="--i:17" cx="329" cy="275" r="14"/><circle class="bubble" style="--i:18" cx="355" cy="275" r="14"/>
+            <circle class="bubble" style="--i:19" cx="134" cy="300" r="14"/><circle class="bubble" style="--i:20" cx="160" cy="300" r="14"/><circle class="bubble" style="--i:21" cx="186" cy="300" r="14"/><circle class="bubble" style="--i:22" cx="212" cy="300" r="14"/><circle class="bubble" style="--i:23" cx="238" cy="300" r="14"/><circle class="bubble" style="--i:24" cx="264" cy="300" r="14"/><circle class="bubble" style="--i:25" cx="290" cy="300" r="14"/><circle class="bubble" style="--i:26" cx="316" cy="300" r="14"/><circle class="bubble" style="--i:27" cx="342" cy="300" r="14"/>
+            <circle class="bubble" style="--i:28" cx="121" cy="325" r="14"/><circle class="bubble" style="--i:29" cx="147" cy="325" r="14"/><circle class="bubble" style="--i:30" cx="173" cy="325" r="14"/><circle class="bubble" style="--i:31" cx="199" cy="325" r="14"/><circle class="bubble" style="--i:32" cx="225" cy="325" r="14"/><circle class="bubble" style="--i:33" cx="251" cy="325" r="14"/><circle class="bubble" style="--i:34" cx="277" cy="325" r="14"/><circle class="bubble" style="--i:35" cx="303" cy="325" r="14"/><circle class="bubble" style="--i:36" cx="329" cy="325" r="14"/><circle class="bubble" style="--i:37" cx="355" cy="325" r="14"/>
+            <circle class="bubble" style="--i:38" cx="134" cy="350" r="14"/><circle class="bubble" style="--i:39" cx="160" cy="350" r="14"/><circle class="bubble" style="--i:40" cx="186" cy="350" r="14"/><circle class="bubble" style="--i:41" cx="212" cy="350" r="14"/><circle class="bubble" style="--i:42" cx="238" cy="350" r="14"/><circle class="bubble" style="--i:43" cx="264" cy="350" r="14"/><circle class="bubble" style="--i:44" cx="290" cy="350" r="14"/><circle class="bubble" style="--i:45" cx="316" cy="350" r="14"/><circle class="bubble" style="--i:46" cx="342" cy="350" r="14"/>
+          </g>
+          <path d="M112 372C104 318 116 270 150 250C176 236 204 242 226 230C252 216 284 224 306 238C340 258 372 292 370 372Z" fill="none" stroke="#0B2E1F" stroke-width="2.5"/>
+          <!-- dondurma -->
+          <path d="M180 240C170 198 200 168 240 168C280 168 308 198 298 240C290 252 270 246 256 254C240 262 222 250 206 254C192 258 184 250 180 240Z" fill="#FFFCF2" stroke="#0B2E1F" stroke-width="2.5"/>
+          <path d="M214 196C222 186 236 182 248 184" fill="none" stroke="#0B2E1F" stroke-width="2" stroke-linecap="round" opacity=".35"/>
+          <!-- çikolata sosu -->
+          <path class="drizzle" d="M146 266C170 296 186 232 212 268C234 300 250 226 276 266C298 300 318 244 346 282" fill="none" stroke="#4A2A1A" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- meyveler -->
+          <circle cx="198" cy="212" r="10" fill="#2E3560" stroke="#0B2E1F" stroke-width="2"/>
+          <circle cx="270" cy="204" r="9" fill="#2E3560" stroke="#0B2E1F" stroke-width="2"/>
+          <circle cx="318" cy="296" r="10" fill="#2E3560" stroke="#0B2E1F" stroke-width="2"/>
+          <path d="M230 182C222 166 230 152 244 154C258 156 262 172 250 186C244 192 236 190 230 182Z" fill="#E4484F" stroke="#0B2E1F" stroke-width="2"/>
+          <path d="M240 156C244 146 254 142 262 146" fill="none" stroke="#2E7D4F" stroke-width="3" stroke-linecap="round"/>
+          <path d="M150 316C142 300 152 286 166 290C180 294 182 310 170 322C164 328 156 326 150 316Z" fill="#E4484F" stroke="#0B2E1F" stroke-width="2"/>
+          <!-- bardak -->
+          <path d="M128 372H352L318 600Q240 614 162 600Z" fill="#FFFFFF" stroke="#0B2E1F" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M141 446H339L333 490H147Z" fill="#0B2E1F"/>
+          <text x="240" y="477" text-anchor="middle" fill="#FFFFFF" font-family="League Spartan Variable, system-ui, sans-serif" font-weight="700" font-size="25" letter-spacing="4">WAFIL</text>
+          <rect x="118" y="362" width="244" height="19" rx="9.5" fill="#FFFFFF" stroke="#0B2E1F" stroke-width="2.5"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <ul class="mt-14 grid grid-cols-2 border-t border-line text-[15px] md:mt-20 md:grid-cols-4 md:text-base" data-reveal style="--d:5">
+    <li class="border-b border-line py-5 pr-4 md:border-b-0 md:border-r md:py-7">
+      <span class="block font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Tezgâh ve ekipman</span>
+      <span class="mt-1 block text-ink-soft">Makineler dahil</span>
+    </li>
+    <li class="border-b border-line py-5 pl-4 md:border-b-0 md:border-r md:px-6 md:py-7">
+      <span class="block font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Ürün eğitimi</span>
+      <span class="mt-1 block text-ink-soft">Reçete ve hazırlık</span>
+    </li>
+    <li class="py-5 pr-4 md:border-r md:px-6 md:py-7">
+      <span class="block font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Açılış haftası</span>
+      <span class="mt-1 block text-ink-soft">Sahada birlikte</span>
+    </li>
+    <li class="py-5 pl-4 md:px-6 md:py-7">
+      <span class="block font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">İlk 5 ortak</span>
+      <span class="mt-1 block text-ink-soft">Lansman bedeli</span>
+    </li>
+  </ul>
 </section>
 
-<!-- Trust Strip -->
-<section class="bg-surface-elevated border-y border-outline-variant/30 py-8 px-6 md:px-margin-x">
-<div class="max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:divide-x divide-outline-variant/30">
-<div class="flex flex-col items-center justify-center gap-2 px-4">
-<span class="material-symbols-outlined text-secondary text-3xl mb-1 icon-fill">inventory_2</span>
-<h3 class="text-headline-md font-headline-md text-on-surface">Tek Paket</h3>
-<p class="text-label-sm font-label-sm text-text-muted uppercase tracking-wider">Tezgâh, ekipman, eğitim</p>
+<!-- Kayan şerit -->
+<div class="marquee-wrap overflow-hidden border-y border-ink bg-ink py-4 text-paper" aria-hidden="true">
+  <div class="marquee font-display text-[1.35rem] font-medium tracking-[-0.01em] md:text-[1.6rem]">
+    <div class="flex shrink-0 items-center">
+      <span class="px-7">Bardakta bubble waffle</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+      <span class="px-7">Dükkân yerine tek tezgâh</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+      <span class="px-7">Yeni bir markayız</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+      <span class="px-7">İlk 5 ortağa lansman bedeli</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+      <span class="px-7">Tezgâh, ekipman, eğitim tek pakette</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+    </div>
+    <div class="flex shrink-0 items-center">
+      <span class="px-7">Bardakta bubble waffle</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+      <span class="px-7">Dükkân yerine tek tezgâh</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+      <span class="px-7">Yeni bir markayız</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+      <span class="px-7">İlk 5 ortağa lansman bedeli</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+      <span class="px-7">Tezgâh, ekipman, eğitim tek pakette</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+    </div>
+  </div>
 </div>
-<div class="flex flex-col items-center justify-center gap-2 px-4">
-<span class="material-symbols-outlined text-secondary text-3xl mb-1 icon-fill">storefront</span>
-<h3 class="text-headline-md font-headline-md text-on-surface">Mobil Büfe</h3>
-<p class="text-label-sm font-label-sm text-text-muted uppercase tracking-wider">Kompakt işletme</p>
-</div>
-<div class="flex flex-col items-center justify-center gap-2 px-4">
-<span class="material-symbols-outlined text-secondary text-3xl mb-1 icon-fill">school</span>
-<h3 class="text-headline-md font-headline-md text-on-surface">Eğitim</h3>
-<p class="text-label-sm font-label-sm text-text-muted uppercase tracking-wider">Ürün ve operasyon</p>
-</div>
-<div class="flex flex-col items-center justify-center gap-2 px-4">
-<span class="material-symbols-outlined text-secondary text-3xl mb-1 icon-fill">handshake</span>
-<h3 class="text-headline-md font-headline-md text-on-surface">Açılış Desteği</h3>
-<p class="text-label-sm font-label-sm text-text-muted uppercase tracking-wider">İlk hafta saha desteği</p>
-</div>
-</div>
+
+<!-- Paket -->
+<section id="paket" class="mx-auto max-w-frame px-5 py-24 md:px-10 md:py-36">
+  <div class="grid gap-x-16 gap-y-12 lg:grid-cols-12">
+    <div class="lg:col-span-5">
+      <div class="lg:sticky lg:top-28" data-reveal>
+        <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em]">Başlangıç paketinde ne var?</h2>
+        <p class="mt-6 max-w-md text-lg leading-relaxed text-ink-soft">Pakette ne olduğunu da, neyin sana kaldığını da açıkça yazdık.</p>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <h3 class="flex items-center justify-between border-b-2 border-ink pb-3 text-[13px] font-semibold uppercase tracking-[0.12em]" data-reveal>
+        <span>Pakette</span><span>Durum</span>
+      </h3>
+      <ul>
+        <li class="border-b border-line py-6" data-reveal>
+          <div class="ledger-row">
+            <span class="ledger-name font-display text-[1.6rem] font-semibold tracking-[-0.02em]">Tezgâh</span>
+            <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+          </div>
+          <p class="mt-2 max-w-xl text-ink-soft">Özel tasarımlı, modüler ve şık sunum tezgâhı. Marka kimliğine uygun, dikkat çekici tasarım.</p>
+        </li>
+        <li class="border-b border-line py-6" data-reveal>
+          <div class="ledger-row">
+            <span class="ledger-name font-display text-[1.6rem] font-semibold tracking-[-0.02em]">Makine ve ekipman</span>
+            <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+          </div>
+          <p class="mt-2 max-w-xl text-ink-soft">Profesyonel waffle makineleri, soğutucu üniteler ve operasyon için gerekli el aletleri.</p>
+        </li>
+        <li class="border-b border-line py-6" data-reveal>
+          <div class="ledger-row">
+            <span class="ledger-name font-display text-[1.6rem] font-semibold tracking-[-0.02em]">Ürün eğitimi</span>
+            <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+          </div>
+          <p class="mt-2 max-w-xl text-ink-soft">Standart WAFIL lezzetini yakalaman için reçete ve ürün hazırlama eğitimi.</p>
+        </li>
+        <li class="border-b border-line py-6" data-reveal>
+          <div class="ledger-row">
+            <span class="ledger-name font-display text-[1.6rem] font-semibold tracking-[-0.02em]">Operasyon desteği</span>
+            <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+          </div>
+          <p class="mt-2 max-w-xl text-ink-soft">Stok yönetimi, hijyen standartları ve müşteri iletişimi konularında temel eğitim.</p>
+        </li>
+        <li class="py-6" data-reveal>
+          <div class="ledger-row">
+            <span class="ledger-name font-display text-[1.6rem] font-semibold tracking-[-0.02em]">Açılış haftası desteği</span>
+            <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+          </div>
+          <p class="mt-2 max-w-xl text-ink-soft">İlk günlerde sahada seninle birlikte çalışıp işleyişi oturtmana yardım ediyoruz.</p>
+        </li>
+      </ul>
+
+      <h3 class="mt-14 flex items-center justify-between border-b-2 border-ink pb-3 text-[13px] font-semibold uppercase tracking-[0.12em]" data-reveal>
+        <span>Pakette yok</span><span>Durum</span>
+      </h3>
+      <ul class="text-ink-soft">
+        <li class="ledger-row border-b border-line py-5" data-reveal>
+          <span class="ledger-name font-display text-[1.6rem] font-medium tracking-[-0.02em]">Lokasyon ve kira</span>
+          <span class="inline-flex items-center gap-2 font-medium"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg>Sana ait</span>
+        </li>
+        <li class="ledger-row border-b border-line py-5" data-reveal>
+          <span class="ledger-name font-display text-[1.6rem] font-medium tracking-[-0.02em]">Altyapı</span>
+          <span class="inline-flex items-center gap-2 font-medium"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg>Sana ait</span>
+        </li>
+        <li class="ledger-row py-5" data-reveal>
+          <span class="ledger-name font-display text-[1.6rem] font-medium tracking-[-0.02em]">Dekorasyon</span>
+          <span class="inline-flex items-center gap-2 font-medium"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg>Sana ait</span>
+        </li>
+      </ul>
+      <p class="mt-8 text-sm text-ink-soft" data-reveal>Belirtilen paket içeriği standart mobil/kiosk modeli için geçerlidir.</p>
+    </div>
+  </div>
 </section>
 
-<!-- Paket İçeriği -->
-<section class="py-16 md:py-section-gap px-6 md:px-margin-x max-w-container-max mx-auto" id="paket">
-<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6">
-<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface max-w-2xl">
-<span class="text-secondary">Başlangıç</span> paketinde ne var?
-</h2>
-<p class="text-body-md font-body-md text-text-muted max-w-md border-l-2 border-secondary pl-4">
-  Pakette ne olduğunu da, neyin sana kaldığını da açıkça yazdık.
-</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-<div class="bg-surface-container rounded-xl p-5 md:p-8 border border-outline-variant/30 hover:border-secondary/50 transition-colors flex flex-col gap-3 md:gap-4 group">
-<div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-surface-elevated flex items-center justify-center mb-1 md:mb-4 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
-<span class="material-symbols-outlined text-2xl">countertops</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface">Tezgâh</h3>
-<p class="text-body-md font-body-md text-on-surface-variant flex-grow">
-  Özel tasarımlı, modüler ve şık sunum tezgâhı. Marka kimliğine uygun, dikkat çekici tasarım.
-</p>
-</div>
-<div class="bg-surface-container rounded-xl p-5 md:p-8 border border-outline-variant/30 hover:border-secondary/50 transition-colors flex flex-col gap-3 md:gap-4 group">
-<div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-surface-elevated flex items-center justify-center mb-1 md:mb-4 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
-<span class="material-symbols-outlined text-2xl">blender</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface">Makine &amp; Ekipman</h3>
-<p class="text-body-md font-body-md text-on-surface-variant flex-grow">
-  Profesyonel waffle makineleri, soğutucu üniteler ve operasyon için gerekli el aletleri.
-</p>
-</div>
-<div class="bg-surface-container rounded-xl p-5 md:p-8 border border-outline-variant/30 hover:border-secondary/50 transition-colors flex flex-col gap-3 md:gap-4 group">
-<div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-surface-elevated flex items-center justify-center mb-1 md:mb-4 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
-<span class="material-symbols-outlined text-2xl">menu_book</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface">Ürün Eğitimi</h3>
-<p class="text-body-md font-body-md text-on-surface-variant flex-grow">
-  Standart WAFIL lezzetini yakalaman için reçete ve ürün hazırlama eğitimi.
-</p>
-</div>
-<div class="bg-surface-container rounded-xl p-5 md:p-8 border border-outline-variant/30 hover:border-secondary/50 transition-colors flex flex-col gap-3 md:gap-4 group">
-<div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-surface-elevated flex items-center justify-center mb-1 md:mb-4 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
-<span class="material-symbols-outlined text-2xl">manage_accounts</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface">Operasyon Desteği</h3>
-<p class="text-body-md font-body-md text-on-surface-variant flex-grow">
-  Stok yönetimi, hijyen standartları ve müşteri iletişimi konularında temel eğitim.
-</p>
-</div>
-<div class="bg-surface-container rounded-xl p-5 md:p-8 border border-outline-variant/30 hover:border-secondary/50 transition-colors flex flex-col gap-3 md:gap-4 group lg:col-span-2">
-<div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-surface-elevated flex items-center justify-center mb-1 md:mb-4 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
-<span class="material-symbols-outlined text-2xl">celebration</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface">Açılış Haftası Desteği</h3>
-<p class="text-body-md font-body-md text-on-surface-variant flex-grow">
-  İlk günlerde sahada seninle birlikte çalışıp işleyişi oturtmana yardım ediyoruz.
-</p>
-</div>
-</div>
-<div class="mt-8 p-4 bg-surface-elevated rounded border-l-4 border-outline text-label-sm font-label-sm text-text-muted flex items-start gap-3">
-<span class="material-symbols-outlined text-xl mt-0.5">info</span>
-<p>Lokasyon seçimi, dükkan kirası, altyapı ve dekorasyon masrafları yatırımcıya aittir. Belirtilen paket içeriği standart mobil/kiosk modeli için geçerlidir.</p>
-</div>
-</section>
+<!-- Model -->
+<section id="model" class="bg-mist">
+  <div class="mx-auto grid max-w-frame items-center gap-x-16 gap-y-14 px-5 py-24 md:px-10 md:py-36 lg:grid-cols-12">
+    <div class="lg:col-span-6" data-reveal>
+      <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em]">Büyük bir dükkânla başlamak zorunda değilsin.</h2>
+      <p class="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft">WAFIL'in mobil kiosk modeli bir dükkâna göre daha küçük bir alanla başlar. Yaya trafiğinin yoğun olduğu lokasyonlarda, AVM'lerde veya etkinlik alanlarında kurulabilir.</p>
+      <ul class="mt-10 border-t border-line">
+        <li class="flex items-center gap-4 border-b border-line py-4 text-lg"><svg class="ic text-ink" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dükkâna göre daha küçük alan</li>
+        <li class="flex items-center gap-4 border-b border-line py-4 text-lg"><svg class="ic text-ink" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tek tezgâhla kurulum</li>
+        <li class="flex items-center gap-4 border-b border-line py-4 text-lg"><svg class="ic text-ink" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sade, küçük ölçekli operasyon</li>
+      </ul>
+    </div>
 
-<!-- Lansman fiyat kartı -->
-<section class="pt-16 md:pt-section-gap px-6 md:px-margin-x bg-surface-elevated border-t border-outline-variant/20" id="lansman">
-<div class="max-w-4xl mx-auto">
-<article class="relative overflow-hidden rounded-xl border border-secondary/25 bg-surface px-6 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12">
-<div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-secondary/70 to-transparent"></div>
-<div class="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full bg-secondary/5 blur-3xl"></div>
-<p class="text-label-bold font-label-bold uppercase tracking-[0.22em] text-secondary">Lansmana özel</p>
-<div class="mt-5 flex flex-wrap items-baseline gap-x-5 gap-y-1">
-<p class="price-display text-5xl sm:text-6xl md:text-7xl font-black text-secondary leading-none">200.000 TL</p>
-<del class="text-xl md:text-2xl font-headline-md text-text-muted/70">250.000 TL</del>
-</div>
-<p class="mt-4 text-label-bold font-label-bold uppercase tracking-[0.14em] text-on-surface">İlk 5 franchise noktasına özel</p>
-<p class="mt-5 max-w-xl text-body-lg font-body-lg text-on-surface-variant">
-  Yeni bir markayız. İlk 5 ortağımıza lansman dönemine özel koşullar sunuyoruz.
-</p>
-<p class="mt-6 max-w-xl border-l border-secondary/70 pl-4 text-body-md font-body-md text-on-surface">
-<strong class="font-bold text-on-surface">İlk 5 franchise noktasının ardından franchise bedeli 250.000 TL olacaktır.</strong>
-</p>
-<p class="mt-6 text-label-sm font-label-sm uppercase tracking-[0.12em] text-text-muted">
-  Tezgâh + makine + ekipman + eğitim + açılış desteği dahil.
-</p>
-</article>
-</div>
-</section>
-
-<!-- Başvuru formu -->
-<section class="pb-16 md:pb-section-gap pt-12 px-6 md:px-margin-x bg-surface-elevated" id="iletisim">
-<div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-12">
-<div class="md:w-1/2 flex flex-col gap-6">
-<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface">
-  WAFIL'i kendi şehrine taşımak ister misin?
-</h2>
-<p class="text-body-md font-body-md text-on-surface-variant">
-  Aşağıdaki formu doldur, en kısa sürede seninle iletişime geçelim.
-</p>
-<div class="mt-4 flex flex-col gap-4">
-<a class="inline-flex items-center gap-3 text-on-surface hover:text-secondary transition-colors" href="https://www.instagram.com/wafil.tr/" rel="noopener noreferrer" target="_blank">
-<svg aria-hidden="true" class="h-8 w-8 shrink-0" viewBox="0 0 24 24">
-<defs>
-<linearGradient id="ig-logo" x1="0%" x2="100%" y1="100%" y2="0%">
-<stop offset="0%" stop-color="#f9ce34"></stop>
-<stop offset="45%" stop-color="#ee2a7b"></stop>
-<stop offset="100%" stop-color="#6228d7"></stop>
-</linearGradient>
-</defs>
-<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" style="fill: url(#ig-logo)"></path>
-</svg>
-<span class="text-body-md font-body-md">@wafil.tr</span>
-</a>
-</div>
-</div>
-<div class="md:w-1/2 bg-surface p-6 sm:p-8 rounded-xl border border-outline-variant/30 shadow-2xl">
-<form class="flex flex-col gap-5" id="franchise-form" novalidate>
-<div class="flex flex-col gap-1">
-<label class="text-label-bold font-label-bold text-text-muted uppercase" for="name">Ad Soyad</label>
-<input autocomplete="name" class="bg-input-fill border border-outline-variant/50 rounded p-3 text-on-surface focus:outline-none focus:border-secondary transition-colors w-full" id="name" name="name" required type="text">
-</div>
-<div class="flex flex-col gap-1">
-<label class="text-label-bold font-label-bold text-text-muted uppercase" for="phone">Telefon</label>
-<input autocomplete="tel" inputmode="tel" class="bg-input-fill border border-outline-variant/50 rounded p-3 text-on-surface focus:outline-none focus:border-secondary transition-colors w-full" id="phone" name="phone" required type="tel">
-</div>
-<div class="flex flex-col gap-1">
-<label class="text-label-bold font-label-bold text-text-muted uppercase" for="city">Şehir</label>
-<input autocomplete="address-level2" class="bg-input-fill border border-outline-variant/50 rounded p-3 text-on-surface focus:outline-none focus:border-secondary transition-colors w-full" id="city" name="city" required type="text">
-</div>
-
-<!-- İsteğe bağlı alanlar. Zorunlu alan sayısı 4'ten 3'e indirildi;
-     e-posta / ilçe / not artık başvuruyu bloklamıyor. -->
-<details class="group rounded border border-outline-variant/30 bg-input-fill/40">
-<summary class="flex cursor-pointer items-center justify-between gap-2 px-3 py-3 text-label-bold font-label-bold uppercase text-text-muted hover:text-on-surface transition-colors">
-  Ek bilgi ekle (isteğe bağlı)
-<span class="material-symbols-outlined text-xl transition-transform group-open:rotate-180">expand_more</span>
-</summary>
-<div class="flex flex-col gap-5 border-t border-outline-variant/30 p-3 pt-4">
-<div class="flex flex-col gap-1">
-<label class="text-label-bold font-label-bold text-text-muted uppercase" for="email">E-posta</label>
-<input autocomplete="email" inputmode="email" class="bg-input-fill border border-outline-variant/50 rounded p-3 text-on-surface focus:outline-none focus:border-secondary transition-colors w-full" id="email" name="email" type="email">
-</div>
-<div class="flex flex-col gap-1">
-<label class="text-label-bold font-label-bold text-text-muted uppercase" for="district">İlçe</label>
-<input class="bg-input-fill border border-outline-variant/50 rounded p-3 text-on-surface focus:outline-none focus:border-secondary transition-colors w-full" id="district" name="district" type="text">
-</div>
-<div class="flex flex-col gap-1">
-<label class="text-label-bold font-label-bold text-text-muted uppercase" for="note">Eklemek İstedikleriniz</label>
-<textarea class="bg-input-fill border border-outline-variant/50 rounded p-3 text-on-surface focus:outline-none focus:border-secondary transition-colors w-full resize-none" id="note" name="note" rows="3"></textarea>
-</div>
-</div>
-</details>
-
-<button class="mt-2 w-full py-4 bg-secondary text-on-secondary text-label-bold font-label-bold uppercase rounded hover:bg-secondary-fixed transition-colors shadow-[0_0_15px_rgba(255,207,52,0.1)] hover:shadow-[0_0_20px_rgba(255,207,52,0.2)] disabled:opacity-60" type="submit">
-  Başvuruyu Gönder
-</button>
-<p class="text-label-sm font-label-sm text-text-muted leading-relaxed">
-  Formu göndererek <a class="underline hover:text-secondary" href="/pages/kvkk.html">KVKK Aydınlatma Metni</a>'ni
-  okuduğunuzu ve verilerinizin başvurunuzun değerlendirilmesi amacıyla işlenmesini kabul ettiğinizi beyan edersiniz.
-</p>
-</form>
-</div>
-</div>
-</section>
-
-<!-- Kiosk modeli -->
-<section class="py-16 md:py-section-gap px-6 md:px-margin-x bg-surface-container-low border-y border-outline-variant/20">
-<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-<div class="order-2 lg:order-1 flex flex-col gap-8">
-<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface">
-  Büyük bir dükkânla başlamak zorunda değilsin.
-</h2>
-<p class="text-body-lg font-body-lg text-on-surface-variant">
-  WAFIL'in mobil kiosk modeli bir dükkâna göre daha küçük bir alanla başlar. Yaya trafiğinin yoğun olduğu lokasyonlarda, AVM'lerde veya etkinlik alanlarında kurulabilir.
-</p>
-<ul class="flex flex-col gap-4">
-<li class="flex items-center gap-3 text-body-md font-body-md text-on-surface">
-<span class="material-symbols-outlined text-secondary icon-fill">check_circle</span>
-  Dükkâna göre daha küçük alan
-</li>
-<li class="flex items-center gap-3 text-body-md font-body-md text-on-surface">
-<span class="material-symbols-outlined text-secondary icon-fill">check_circle</span>
-  Tek tezgâhla kurulum
-</li>
-<li class="flex items-center gap-3 text-body-md font-body-md text-on-surface">
-<span class="material-symbols-outlined text-secondary icon-fill">check_circle</span>
-  Sade, küçük ölçekli operasyon
-</li>
-</ul>
-</div>
-<div class="order-1 lg:order-2 rounded-2xl overflow-hidden shadow-2xl relative">
-<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent z-10 lg:hidden"></div>
-<picture>
-<source type="image/webp" srcset="/wafil-kiosk-512.webp">
-<img alt="WAFIL mobil kiosk" class="w-full h-auto object-cover" src="/wafil-kiosk-512.jpg" width="512" height="382" loading="lazy" decoding="async">
-</picture>
-</div>
-</div>
+    <figure class="lg:col-span-6" data-reveal style="--d:2">
+      <svg class="h-auto w-full" viewBox="0 0 560 400" role="img" aria-labelledby="plan-title">
+        <title id="plan-title">Kat planı çizimi: büyük bir dükkân alanının içinde küçük bir tezgâh</title>
+        <defs>
+          <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="9" stroke="#0B2E1F" stroke-width="1.4" opacity=".55"/>
+          </pattern>
+        </defs>
+        <rect x="16" y="16" width="528" height="368" fill="none" stroke="#4A655A" stroke-width="1.5" stroke-dasharray="7 7"/>
+        <path d="M200 384v-16M280 384v-16" stroke="#4A655A" stroke-width="1.5"/>
+        <text x="40" y="54" fill="#4A655A" font-family="League Spartan Variable, system-ui, sans-serif" font-size="22" font-weight="500">Dükkân</text>
+        <rect x="330" y="236" width="170" height="112" fill="#FFD21F"/>
+        <rect x="330" y="236" width="170" height="112" fill="url(#hatch)" stroke="#0B2E1F" stroke-width="2.5"/>
+        <text x="330" y="222" fill="#0B2E1F" font-family="League Spartan Variable, system-ui, sans-serif" font-size="26" font-weight="700">Tezgâh</text>
+      </svg>
+      <figcaption class="mt-4 text-sm text-ink-soft">Ölçeksiz şema.</figcaption>
+    </figure>
+  </div>
 </section>
 
 <!-- Süreç -->
-<section class="py-16 md:py-section-gap px-6 md:px-margin-x max-w-container-max mx-auto" id="surec">
-<div class="text-center mb-10 md:mb-16">
-<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface mb-4">
-  WAFIL franchise süreci nasıl ilerliyor?
-</h2>
-<p class="text-body-lg font-body-lg text-text-muted max-w-2xl mx-auto">
-  Adım adım, her aşamada birlikte ilerlediğimiz bir süreç.
-</p>
-</div>
-<div class="relative">
-<div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 transform md:-translate-x-1/2 hidden sm:block"></div>
-<div class="flex flex-col gap-12">
-<div class="relative flex flex-col md:flex-row items-center gap-8 md:justify-between">
-<div class="md:w-1/2 md:pr-12 md:text-right flex flex-col gap-2 relative z-10 bg-background md:bg-transparent p-4 md:p-0 rounded-lg">
-<h3 class="text-headline-md font-headline-md text-secondary">1. Başvuru</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Formu doldurarak ilk adımı at.</p>
-</div>
-<div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-secondary transform -translate-x-1/2 shadow-[0_0_10px_rgba(255,207,52,0.5)] z-20"></div>
-<div class="md:w-1/2 md:pl-12 hidden md:block opacity-0">Spacer</div>
-</div>
-<div class="relative flex flex-col md:flex-row items-center gap-8 md:justify-between">
-<div class="md:w-1/2 md:pr-12 hidden md:block opacity-0">Spacer</div>
-<div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-surface-elevated border-2 border-secondary transform -translate-x-1/2 z-20"></div>
-<div class="md:w-1/2 md:pl-12 flex flex-col gap-2 relative z-10 bg-background md:bg-transparent p-4 md:p-0 rounded-lg">
-<h3 class="text-headline-md font-headline-md text-secondary">2. Ön Görüşme</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Beklentileri ve modeli konuşalım.</p>
-</div>
-</div>
-<div class="relative flex flex-col md:flex-row items-center gap-8 md:justify-between">
-<div class="md:w-1/2 md:pr-12 md:text-right flex flex-col gap-2 relative z-10 bg-background md:bg-transparent p-4 md:p-0 rounded-lg">
-<h3 class="text-headline-md font-headline-md text-secondary">3. Lokasyon Onayı</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Önerdiğin yeri birlikte yerinde inceleyelim.</p>
-</div>
-<div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-surface-elevated border-2 border-secondary transform -translate-x-1/2 z-20"></div>
-<div class="md:w-1/2 md:pl-12 hidden md:block opacity-0">Spacer</div>
-</div>
-<div class="relative flex flex-col md:flex-row items-center gap-8 md:justify-between">
-<div class="md:w-1/2 md:pr-12 hidden md:block opacity-0">Spacer</div>
-<div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-surface-elevated border-2 border-secondary transform -translate-x-1/2 z-20"></div>
-<div class="md:w-1/2 md:pl-12 flex flex-col gap-2 relative z-10 bg-background md:bg-transparent p-4 md:p-0 rounded-lg">
-<h3 class="text-headline-md font-headline-md text-secondary">4. Sözleşme &amp; Ödeme</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Resmi süreci tamamlayalım.</p>
-</div>
-</div>
-<div class="relative flex flex-col md:flex-row items-center gap-8 md:justify-between">
-<div class="md:w-1/2 md:pr-12 md:text-right flex flex-col gap-2 relative z-10 bg-background md:bg-transparent p-4 md:p-0 rounded-lg">
-<h3 class="text-headline-md font-headline-md text-secondary">5. Kurulum &amp; Eğitim</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Ekipmanlar kurulsun, eğitim başlasın.</p>
-</div>
-<div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-surface-elevated border-2 border-secondary transform -translate-x-1/2 z-20"></div>
-<div class="md:w-1/2 md:pl-12 hidden md:block opacity-0">Spacer</div>
-</div>
-<div class="relative flex flex-col md:flex-row items-center gap-8 md:justify-between">
-<div class="md:w-1/2 md:pr-12 hidden md:block opacity-0">Spacer</div>
-<div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-secondary transform -translate-x-1/2 shadow-[0_0_10px_rgba(255,207,52,0.5)] z-20"></div>
-<div class="md:w-1/2 md:pl-12 flex flex-col gap-2 relative z-10 bg-background md:bg-transparent p-4 md:p-0 rounded-lg">
-<h3 class="text-headline-md font-headline-md text-secondary">6. Açılış</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">İlk misafirlerini birlikte ağırlayalım.</p>
-</div>
-</div>
-</div>
-</div>
+<section id="surec" class="mx-auto max-w-frame px-5 py-24 md:px-10 md:py-36">
+  <div class="grid gap-x-16 gap-y-14 lg:grid-cols-12">
+    <div class="lg:col-span-5">
+      <div class="lg:sticky lg:top-28">
+        <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em]" data-reveal>Franchise süreci nasıl ilerliyor?</h2>
+        <p class="mt-6 max-w-md text-lg leading-relaxed text-ink-soft" data-reveal>Adım adım, her aşamada birlikte ilerlediğimiz bir süreç.</p>
+        <div class="mt-16 hidden lg:block" aria-hidden="true">
+          <p class="font-display text-[6rem] font-semibold leading-none tracking-[-0.04em] tabular">
+            <span class="counter-digit" data-counter>01</span><span class="text-line">/06</span>
+          </p>
+          <p class="mt-3 font-display text-2xl font-medium" data-counter-title>Başvuru</p>
+        </div>
+      </div>
+    </div>
+
+    <ol class="axis relative lg:col-span-7" data-axis>
+      <div class="absolute bottom-3 left-[11px] top-3 w-px bg-line" aria-hidden="true">
+        <div class="axis-fill absolute inset-0 bg-ink"></div>
+      </div>
+      <li class="step relative pb-14 pl-14 lg:min-h-[34vh]" data-step="Başvuru">
+        <span class="step-dot absolute left-0 top-1 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper" aria-hidden="true"></span>
+        <p class="text-sm font-semibold text-ink-soft tabular">01</p>
+        <h3 class="mt-1 font-display text-[2rem] font-semibold leading-tight tracking-[-0.025em]">Başvuru</h3>
+        <p class="mt-2 text-lg text-ink-soft">Formu doldurarak ilk adımı at.</p>
+      </li>
+      <li class="step relative pb-14 pl-14 lg:min-h-[34vh]" data-step="Ön görüşme">
+        <span class="step-dot absolute left-0 top-1 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper" aria-hidden="true"></span>
+        <p class="text-sm font-semibold text-ink-soft tabular">02</p>
+        <h3 class="mt-1 font-display text-[2rem] font-semibold leading-tight tracking-[-0.025em]">Ön görüşme</h3>
+        <p class="mt-2 text-lg text-ink-soft">Beklentileri ve modeli konuşalım.</p>
+      </li>
+      <li class="step relative pb-14 pl-14 lg:min-h-[34vh]" data-step="Lokasyon onayı">
+        <span class="step-dot absolute left-0 top-1 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper" aria-hidden="true"></span>
+        <p class="text-sm font-semibold text-ink-soft tabular">03</p>
+        <h3 class="mt-1 font-display text-[2rem] font-semibold leading-tight tracking-[-0.025em]">Lokasyon onayı</h3>
+        <p class="mt-2 text-lg text-ink-soft">Önerdiğin yeri birlikte yerinde inceleyelim.</p>
+      </li>
+      <li class="step relative pb-14 pl-14 lg:min-h-[34vh]" data-step="Sözleşme ve ödeme">
+        <span class="step-dot absolute left-0 top-1 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper" aria-hidden="true"></span>
+        <p class="text-sm font-semibold text-ink-soft tabular">04</p>
+        <h3 class="mt-1 font-display text-[2rem] font-semibold leading-tight tracking-[-0.025em]">Sözleşme ve ödeme</h3>
+        <p class="mt-2 text-lg text-ink-soft">Resmi süreci tamamlayalım.</p>
+      </li>
+      <li class="step relative pb-14 pl-14 lg:min-h-[34vh]" data-step="Kurulum ve eğitim">
+        <span class="step-dot absolute left-0 top-1 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper" aria-hidden="true"></span>
+        <p class="text-sm font-semibold text-ink-soft tabular">05</p>
+        <h3 class="mt-1 font-display text-[2rem] font-semibold leading-tight tracking-[-0.025em]">Kurulum ve eğitim</h3>
+        <p class="mt-2 text-lg text-ink-soft">Ekipmanlar kurulsun, eğitim başlasın.</p>
+      </li>
+      <li class="step relative pl-14" data-step="Açılış">
+        <span class="step-dot absolute left-0 top-1 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper" aria-hidden="true"></span>
+        <p class="text-sm font-semibold text-ink-soft tabular">06</p>
+        <h3 class="mt-1 font-display text-[2rem] font-semibold leading-tight tracking-[-0.025em]">Açılış</h3>
+        <p class="mt-2 text-lg text-ink-soft">İlk misafirlerini birlikte ağırlayalım.</p>
+      </li>
+    </ol>
+  </div>
 </section>
 
-<!-- Ürün odağı -->
-<section class="py-16 md:py-section-gap bg-surface-container overflow-hidden relative">
-<div class="max-w-container-max mx-auto px-6 md:px-margin-x relative z-10 flex flex-col items-center text-center">
-<span class="inline-block py-1 px-4 rounded-full bg-secondary/10 text-secondary border border-secondary/20 text-label-sm font-label-sm mb-6">ÜRÜN ODAĞI</span>
-<h2 class="text-display-lg-mobile md:text-headline-lg font-display-lg-mobile md:font-headline-lg text-on-surface max-w-3xl mb-8">
-  İnsanlar önce markayı değil, <br><span class="text-secondary italic">lezzeti tadıyor.</span>
-</h2>
-<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
-  Standart reçeteler ve göze hitap eden sunumlar. Müşteriyi geri getiren asıl şey ürünün kalitesidir. Biz sana bu lezzeti her porsiyonda aynı şekilde hazırlamanın tarifini ve eğitimini veriyoruz.
-</p>
-</div>
-<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-<div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+<!-- Ürün -->
+<section id="urun" class="border-t border-line">
+  <div class="mx-auto grid max-w-frame items-center gap-x-16 gap-y-12 px-5 py-24 md:px-10 md:py-36 lg:grid-cols-12">
+    <!-- Flow görseli gelince: <img src="/gorsel/urun-bardak.webp" …> ile değiştir (bkz. docs/flow-gorseller.md) -->
+    <div class="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-mist lg:col-span-6" data-todo data-reveal>
+      <p class="absolute inset-x-6 bottom-6 text-sm font-medium text-ink-soft">Görsel bekleniyor: urun-bardak (Flow)</p>
+    </div>
+    <div class="lg:col-span-6" data-reveal style="--d:2">
+      <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em]">Her bardak aynı tarifle.</h2>
+      <p class="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft">Standart reçeteler ve göze hitap eden sunumlar. Müşteriyi geri getiren asıl şey ürünün kalitesidir. Biz sana bu lezzeti her porsiyonda aynı şekilde hazırlamanın tarifini ve eğitimini veriyoruz.</p>
+      <p class="mt-10 border-t border-line pt-6 text-lg">
+        İlk tezgâhımız: <span data-todo>[yer · açılış tarihi]</span>. Gel, tadına bak.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Lansman bedeli -->
+<section id="lansman" class="bg-ink text-paper">
+  <div class="mx-auto grid max-w-frame gap-x-16 gap-y-12 px-5 py-24 md:px-10 md:py-32 lg:grid-cols-12">
+    <div class="lg:col-span-6" data-reveal>
+      <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em]">İlk 5 ortağa lansman bedeli</h2>
+      <p class="mt-7 max-w-lg text-lg leading-relaxed text-[#C9D6CF]">Yeni bir markayız. İlk 5 ortağımıza lansman dönemine özel koşullar sunuyoruz.</p>
+    </div>
+    <div class="lg:col-span-6" data-reveal style="--d:2">
+      <div class="flex flex-wrap items-baseline gap-x-6 gap-y-2 border-b border-[#2A4B3C] pb-8">
+        <p class="font-display text-[clamp(3.5rem,8vw,6rem)] font-semibold leading-none tracking-[-0.04em] text-sun tabular">200.000 TL</p>
+        <del class="font-display text-2xl text-[#9FB4AA] tabular md:text-3xl">250.000 TL</del>
+      </div>
+      <p class="mt-8 text-lg font-semibold">İlk 5 franchise noktasının ardından franchise bedeli 250.000 TL olacaktır.</p>
+      <p class="mt-3 text-[#C9D6CF]">Tezgâh + makine + ekipman + eğitim + açılış desteği dahil.</p>
+      <a class="btn-sun mt-10 text-[17px]" href="#iletisim">
+        Başvur
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- SSS -->
-<section class="py-16 md:py-section-gap px-6 md:px-margin-x max-w-3xl mx-auto" id="sss">
-<div class="text-center mb-12">
-<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface mb-4">
-  Sıkça Sorulan Sorular
-</h2>
-</div>
-<div class="flex flex-col gap-4">
-<div class="accordion-item bg-surface-container rounded-lg border border-outline-variant/30 overflow-hidden">
-<button class="accordion-toggle w-full px-6 py-5 flex justify-between items-center text-left hover:bg-surface-elevated transition-colors" type="button">
-<span class="text-body-lg font-body-lg text-on-surface font-medium">Franchise bedeli ne kadar?</span>
-<span class="material-symbols-outlined text-text-muted accordion-icon transition-transform duration-300">expand_more</span>
-</button>
-<div class="accordion-content bg-background px-6">
-<div class="py-4 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20">
-  Lansman dönemine özel, ilk 5 franchise noktası için başlangıç bedelimiz 200.000 TL'dir (sonrasında 250.000 TL). Bu bedel standart ekipman ve eğitimleri kapsar.
-</div>
-</div>
-</div>
-<div class="accordion-item bg-surface-container rounded-lg border border-outline-variant/30 overflow-hidden">
-<button class="accordion-toggle w-full px-6 py-5 flex justify-between items-center text-left hover:bg-surface-elevated transition-colors" type="button">
-<span class="text-body-lg font-body-lg text-on-surface font-medium">Bu bedele dükkân dekorasyonu dahil mi?</span>
-<span class="material-symbols-outlined text-text-muted accordion-icon transition-transform duration-300">expand_more</span>
-</button>
-<div class="accordion-content bg-background px-6">
-<div class="py-4 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20">
-  Hayır, pakete dükkan dekorasyonu, altyapı işleri ve kira gibi fiziki lokasyon masrafları dahil değildir. Paket, operasyonel ekipman ve eğitimi kapsar.
-</div>
-</div>
-</div>
-<div class="accordion-item bg-surface-container rounded-lg border border-outline-variant/30 overflow-hidden">
-<button class="accordion-toggle w-full px-6 py-5 flex justify-between items-center text-left hover:bg-surface-elevated transition-colors" type="button">
-<span class="text-body-lg font-body-lg text-on-surface font-medium">Eğitim nerede veriliyor?</span>
-<span class="material-symbols-outlined text-text-muted accordion-icon transition-transform duration-300">expand_more</span>
-</button>
-<div class="accordion-content bg-background px-6">
-<div class="py-4 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20">
-  Eğitim önce bizim yanımızda teorik olarak başlar, ardından onaylanan kendi lokasyonunuzda uygulamalı olarak tamamlanır.
-</div>
-</div>
-</div>
-<div class="accordion-item bg-surface-container rounded-lg border border-outline-variant/30 overflow-hidden">
-<button class="accordion-toggle w-full px-6 py-5 flex justify-between items-center text-left hover:bg-surface-elevated transition-colors" type="button">
-<span class="text-body-lg font-body-lg text-on-surface font-medium">Aylık cirodan pay (royalty fee) alıyor musunuz?</span>
-<span class="material-symbols-outlined text-text-muted accordion-icon transition-transform duration-300">expand_more</span>
-</button>
-<div class="accordion-content bg-background px-6">
-<div class="py-4 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20">
-  Detaylı finansal model ve royalty bedelleri ön görüşme aşamasında şeffaf bir şekilde paylaşılmaktadır.
-</div>
-</div>
-</div>
-<div class="accordion-item bg-surface-container rounded-lg border border-outline-variant/30 overflow-hidden">
-<button class="accordion-toggle w-full px-6 py-5 flex justify-between items-center text-left hover:bg-surface-elevated transition-colors" type="button">
-<span class="text-body-lg font-body-lg text-on-surface font-medium">Ham maddeyi sizden mi almak zorundayım?</span>
-<span class="material-symbols-outlined text-text-muted accordion-icon transition-transform duration-300">expand_more</span>
-</button>
-<div class="accordion-content bg-background px-6">
-<div class="py-4 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20">
-  Standart kaliteyi korumak adına temel ham maddeler (özel waffle unu, çikolata sosları vb.) merkezden tedarik edilmelidir. Taze meyveler lokal olarak temin edilebilir.
-</div>
-</div>
-</div>
-<div class="accordion-item bg-surface-container rounded-lg border border-outline-variant/30 overflow-hidden">
-<button class="accordion-toggle w-full px-6 py-5 flex justify-between items-center text-left hover:bg-surface-elevated transition-colors" type="button">
-<span class="text-body-lg font-body-lg text-on-surface font-medium">Sözleşme süresi ne kadar?</span>
-<span class="material-symbols-outlined text-text-muted accordion-icon transition-transform duration-300">expand_more</span>
-</button>
-<div class="accordion-content bg-background px-6">
-<div class="py-4 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20">
-  Standart franchise sözleşmemiz 5 yıllıktır. Süre bitiminde tarafların karşılıklı memnuniyeti durumunda yenilenebilir.
-</div>
-</div>
-</div>
-<div class="accordion-item bg-surface-container rounded-lg border border-outline-variant/30 overflow-hidden">
-<button class="accordion-toggle w-full px-6 py-5 flex justify-between items-center text-left hover:bg-surface-elevated transition-colors" type="button">
-<span class="text-body-lg font-body-lg text-on-surface font-medium">Lokasyon seçiminde destek oluyor musunuz?</span>
-<span class="material-symbols-outlined text-text-muted accordion-icon transition-transform duration-300">expand_more</span>
-</button>
-<div class="accordion-content bg-background px-6">
-<div class="py-4 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20">
-  Evet. Önerdiğiniz lokasyonu birlikte yerinde inceliyor; yaya trafiği, hedef kitle uygunluğu ve ticari potansiyel açısından değerlendirdikten sonra onaylıyoruz.
-</div>
-</div>
-</div>
-</div>
-<div class="mt-12 text-center">
-<a class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-on-secondary text-label-bold font-label-bold uppercase rounded shadow-[0_0_20px_rgba(255,207,52,0.15)] hover:bg-secondary-fixed transition-colors" href="#iletisim">
-  Franchise Başvurusu Yap
-<span aria-hidden="true">→</span>
-</a>
-</div>
+<section id="sss" class="mx-auto max-w-frame px-5 py-24 md:px-10 md:py-36">
+  <div class="grid gap-x-16 gap-y-10 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em] lg:sticky lg:top-28" data-reveal>Sıkça sorulan sorular</h2>
+    </div>
+    <div class="border-t border-ink lg:col-span-8">
+      <div class="accordion-item border-b border-line">
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Franchise bedeli ne kadar?</span>
+          <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Lansman dönemine özel, ilk 5 franchise noktası için başlangıç bedelimiz 200.000 TL'dir (sonrasında 250.000 TL). Bu bedel standart ekipman ve eğitimleri kapsar.</p></div></div>
+      </div>
+      <div class="accordion-item border-b border-line">
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Bu bedele dükkân dekorasyonu dahil mi?</span>
+          <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Hayır, pakete dükkan dekorasyonu, altyapı işleri ve kira gibi fiziki lokasyon masrafları dahil değildir. Paket, operasyonel ekipman ve eğitimi kapsar.</p></div></div>
+      </div>
+      <div class="accordion-item border-b border-line">
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Eğitim nerede veriliyor?</span>
+          <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Eğitim önce bizim yanımızda teorik olarak başlar, ardından onaylanan kendi lokasyonunuzda uygulamalı olarak tamamlanır.</p></div></div>
+      </div>
+      <div class="accordion-item border-b border-line">
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Aylık cirodan pay (royalty fee) alıyor musunuz?</span>
+          <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Detaylı finansal model ve royalty bedelleri ön görüşme aşamasında şeffaf bir şekilde paylaşılmaktadır.</p></div></div>
+      </div>
+      <div class="accordion-item border-b border-line">
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Ham maddeyi sizden mi almak zorundayım?</span>
+          <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Standart kaliteyi korumak adına temel ham maddeler (özel waffle unu, çikolata sosları vb.) merkezden tedarik edilmelidir. Taze meyveler lokal olarak temin edilebilir.</p></div></div>
+      </div>
+      <div class="accordion-item border-b border-line">
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Sözleşme süresi ne kadar?</span>
+          <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Standart franchise sözleşmemiz 5 yıllıktır. Süre bitiminde tarafların karşılıklı memnuniyeti durumunda yenilenebilir.</p></div></div>
+      </div>
+      <div class="accordion-item border-b border-line">
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Lokasyon seçiminde destek oluyor musunuz?</span>
+          <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Evet. Önerdiğiniz lokasyonu birlikte yerinde inceliyor; yaya trafiği, hedef kitle uygunluğu ve ticari potansiyel açısından değerlendirdikten sonra onaylıyoruz.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Başvuru formu -->
+<section id="iletisim" class="bg-mist">
+  <div class="mx-auto grid max-w-frame gap-x-16 gap-y-12 px-5 py-24 md:px-10 md:py-36 lg:grid-cols-12">
+    <div class="lg:col-span-5" data-reveal>
+      <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em]">WAFIL'i kendi şehrine taşımak ister misin?</h2>
+      <p class="mt-6 max-w-md text-lg leading-relaxed text-ink-soft">Aşağıdaki formu doldur, en kısa sürede seninle iletişime geçelim.</p>
+      <a class="link-line mt-10 text-lg text-ink" href="https://www.instagram.com/wafil.tr/" rel="noopener noreferrer" target="_blank">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8h.01"/></svg>
+        @wafil.tr
+      </a>
+    </div>
+
+    <div class="lg:col-span-7" data-reveal style="--d:2">
+      <form class="flex flex-col gap-8" id="franchise-form" novalidate>
+        <div class="grid gap-8 md:grid-cols-2">
+          <div>
+            <label class="text-sm font-semibold text-ink-soft" for="name">Ad soyad</label>
+            <input autocomplete="name" class="field" id="name" name="name" required type="text">
+          </div>
+          <div>
+            <label class="text-sm font-semibold text-ink-soft" for="phone">Telefon</label>
+            <input autocomplete="tel" inputmode="tel" class="field" id="phone" name="phone" required type="tel">
+          </div>
+        </div>
+        <div>
+          <label class="text-sm font-semibold text-ink-soft" for="city">Şehir</label>
+          <input autocomplete="address-level2" class="field" id="city" name="city" required type="text">
+        </div>
+
+        <!-- İsteğe bağlı alanlar: e-posta / ilçe / not başvuruyu bloklamaz. -->
+        <details class="group border-b border-line">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2 py-3 font-semibold text-ink [&::-webkit-details-marker]:hidden">
+            Ek bilgi ekle (isteğe bağlı)
+            <svg class="ic transition-transform duration-500 ease-out group-open:rotate-45" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </summary>
+          <div class="flex flex-col gap-8 pb-8 pt-4">
+            <div class="grid gap-8 md:grid-cols-2">
+              <div>
+                <label class="text-sm font-semibold text-ink-soft" for="email">E-posta</label>
+                <input autocomplete="email" inputmode="email" class="field" id="email" name="email" type="email">
+              </div>
+              <div>
+                <label class="text-sm font-semibold text-ink-soft" for="district">İlçe</label>
+                <input class="field" id="district" name="district" type="text">
+              </div>
+            </div>
+            <div>
+              <label class="text-sm font-semibold text-ink-soft" for="note">Eklemek istedikleriniz</label>
+              <textarea class="field resize-none" id="note" name="note" rows="3"></textarea>
+            </div>
+          </div>
+        </details>
+
+        <button class="btn-sun w-full !py-4 text-[17px]" type="submit">Başvuruyu gönder</button>
+        <p class="text-sm leading-relaxed text-ink-soft">
+          Formu göndererek <a class="underline hover:text-ink" href="/pages/kvkk.html">KVKK Aydınlatma Metni</a>'ni
+          okuduğunuzu ve verilerinizin başvurunuzun değerlendirilmesi amacıyla işlenmesini kabul ettiğinizi beyan edersiniz.
+        </p>
+      </form>
+    </div>
+  </div>
 </section>
 
 </main>
 
-<!-- Footer -->
-<footer class="bg-surface-container-lowest w-full py-stack-lg border-t border-outline-variant/20">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-6 md:px-margin-x max-w-container-max mx-auto items-center">
-<div class="text-headline-md font-headline-md font-black text-secondary md:col-span-1">WAFIL</div>
-<div class="flex flex-wrap gap-4 md:col-span-2 md:justify-center">
-<a class="text-label-sm font-label-sm text-text-muted hover:text-on-surface hover:underline transition-colors" href="/pages/kullanim-kosullari.html">Kullanım Koşulları</a>
-<a class="text-label-sm font-label-sm text-text-muted hover:text-on-surface hover:underline transition-colors" href="/pages/gizlilik.html">Gizlilik Politikası</a>
-<a class="text-label-sm font-label-sm text-text-muted hover:text-on-surface hover:underline transition-colors" href="/pages/kvkk.html">KVKK Aydınlatma Metni</a>
-<a class="text-label-sm font-label-sm text-text-muted hover:text-on-surface hover:underline transition-colors" href="#iletisim">Bize Ulaşın</a>
-</div>
-<div class="text-body-md font-body-md text-text-muted text-sm md:col-span-1 md:text-right">
-  © 2026 WAFIL Franchise. Tüm Hakları Saklıdır.
-</div>
-</div>
+<!-- Alt bilgi -->
+<footer class="overflow-hidden bg-paper">
+  <div class="mx-auto flex max-w-frame flex-col gap-6 px-5 pb-8 pt-16 md:flex-row md:items-center md:justify-between md:px-10">
+    <nav class="flex flex-wrap gap-x-7 gap-y-3 text-[15px] text-ink-soft" aria-label="Yasal">
+      <a class="hover:text-ink hover:underline" href="/pages/kullanim-kosullari.html">Kullanım Koşulları</a>
+      <a class="hover:text-ink hover:underline" href="/pages/gizlilik.html">Gizlilik Politikası</a>
+      <a class="hover:text-ink hover:underline" href="/pages/kvkk.html">KVKK Aydınlatma Metni</a>
+      <a class="hover:text-ink hover:underline" href="#iletisim">Bize Ulaşın</a>
+    </nav>
+    <p class="text-[15px] text-ink-soft">© 2026 WAFIL Franchise. Tüm Hakları Saklıdır.</p>
+  </div>
+  <p class="select-none px-3 font-display text-[22.5vw] font-bold leading-[0.74] tracking-[0.02em] text-ink" aria-hidden="true">WAFIL</p>
 </footer>
 
-<!-- Mobil alt bar — forma gider (önce fiyat kartına gidiyordu, fazladan bir tık ekliyordu) -->
-<nav class="bg-secondary bottom-0 md:hidden z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.3)] fixed left-0 w-full flex justify-center items-center">
-<a class="flex items-center justify-center gap-2 bg-on-secondary/10 w-full py-4 text-on-secondary text-label-bold font-label-bold active:bg-on-secondary/20 active:scale-[0.98] transition-all" href="#iletisim">
-<span class="material-symbols-outlined">send</span>
-  Hemen Başvur
-</a>
-</nav>
+<!-- Mobil alt çubuk: forma gider, form ekrandayken çekilir -->
+<div class="dock fixed inset-x-0 bottom-0 z-40 border-t border-line bg-paper/90 p-3 backdrop-blur-md md:hidden" data-dock>
+  <a class="btn-sun w-full !py-3.5 text-[17px]" href="#iletisim">
+    Hemen başvur
+    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</div>
 
 </body>
 </html>

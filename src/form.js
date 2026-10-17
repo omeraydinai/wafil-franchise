@@ -1,4 +1,7 @@
+import '@fontsource-variable/league-spartan'
+import '@fontsource-variable/hanken-grotesk'
 import './index.css'
+import { scrollToTarget } from './motion.js'
 
 const SCRIPT_URL =
   import.meta.env.VITE_SCRIPT_URL ||
@@ -24,27 +27,22 @@ function setStatus(form, type, text) {
   box.textContent = text
   box.className =
     type === 'error'
-      ? 'rounded-lg border border-red-400/40 bg-red-500/10 px-3 py-2 text-sm text-red-300'
+      ? 'border-t-2 border-[#b42318] pt-3 text-[15px] font-medium text-[#b42318]'
       : type === 'success'
-        ? 'rounded-lg border border-secondary/40 bg-secondary/10 px-3 py-2 text-sm text-secondary'
+        ? 'pt-3 text-[15px] text-ink-soft'
         : 'hidden'
 }
 
 function showSuccess(form) {
   const panel = form.parentElement
   panel.innerHTML = `
-    <div class="py-8 text-center">
-      <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
-        <span class="material-symbols-outlined text-on-secondary text-3xl icon-fill">check</span>
+    <div class="py-10">
+      <div class="flex h-14 w-14 items-center justify-center rounded-full bg-sun text-ink">
+        <svg class="ic !h-7 !w-7" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
       </div>
-      <h2 class="mt-5 text-headline-md font-headline-md text-on-surface">Başvurunuz alındı</h2>
-      <p class="mt-2 text-body-md font-body-md text-on-surface-variant">
-        En kısa sürede sizinle iletişime geçeceğiz.
-      </p>
-      <button type="button" data-new-application
-        class="mt-6 rounded border-2 border-secondary px-6 py-3 text-label-bold font-label-bold uppercase text-secondary hover:bg-secondary hover:text-on-secondary transition-colors">
-        Yeni başvuru
-      </button>
+      <h3 class="mt-6 font-display text-[2.25rem] font-semibold leading-none tracking-[-0.03em] text-ink">Başvurunuz alındı</h3>
+      <p class="mt-3 text-lg text-ink-soft">En kısa sürede sizinle iletişime geçeceğiz.</p>
+      <button type="button" data-new-application class="link-line mt-8 text-ink">Yeni başvuru</button>
     </div>
   `
   panel.querySelector('[data-new-application]')?.addEventListener('click', () => location.reload())
@@ -148,7 +146,8 @@ function initMobileNav() {
 function initAccordion() {
   document.querySelectorAll('.accordion-toggle').forEach((button) => {
     button.addEventListener('click', () => {
-      button.closest('.accordion-item')?.classList.toggle('active')
+      const open = button.closest('.accordion-item')?.classList.toggle('active')
+      button.setAttribute('aria-expanded', String(Boolean(open)))
     })
   })
 }
@@ -161,7 +160,7 @@ function initSmoothScroll() {
       const target = document.querySelector(id)
       if (!target) return
       e.preventDefault()
-      target.scrollIntoView({ behavior: 'smooth' })
+      scrollToTarget(target)
     })
   })
 }
