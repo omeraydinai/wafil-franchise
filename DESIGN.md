@@ -62,3 +62,7 @@ Metin seçimi sarı/`ink`, imleç `ink`, odak halkası 2px `ink` (3px boşluk), 
 ## Görseller
 
 Yalnız AI (Google Flow), promptlar `docs/flow-gorseller.md`. Tezgâh/kiosk görseli üretilmez; tezgâhı anlatan yerde kat planı çizimi var. Doldurulmamış bilgi `data-todo` ile çizgili işaretlenir ve yayına çıkmaz.
+
+### Görsel yerleri (`slot`)
+
+13 görsel yeri var (liste ve promptlar: `docs/flow-gorseller.md`). Her yer `figure.slot` + `img`: görsel `public/gorsel/<ad>-800|1600.webp` olarak gelince alanı kaplar; yoksa `onerror` resmi kaldırır ve çizgili zemin üstünde "Görsel bekleniyor: <ad>" etiketi kalır. Girişte görsel yoksa çizgi bardak illüstrasyonu görünür. Kaynaklar `assets-src/gorsel/` altına konur, `npm run gorseller` boyutlandırır. Köşe yarıçapları: ürün 28px, şerit ve lokasyon 22px, malzeme 16px. Lokasyon görselleri "Temsili görseller" notuyla gösterilir.
