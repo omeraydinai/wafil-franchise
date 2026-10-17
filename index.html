@@ -84,30 +84,31 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <main>
 
 <!-- Giriş -->
-<section class="mx-auto max-w-frame px-5 pt-10 md:px-10 md:pt-16">
-  <div class="grid items-end gap-x-10 gap-y-10 lg:grid-cols-12">
-    <div class="lg:col-span-7 lg:pb-6">
-      <h1 class="font-display text-[clamp(3.1rem,8.6vw,6rem)] font-semibold leading-[0.92] tracking-[-0.04em]">
-        <span class="line-mask"><span>Kendi işini</span></span>
-        <span class="line-mask"><span class="font-light">tek tezgâhla</span></span>
-        <span class="line-mask"><span>kur.</span></span>
-      </h1>
-      <p class="mt-8 max-w-[34rem] text-lg leading-relaxed text-ink-soft md:text-xl" data-reveal style="--d:3">
-        Sıcacık waffle kokusu, senin tezgâhında. Tezgâhtan eğitime kadar başlangıç için gerekenler tek pakette.
-      </p>
-      <div class="mt-9 flex flex-wrap items-center gap-x-8 gap-y-5" data-reveal style="--d:4">
-        <a class="btn-sun text-[17px]" href="#iletisim">
-          Franchise başvurusu
-          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="link-line text-[17px] text-ink" href="#paket">Pakette ne var?</a>
+<section class="flex min-h-[calc(100svh-4rem)] flex-col">
+  <div class="mx-auto flex w-full max-w-frame flex-1 flex-col justify-center px-5 pb-5 pt-6 md:px-10 md:pb-[clamp(1.5rem,4svh,3rem)] md:pt-[clamp(1.5rem,4svh,3rem)]">
+    <div class="grid grid-cols-1 items-center gap-x-10 gap-y-[clamp(1rem,3svh,2.5rem)] lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h1 class="font-display text-[clamp(2.5rem,min(8.6vw,10svh),6rem)] font-semibold leading-[0.92] tracking-[-0.04em]">
+          <span class="line-mask"><span>Kendi işini</span></span>
+          <span class="line-mask"><span class="font-light">tek tezgâhla</span></span>
+          <span class="line-mask"><span>kur.</span></span>
+        </h1>
+        <p class="mt-[clamp(1rem,3svh,2rem)] max-w-[34rem] text-[clamp(1.05rem,2.2svh,1.25rem)] leading-relaxed text-ink-soft" data-reveal style="--d:3">
+          Sıcacık waffle kokusu, senin tezgâhında. Tezgâhtan eğitime kadar başlangıç için gerekenler tek pakette.
+        </p>
+        <div class="mt-[clamp(1.25rem,3.5svh,2.25rem)] flex flex-wrap items-center gap-x-8 gap-y-4" data-reveal style="--d:4">
+          <a class="btn-sun text-[17px]" href="#iletisim">
+            Franchise başvurusu
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="link-line text-[17px] text-ink" href="#paket">Pakette ne var?</a>
+        </div>
       </div>
-    </div>
 
-    <div class="relative mx-auto w-full max-w-[25rem] lg:col-span-5 lg:max-w-none">
-      <!-- Flow görseli (hero-bardak) gelince çizimin üstüne oturur; yoksa çizim görünür kalır -->
-      <img class="cup-rise absolute inset-0 z-10 h-full w-full bg-paper object-contain [mask-image:linear-gradient(to_left,transparent,#000_7%)]" src="/gorsel/hero-bardak-1600.webp" srcset="/gorsel/hero-bardak-800.webp 800w, /gorsel/hero-bardak-1600.webp 1600w" sizes="(min-width: 1024px) 40vw, 90vw" alt="Kâğıt bardakta bubble waffle: üstünde dondurma, meyve ve çikolata sosu" fetchpriority="high" decoding="async" onerror="this.remove()">
-      <svg class="block h-auto w-full" viewBox="0 0 480 620" role="img" aria-labelledby="cup-title">
+      <div class="relative mx-auto aspect-[480/620] h-[clamp(8.5rem,23svh,18rem)] lg:col-span-5 lg:h-[min(52svh,36rem)]">
+        <!-- Flow görseli (hero-bardak) gelince çizimin üstüne oturur; yoksa çizim görünür kalır -->
+        <img class="cup-rise absolute inset-0 z-10 h-full w-full bg-paper object-contain [mask-image:linear-gradient(to_left,transparent,#000_7%)]" src="/gorsel/hero-bardak-1600.webp" srcset="/gorsel/hero-bardak-800.webp 800w, /gorsel/hero-bardak-1600.webp 1600w" sizes="(min-width: 1024px) 40vw, 60vw" alt="Kâğıt bardakta bubble waffle: üstünde dondurma, meyve ve çikolata sosu" fetchpriority="high" decoding="async" onerror="this.remove()">
+        <svg class="block h-full w-full" viewBox="0 0 480 620" role="img" aria-labelledby="cup-title">
         <title id="cup-title">Kâğıt bardakta bubble waffle: üstünde dondurma, meyve ve çikolata sosu (illüstrasyon)</title>
         <defs>
           <clipPath id="waffle-clip">
@@ -144,316 +145,348 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <rect x="118" y="362" width="244" height="19" rx="9.5" fill="#FFFFFF" stroke="#0B2E1F" stroke-width="2.5"/>
         </g>
       </svg>
-    </div>
-  </div>
-
-  <ul class="mt-14 grid grid-cols-2 border-t border-line text-[15px] md:mt-20 md:grid-cols-4 md:text-base" data-reveal style="--d:5">
-    <li class="border-b border-line py-5 pr-4 md:border-b-0 md:border-r md:py-7">
-      <span class="block font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Tezgâh ve ekipman</span>
-      <span class="mt-1 block text-ink-soft">Makineler dahil</span>
-    </li>
-    <li class="border-b border-line py-5 pl-4 md:border-b-0 md:border-r md:px-6 md:py-7">
-      <span class="block font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Ürün eğitimi</span>
-      <span class="mt-1 block text-ink-soft">Reçete ve hazırlık</span>
-    </li>
-    <li class="py-5 pr-4 md:border-r md:px-6 md:py-7">
-      <span class="block font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Açılış haftası</span>
-      <span class="mt-1 block text-ink-soft">Sahada birlikte</span>
-    </li>
-    <li class="py-5 pl-4 md:px-6 md:py-7">
-      <span class="block font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">İlk 5 ortak</span>
-      <span class="mt-1 block text-ink-soft">Lansman bedeli</span>
-    </li>
-  </ul>
-</section>
-
-<!-- Kayan şerit -->
-<div class="marquee-wrap overflow-hidden border-y border-ink bg-ink py-4 text-paper" aria-hidden="true">
-  <div class="marquee font-display text-[1.35rem] font-medium tracking-[-0.01em] md:text-[1.6rem]">
-    <div class="flex shrink-0 items-center">
-      <span class="px-7">Bardakta bubble waffle</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
-      <span class="px-7">Dükkân yerine tek tezgâh</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
-      <span class="px-7">Yeni bir markayız</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
-      <span class="px-7">İlk 5 ortağa lansman bedeli</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
-      <span class="px-7">Tezgâh, ekipman, eğitim tek pakette</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
-    </div>
-    <div class="flex shrink-0 items-center">
-      <span class="px-7">Bardakta bubble waffle</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
-      <span class="px-7">Dükkân yerine tek tezgâh</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
-      <span class="px-7">Yeni bir markayız</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
-      <span class="px-7">İlk 5 ortağa lansman bedeli</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
-      <span class="px-7">Tezgâh, ekipman, eğitim tek pakette</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
-    </div>
-  </div>
-</div>
-
-<!-- Paket -->
-<section id="paket" class="mx-auto max-w-frame px-5 py-24 md:px-10 md:py-36">
-  <div class="grid gap-x-16 gap-y-12 lg:grid-cols-12">
-    <div class="lg:col-span-5">
-      <div class="lg:sticky lg:top-28" data-reveal>
-        <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em]">Başlangıç paketinde ne var?</h2>
-        <p class="mt-6 max-w-md text-lg leading-relaxed text-ink-soft">Pakette ne olduğunu da, neyin sana kaldığını da açıkça yazdık.</p>
-        <ul class="mt-10 grid max-w-md grid-cols-3 gap-3">
-          <li>
-            <figure class="slot aspect-square rounded-2xl">
-              <span class="slot-label">malzeme-un</span>
-              <img src="/gorsel/malzeme-un-800.webp" alt="Özel waffle unu" loading="lazy" decoding="async" onerror="this.remove()">
-            </figure>
-            <p class="mt-2 text-sm leading-snug"><span class="font-semibold">Özel waffle unu</span><br><span class="text-ink-soft">Merkezden</span></p>
-          </li>
-          <li>
-            <figure class="slot aspect-square rounded-2xl">
-              <span class="slot-label">malzeme-sos</span>
-              <img src="/gorsel/malzeme-sos-800.webp" alt="Çikolata sosu" loading="lazy" decoding="async" onerror="this.remove()">
-            </figure>
-            <p class="mt-2 text-sm leading-snug"><span class="font-semibold">Soslar</span><br><span class="text-ink-soft">Merkezden</span></p>
-          </li>
-          <li>
-            <figure class="slot aspect-square rounded-2xl">
-              <span class="slot-label">malzeme-meyve</span>
-              <img src="/gorsel/malzeme-meyve-800.webp" alt="Taze çilek ve yaban mersini" loading="lazy" decoding="async" onerror="this.remove()">
-            </figure>
-            <p class="mt-2 text-sm leading-snug"><span class="font-semibold">Taze meyve</span><br><span class="text-ink-soft">Yerelden</span></p>
-          </li>
-        </ul>
       </div>
     </div>
 
-    <div class="lg:col-span-7">
-      <h3 class="flex items-center justify-between border-b-2 border-ink pb-3 text-[13px] font-semibold uppercase tracking-[0.12em]" data-reveal>
-        <span>Pakette</span><span>Durum</span>
-      </h3>
-      <ul>
-        <li class="border-b border-line py-6" data-reveal>
-          <div class="ledger-row">
-            <span class="ledger-name font-display text-[1.6rem] font-semibold tracking-[-0.02em]">Tezgâh</span>
-            <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
-          </div>
-          <p class="mt-2 max-w-xl text-ink-soft">Özel tasarımlı, modüler ve şık sunum tezgâhı. Marka kimliğine uygun, dikkat çekici tasarım.</p>
-        </li>
-        <li class="border-b border-line py-6" data-reveal>
-          <div class="ledger-row">
-            <span class="ledger-name font-display text-[1.6rem] font-semibold tracking-[-0.02em]">Makine ve ekipman</span>
-            <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
-          </div>
-          <p class="mt-2 max-w-xl text-ink-soft">Profesyonel waffle makineleri, soğutucu üniteler ve operasyon için gerekli el aletleri.</p>
-        </li>
-        <li class="border-b border-line py-6" data-reveal>
-          <div class="ledger-row">
-            <span class="ledger-name font-display text-[1.6rem] font-semibold tracking-[-0.02em]">Ürün eğitimi</span>
-            <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
-          </div>
-          <p class="mt-2 max-w-xl text-ink-soft">Standart WAFIL lezzetini yakalaman için reçete ve ürün hazırlama eğitimi.</p>
-        </li>
-        <li class="border-b border-line py-6" data-reveal>
-          <div class="ledger-row">
-            <span class="ledger-name font-display text-[1.6rem] font-semibold tracking-[-0.02em]">Operasyon desteği</span>
-            <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
-          </div>
-          <p class="mt-2 max-w-xl text-ink-soft">Stok yönetimi, hijyen standartları ve müşteri iletişimi konularında temel eğitim.</p>
-        </li>
-        <li class="py-6" data-reveal>
-          <div class="ledger-row">
-            <span class="ledger-name font-display text-[1.6rem] font-semibold tracking-[-0.02em]">Açılış haftası desteği</span>
-            <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
-          </div>
-          <p class="mt-2 max-w-xl text-ink-soft">İlk günlerde sahada seninle birlikte çalışıp işleyişi oturtmana yardım ediyoruz.</p>
-        </li>
-      </ul>
+    <ul class="mt-[clamp(1.25rem,4svh,3rem)] hidden grid-cols-4 border-t border-line md:grid" data-reveal style="--d:5">
+      <li class="border-r border-line py-[clamp(1rem,2.5svh,1.75rem)] pr-6">
+        <span class="block font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Tezgâh ve ekipman</span>
+        <span class="mt-1 block text-ink-soft">Makineler dahil</span>
+      </li>
+      <li class="border-r border-line px-6 py-[clamp(1rem,2.5svh,1.75rem)]">
+        <span class="block font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Ürün eğitimi</span>
+        <span class="mt-1 block text-ink-soft">Reçete ve hazırlık</span>
+      </li>
+      <li class="border-r border-line px-6 py-[clamp(1rem,2.5svh,1.75rem)]">
+        <span class="block font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Açılış haftası</span>
+        <span class="mt-1 block text-ink-soft">Sahada birlikte</span>
+      </li>
+      <li class="px-6 py-[clamp(1rem,2.5svh,1.75rem)]">
+        <span class="block font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">İlk 5 ortak</span>
+        <span class="mt-1 block text-ink-soft">Lansman bedeli</span>
+      </li>
+    </ul>
+  </div>
 
-      <h3 class="mt-14 flex items-center justify-between border-b-2 border-ink pb-3 text-[13px] font-semibold uppercase tracking-[0.12em]" data-reveal>
-        <span>Pakette yok</span><span>Durum</span>
-      </h3>
-      <ul class="text-ink-soft">
-        <li class="ledger-row border-b border-line py-5" data-reveal>
-          <span class="ledger-name font-display text-[1.6rem] font-medium tracking-[-0.02em]">Lokasyon ve kira</span>
-          <span class="inline-flex items-center gap-2 font-medium"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg>Sana ait</span>
+  <!-- Kayan şerit -->
+  <div class="marquee-wrap mb-[4.75rem] overflow-hidden border-y border-ink bg-ink py-3 text-paper md:mb-0 md:py-4" aria-hidden="true">
+    <div class="marquee font-display text-[1.35rem] font-medium tracking-[-0.01em] md:text-[1.6rem]">
+      <div class="flex shrink-0 items-center">
+        <span class="px-7">Bardakta bubble waffle</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+        <span class="px-7">Dükkân yerine tek tezgâh</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+        <span class="px-7">Yeni bir markayız</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+        <span class="px-7">İlk 5 ortağa lansman bedeli</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+        <span class="px-7">Tezgâh, ekipman, eğitim tek pakette</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+      </div>
+      <div class="flex shrink-0 items-center">
+        <span class="px-7">Bardakta bubble waffle</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+        <span class="px-7">Dükkân yerine tek tezgâh</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+        <span class="px-7">Yeni bir markayız</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+        <span class="px-7">İlk 5 ortağa lansman bedeli</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+        <span class="px-7">Tezgâh, ekipman, eğitim tek pakette</span><svg class="h-3 w-3 text-sun" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paket -->
+<section id="paket" class="sec">
+  <div class="mx-auto grid w-full max-w-frame grid-cols-1 items-center gap-x-16 gap-y-[clamp(1rem,2.5svh,2.5rem)] px-5 md:px-10 lg:grid-cols-12">
+    <div class="lg:col-span-5" data-reveal>
+      <h2 class="h-sec">Başlangıç paketinde ne var?</h2>
+      <p class="mt-[clamp(.6rem,1.8svh,1.5rem)] max-w-md text-[clamp(1rem,2svh,1.125rem)] leading-relaxed text-ink-soft">Pakette ne olduğunu da, neyin sana kaldığını da açıkça yazdık.</p>
+      <ul class="mt-[clamp(.9rem,3svh,2.5rem)] grid max-w-[19rem] grid-cols-3 gap-2.5 md:max-w-md md:gap-3">
+        <li>
+          <figure class="slot aspect-square rounded-xl md:rounded-2xl">
+            <span class="slot-label">malzeme-un</span>
+            <img src="/gorsel/malzeme-un-800.webp" alt="Özel waffle unu" loading="lazy" decoding="async" onerror="this.remove()">
+          </figure>
+          <p class="mt-1.5 text-[12px] leading-snug md:mt-2 md:text-sm"><span class="font-semibold">Özel waffle unu</span><br><span class="text-ink-soft">Merkezden</span></p>
         </li>
-        <li class="ledger-row border-b border-line py-5" data-reveal>
-          <span class="ledger-name font-display text-[1.6rem] font-medium tracking-[-0.02em]">Altyapı</span>
-          <span class="inline-flex items-center gap-2 font-medium"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg>Sana ait</span>
+        <li>
+          <figure class="slot aspect-square rounded-xl md:rounded-2xl">
+            <span class="slot-label">malzeme-sos</span>
+            <img src="/gorsel/malzeme-sos-800.webp" alt="Çikolata sosu" loading="lazy" decoding="async" onerror="this.remove()">
+          </figure>
+          <p class="mt-1.5 text-[12px] leading-snug md:mt-2 md:text-sm"><span class="font-semibold">Soslar</span><br><span class="text-ink-soft">Merkezden</span></p>
         </li>
-        <li class="ledger-row py-5" data-reveal>
-          <span class="ledger-name font-display text-[1.6rem] font-medium tracking-[-0.02em]">Dekorasyon</span>
-          <span class="inline-flex items-center gap-2 font-medium"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg>Sana ait</span>
+        <li>
+          <figure class="slot aspect-square rounded-xl md:rounded-2xl">
+            <span class="slot-label">malzeme-meyve</span>
+            <img src="/gorsel/malzeme-meyve-800.webp" alt="Taze çilek ve yaban mersini" loading="lazy" decoding="async" onerror="this.remove()">
+          </figure>
+          <p class="mt-1.5 text-[12px] leading-snug md:mt-2 md:text-sm"><span class="font-semibold">Taze meyve</span><br><span class="text-ink-soft">Yerelden</span></p>
         </li>
       </ul>
-      <p class="mt-8 text-sm text-ink-soft" data-reveal>Belirtilen paket içeriği standart mobil/kiosk modeli için geçerlidir.</p>
+    </div>
+
+    <div class="lg:col-span-7">
+      <!-- Masaüstü / tablet: paket fişi -->
+      <div class="hidden md:block" data-reveal>
+        <h3 class="flex items-center justify-between border-b-2 border-ink pb-2.5 text-[13px] font-semibold uppercase tracking-[0.12em]"><span>Pakette</span><span>Durum</span></h3>
+        <ul>
+          <li class="border-b border-line py-[clamp(.4rem,1.25svh,1.1rem)]">
+            <div class="ledger-row">
+              <span class="ledger-name font-display text-[clamp(1.2rem,2.6svh,1.5rem)] font-semibold tracking-[-0.02em]">Tezgâh</span>
+              <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+            </div>
+            <p class="mt-0.5 max-w-xl text-[14px] leading-snug text-ink-soft xl:text-[15px]">Özel tasarımlı, modüler ve şık sunum tezgâhı. Marka kimliğine uygun, dikkat çekici tasarım.</p>
+          </li>
+          <li class="border-b border-line py-[clamp(.4rem,1.25svh,1.1rem)]">
+            <div class="ledger-row">
+              <span class="ledger-name font-display text-[clamp(1.2rem,2.6svh,1.5rem)] font-semibold tracking-[-0.02em]">Makine ve ekipman</span>
+              <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+            </div>
+            <p class="mt-0.5 max-w-xl text-[14px] leading-snug text-ink-soft xl:text-[15px]">Profesyonel waffle makineleri, soğutucu üniteler ve operasyon için gerekli el aletleri.</p>
+          </li>
+          <li class="border-b border-line py-[clamp(.4rem,1.25svh,1.1rem)]">
+            <div class="ledger-row">
+              <span class="ledger-name font-display text-[clamp(1.2rem,2.6svh,1.5rem)] font-semibold tracking-[-0.02em]">Ürün eğitimi</span>
+              <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+            </div>
+            <p class="mt-0.5 max-w-xl text-[14px] leading-snug text-ink-soft xl:text-[15px]">Standart WAFIL lezzetini yakalaman için reçete ve ürün hazırlama eğitimi.</p>
+          </li>
+          <li class="border-b border-line py-[clamp(.4rem,1.25svh,1.1rem)]">
+            <div class="ledger-row">
+              <span class="ledger-name font-display text-[clamp(1.2rem,2.6svh,1.5rem)] font-semibold tracking-[-0.02em]">Operasyon desteği</span>
+              <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+            </div>
+            <p class="mt-0.5 max-w-xl text-[14px] leading-snug text-ink-soft xl:text-[15px]">Stok yönetimi, hijyen standartları ve müşteri iletişimi konularında temel eğitim.</p>
+          </li>
+          <li class="py-[clamp(.4rem,1.25svh,1.1rem)]">
+            <div class="ledger-row">
+              <span class="ledger-name font-display text-[clamp(1.2rem,2.6svh,1.5rem)] font-semibold tracking-[-0.02em]">Açılış haftası desteği</span>
+              <span class="inline-flex items-center gap-2 font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+            </div>
+            <p class="mt-0.5 max-w-xl text-[14px] leading-snug text-ink-soft xl:text-[15px]">İlk günlerde sahada seninle birlikte çalışıp işleyişi oturtmana yardım ediyoruz.</p>
+          </li>
+        </ul>
+        <h3 class="mt-[clamp(1rem,3svh,2rem)] flex items-center justify-between border-b-2 border-ink pb-2.5 text-[13px] font-semibold uppercase tracking-[0.12em]"><span>Pakette yok</span><span>Durum</span></h3>
+        <div class="ledger-row py-[clamp(.55rem,1.5svh,1rem)] text-ink-soft">
+          <span class="ledger-name font-display text-[clamp(1.2rem,2.6svh,1.5rem)] font-medium tracking-[-0.02em]">Lokasyon, kira, altyapı, dekorasyon</span>
+          <span class="inline-flex items-center gap-2 font-medium"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg>Sana ait</span>
+        </div>
+        <p class="mt-2 text-sm text-ink-soft">Belirtilen paket içeriği standart mobil/kiosk modeli için geçerlidir.</p>
+      </div>
+
+      <!-- Telefon: yana kaydırılan kartlar -->
+      <div class="md:hidden">
+        <ul class="swipe pb-1" aria-label="Pakette olanlar">
+          <li class="w-[78%] rounded-2xl border border-line bg-paper p-4">
+            <span class="inline-flex items-center gap-1.5 text-sm font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+            <p class="mt-2 font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Tezgâh</p>
+            <p class="mt-1.5 text-[14px] leading-snug text-ink-soft">Özel tasarımlı, modüler ve şık sunum tezgâhı. Marka kimliğine uygun, dikkat çekici tasarım.</p>
+          </li>
+          <li class="w-[78%] rounded-2xl border border-line bg-paper p-4">
+            <span class="inline-flex items-center gap-1.5 text-sm font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+            <p class="mt-2 font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Makine ve ekipman</p>
+            <p class="mt-1.5 text-[14px] leading-snug text-ink-soft">Profesyonel waffle makineleri, soğutucu üniteler ve operasyon için gerekli el aletleri.</p>
+          </li>
+          <li class="w-[78%] rounded-2xl border border-line bg-paper p-4">
+            <span class="inline-flex items-center gap-1.5 text-sm font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+            <p class="mt-2 font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Ürün eğitimi</p>
+            <p class="mt-1.5 text-[14px] leading-snug text-ink-soft">Standart WAFIL lezzetini yakalaman için reçete ve ürün hazırlama eğitimi.</p>
+          </li>
+          <li class="w-[78%] rounded-2xl border border-line bg-paper p-4">
+            <span class="inline-flex items-center gap-1.5 text-sm font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+            <p class="mt-2 font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Operasyon desteği</p>
+            <p class="mt-1.5 text-[14px] leading-snug text-ink-soft">Stok yönetimi, hijyen standartları ve müşteri iletişimi konularında temel eğitim.</p>
+          </li>
+          <li class="w-[78%] rounded-2xl border border-line bg-paper p-4">
+            <span class="inline-flex items-center gap-1.5 text-sm font-semibold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dahil</span>
+            <p class="mt-2 font-display text-[1.35rem] font-semibold leading-tight tracking-[-0.02em]">Açılış haftası desteği</p>
+            <p class="mt-1.5 text-[14px] leading-snug text-ink-soft">İlk günlerde sahada seninle birlikte çalışıp işleyişi oturtmana yardım ediyoruz.</p>
+          </li>
+        </ul>
+        <div class="mt-3 flex items-start gap-2.5 border-t border-line pt-3 text-[14px] text-ink-soft">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg>
+          <p><span class="font-semibold text-ink">Pakette yok:</span> lokasyon, kira, altyapı ve dekorasyon sana ait. Paket, standart mobil/kiosk modeli için geçerlidir.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Model -->
-<section id="model" class="bg-mist">
-  <div class="mx-auto grid max-w-frame items-center gap-x-16 gap-y-14 px-5 py-24 md:px-10 md:py-36 lg:grid-cols-12">
+<section id="model" class="sec bg-mist">
+  <div class="mx-auto grid w-full max-w-frame grid-cols-1 items-center gap-x-16 gap-y-[clamp(1rem,2.5svh,2.5rem)] px-5 md:px-10 lg:grid-cols-12">
     <div class="lg:col-span-6" data-reveal>
-      <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em]">Büyük bir dükkânla başlamak zorunda değilsin.</h2>
-      <p class="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft">WAFIL'in mobil kiosk modeli bir dükkâna göre daha küçük bir alanla başlar. Yaya trafiğinin yoğun olduğu lokasyonlarda, AVM'lerde veya etkinlik alanlarında kurulabilir.</p>
-      <ul class="mt-10 border-t border-line">
-        <li class="flex items-center gap-4 border-b border-line py-4 text-lg"><svg class="ic text-ink" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dükkâna göre daha küçük alan</li>
-        <li class="flex items-center gap-4 border-b border-line py-4 text-lg"><svg class="ic text-ink" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tek tezgâhla kurulum</li>
-        <li class="flex items-center gap-4 border-b border-line py-4 text-lg"><svg class="ic text-ink" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sade, küçük ölçekli operasyon</li>
+      <h2 class="h-sec">Büyük bir dükkânla başlamak zorunda değilsin.</h2>
+      <p class="mt-[clamp(.6rem,1.8svh,1.5rem)] max-w-xl text-[clamp(1rem,2svh,1.125rem)] leading-relaxed text-ink-soft">WAFIL'in mobil kiosk modeli bir dükkâna göre daha küçük bir alanla başlar. Yaya trafiğinin yoğun olduğu lokasyonlarda, AVM'lerde veya etkinlik alanlarında kurulabilir.</p>
+      <ul class="mt-[clamp(.8rem,2.5svh,2rem)] flex flex-wrap gap-2 lg:block lg:border-t lg:border-line">
+        <li class="flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1.5 text-sm lg:rounded-none lg:border-0 lg:border-b lg:bg-transparent lg:px-0 lg:py-[clamp(.5rem,1.4svh,.9rem)] lg:text-lg"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dükkâna göre daha küçük alan</li>
+        <li class="flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1.5 text-sm lg:rounded-none lg:border-0 lg:border-b lg:bg-transparent lg:px-0 lg:py-[clamp(.5rem,1.4svh,.9rem)] lg:text-lg"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tek tezgâhla kurulum</li>
+        <li class="flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1.5 text-sm lg:rounded-none lg:border-0 lg:border-b lg:bg-transparent lg:px-0 lg:py-[clamp(.5rem,1.4svh,.9rem)] lg:text-lg"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sade, küçük ölçekli operasyon</li>
       </ul>
+      <!-- Masaüstü: lokasyonlar küçük kareler -->
+      <ul class="mt-[clamp(1rem,3svh,2rem)] hidden grid-cols-3 gap-3 lg:grid">
+        <li>
+          <figure class="slot aspect-[4/3] rounded-xl">
+            <span class="slot-label">lokasyon-avm</span>
+            <img src="/gorsel/lokasyon-avm-1600.webp" srcset="/gorsel/lokasyon-avm-800.webp 800w, /gorsel/lokasyon-avm-1600.webp 1600w" sizes="15vw" alt="Aydınlık bir AVM koridoru" loading="lazy" decoding="async" onerror="this.remove()">
+          </figure>
+          <p class="mt-1.5 text-sm font-semibold">AVM koridoru</p>
+        </li>
+        <li>
+          <figure class="slot aspect-[4/3] rounded-xl">
+            <span class="slot-label">lokasyon-cadde</span>
+            <img src="/gorsel/lokasyon-cadde-1600.webp" srcset="/gorsel/lokasyon-cadde-800.webp 800w, /gorsel/lokasyon-cadde-1600.webp 1600w" sizes="15vw" alt="Yayaların geçtiği işlek bir cadde" loading="lazy" decoding="async" onerror="this.remove()">
+          </figure>
+          <p class="mt-1.5 text-sm font-semibold">İşlek cadde</p>
+        </li>
+        <li>
+          <figure class="slot aspect-[4/3] rounded-xl">
+            <span class="slot-label">lokasyon-etkinlik</span>
+            <img src="/gorsel/lokasyon-etkinlik-1600.webp" srcset="/gorsel/lokasyon-etkinlik-800.webp 800w, /gorsel/lokasyon-etkinlik-1600.webp 1600w" sizes="15vw" alt="Açık hava etkinlik alanı" loading="lazy" decoding="async" onerror="this.remove()">
+          </figure>
+          <p class="mt-1.5 text-sm font-semibold">Etkinlik alanı</p>
+        </li>
+      </ul>
+      <p class="mt-2 hidden text-xs text-ink-soft lg:block">Temsili görseller: tezgâhın kurulabileceği yer türleri.</p>
     </div>
 
-    <figure class="w-full lg:col-span-6" data-reveal style="--d:2">
+    <!-- Masaüstü: tezgâh görseli -->
+    <figure class="hidden w-full lg:col-span-6 lg:block" data-reveal style="--d:2">
       <div class="overflow-hidden rounded-[22px] bg-mist">
-        <img class="block h-auto w-full" src="/gorsel/tezgah-1600.webp" srcset="/gorsel/tezgah-800.webp 800w, /gorsel/tezgah-1600.webp 1600w" sizes="(min-width: 1024px) 45vw, 90vw" width="2000" height="1493" alt="WAFIL tezgâhının tasarım görselleştirmesi: ışıklı WAFIL tabelalı mobil kiosk, ön panelde 'Mutluluğun çıtır hâli.' yazısı" loading="lazy" decoding="async">
+        <img class="block h-auto w-full" src="/gorsel/tezgah-1600.webp" srcset="/gorsel/tezgah-800.webp 800w, /gorsel/tezgah-1600.webp 1600w" sizes="(min-width: 1024px) 45vw, 82vw" width="2000" height="1493" alt="WAFIL tezgâhının tasarım görselleştirmesi: ışıklı WAFIL tabelalı mobil kiosk, ön panelde 'Mutluluğun çıtır hâli.' yazısı" loading="lazy" decoding="async">
       </div>
-      <figcaption class="mt-4 flex items-baseline justify-between gap-4">
+      <figcaption class="mt-3 flex items-baseline justify-between gap-4">
         <span class="font-display text-xl font-semibold">Tezgâh tasarımı</span>
         <span class="text-sm text-ink-soft">Görselleştirme</span>
       </figcaption>
     </figure>
 
-    <div class="lg:col-span-12">
-      <ul class="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0">
-        <li class="w-[78%] shrink-0 snap-start md:w-auto" data-reveal>
-          <figure class="slot aspect-[4/3] rounded-[22px]">
+    <!-- Telefon / tablet: tezgâh + lokasyonlar tek şerit -->
+    <div class="lg:hidden">
+      <ul class="swipe md:gap-4">
+        <li class="w-[82%] md:w-[46%]">
+          <figure>
+            <div class="overflow-hidden rounded-2xl bg-mist"><img class="block h-auto w-full" src="/gorsel/tezgah-1600.webp" srcset="/gorsel/tezgah-800.webp 800w, /gorsel/tezgah-1600.webp 1600w" sizes="(min-width: 1024px) 45vw, 82vw" width="2000" height="1493" alt="WAFIL tezgâhının tasarım görselleştirmesi: ışıklı WAFIL tabelalı mobil kiosk, ön panelde 'Mutluluğun çıtır hâli.' yazısı" loading="lazy" decoding="async"></div>
+            <figcaption class="mt-2 flex items-baseline justify-between gap-3 text-sm"><span class="font-semibold">Tezgâh tasarımı</span><span class="text-ink-soft">Görselleştirme</span></figcaption>
+          </figure>
+        </li>
+        <li class="w-[82%] md:w-[46%]">
+          <figure class="slot aspect-[4/3] rounded-2xl">
             <span class="slot-label">lokasyon-avm</span>
-            <img src="/gorsel/lokasyon-avm-1600.webp" srcset="/gorsel/lokasyon-avm-800.webp 800w, /gorsel/lokasyon-avm-1600.webp 1600w" sizes="(min-width: 768px) 30vw, 78vw" alt="Aydınlık bir AVM koridoru" loading="lazy" decoding="async" onerror="this.remove()">
+            <img src="/gorsel/lokasyon-avm-1600.webp" srcset="/gorsel/lokasyon-avm-800.webp 800w, /gorsel/lokasyon-avm-1600.webp 1600w" sizes="82vw" alt="Aydınlık bir AVM koridoru" loading="lazy" decoding="async" onerror="this.remove()">
           </figure>
-          <p class="mt-3 font-display text-xl font-semibold">AVM koridoru</p>
+          <p class="mt-2 text-sm"><span class="font-semibold">AVM koridoru</span> <span class="text-ink-soft">· Temsili</span></p>
         </li>
-        <li class="w-[78%] shrink-0 snap-start md:w-auto" data-reveal style="--d:1">
-          <figure class="slot aspect-[4/3] rounded-[22px]">
+        <li class="w-[82%] md:w-[46%]">
+          <figure class="slot aspect-[4/3] rounded-2xl">
             <span class="slot-label">lokasyon-cadde</span>
-            <img src="/gorsel/lokasyon-cadde-1600.webp" srcset="/gorsel/lokasyon-cadde-800.webp 800w, /gorsel/lokasyon-cadde-1600.webp 1600w" sizes="(min-width: 768px) 30vw, 78vw" alt="Yayaların geçtiği işlek bir cadde" loading="lazy" decoding="async" onerror="this.remove()">
+            <img src="/gorsel/lokasyon-cadde-1600.webp" srcset="/gorsel/lokasyon-cadde-800.webp 800w, /gorsel/lokasyon-cadde-1600.webp 1600w" sizes="82vw" alt="Yayaların geçtiği işlek bir cadde" loading="lazy" decoding="async" onerror="this.remove()">
           </figure>
-          <p class="mt-3 font-display text-xl font-semibold">İşlek cadde</p>
+          <p class="mt-2 text-sm"><span class="font-semibold">İşlek cadde</span> <span class="text-ink-soft">· Temsili</span></p>
         </li>
-        <li class="w-[78%] shrink-0 snap-start md:w-auto" data-reveal style="--d:2">
-          <figure class="slot aspect-[4/3] rounded-[22px]">
+        <li class="w-[82%] md:w-[46%]">
+          <figure class="slot aspect-[4/3] rounded-2xl">
             <span class="slot-label">lokasyon-etkinlik</span>
-            <img src="/gorsel/lokasyon-etkinlik-1600.webp" srcset="/gorsel/lokasyon-etkinlik-800.webp 800w, /gorsel/lokasyon-etkinlik-1600.webp 1600w" sizes="(min-width: 768px) 30vw, 78vw" alt="Açık hava etkinlik alanı" loading="lazy" decoding="async" onerror="this.remove()">
+            <img src="/gorsel/lokasyon-etkinlik-1600.webp" srcset="/gorsel/lokasyon-etkinlik-800.webp 800w, /gorsel/lokasyon-etkinlik-1600.webp 1600w" sizes="82vw" alt="Açık hava etkinlik alanı" loading="lazy" decoding="async" onerror="this.remove()">
           </figure>
-          <p class="mt-3 font-display text-xl font-semibold">Etkinlik alanı</p>
+          <p class="mt-2 text-sm"><span class="font-semibold">Etkinlik alanı</span> <span class="text-ink-soft">· Temsili</span></p>
         </li>
       </ul>
-      <p class="mt-5 text-sm text-ink-soft">Temsili görseller: tezgâhın kurulabileceği yer türleri.</p>
     </div>
   </div>
 </section>
 
 <!-- Süreç -->
-<section id="surec" class="mx-auto max-w-frame px-5 py-24 md:px-10 md:py-36">
-  <div class="grid gap-x-16 gap-y-14 lg:grid-cols-12">
-    <div class="lg:col-span-5">
-      <div class="lg:sticky lg:top-28">
-        <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em]" data-reveal>Franchise süreci nasıl ilerliyor?</h2>
-        <p class="mt-6 max-w-md text-lg leading-relaxed text-ink-soft" data-reveal>Adım adım, her aşamada birlikte ilerlediğimiz bir süreç.</p>
-        <div class="mt-16 hidden lg:block" aria-hidden="true">
-          <p class="font-display text-[6rem] font-semibold leading-none tracking-[-0.04em] tabular">
-            <span class="counter-digit" data-counter>01</span><span class="text-line">/06</span>
-          </p>
-          <p class="mt-3 font-display text-2xl font-medium" data-counter-title>Başvuru</p>
-        </div>
-      </div>
+<section id="surec" class="sec">
+  <div class="mx-auto w-full max-w-frame px-5 md:px-10">
+    <div class="max-w-2xl" data-reveal>
+      <h2 class="h-sec">Franchise süreci nasıl ilerliyor?</h2>
+      <p class="mt-[clamp(.6rem,1.8svh,1.5rem)] text-[clamp(1rem,2svh,1.125rem)] leading-relaxed text-ink-soft">Adım adım, her aşamada birlikte ilerlediğimiz bir süreç.</p>
     </div>
-
-    <ol class="axis relative lg:col-span-7" data-axis>
-      <div class="absolute bottom-3 left-[11px] top-3 w-px bg-line" aria-hidden="true">
-        <div class="axis-fill absolute inset-0 bg-ink"></div>
-      </div>
-      <li class="step relative pb-14 pl-14 lg:min-h-[34vh]" data-step="Başvuru">
-        <span class="step-dot absolute left-0 top-1 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper" aria-hidden="true"></span>
-        <p class="text-sm font-semibold text-ink-soft tabular">01</p>
-        <h3 class="mt-1 font-display text-[2rem] font-semibold leading-tight tracking-[-0.025em]">Başvuru</h3>
-        <p class="mt-2 text-lg text-ink-soft">Formu doldurarak ilk adımı at.</p>
+    <ol class="axis relative mt-[clamp(1.25rem,5svh,4rem)] flex flex-col gap-[clamp(.55rem,1.6svh,1.5rem)] lg:grid lg:grid-cols-6 lg:gap-6" data-reveal>
+      <div class="axis-line" aria-hidden="true"><div class="axis-fill"></div></div>
+      <li class="step relative pl-12 lg:pl-0 lg:pt-12" style="--i:0">
+        <span class="step-dot absolute left-0 top-0.5 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper lg:top-0" aria-hidden="true"></span>
+        <h3 class="font-display text-[clamp(1.15rem,2.5svh,1.6rem)] font-semibold leading-tight tracking-[-0.02em]"><span class="mr-2 font-sans text-sm font-semibold text-ink-soft tabular lg:mb-0.5 lg:mr-0 lg:block">01</span>Başvuru</h3>
+        <p class="mt-0.5 text-[14px] leading-snug text-ink-soft lg:mt-1 lg:text-[15px]">Formu doldurarak ilk adımı at.</p>
       </li>
-      <li class="step relative pb-14 pl-14 lg:min-h-[34vh]" data-step="Ön görüşme">
-        <span class="step-dot absolute left-0 top-1 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper" aria-hidden="true"></span>
-        <p class="text-sm font-semibold text-ink-soft tabular">02</p>
-        <h3 class="mt-1 font-display text-[2rem] font-semibold leading-tight tracking-[-0.025em]">Ön görüşme</h3>
-        <p class="mt-2 text-lg text-ink-soft">Beklentileri ve modeli konuşalım.</p>
+      <li class="step relative pl-12 lg:pl-0 lg:pt-12" style="--i:1">
+        <span class="step-dot absolute left-0 top-0.5 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper lg:top-0" aria-hidden="true"></span>
+        <h3 class="font-display text-[clamp(1.15rem,2.5svh,1.6rem)] font-semibold leading-tight tracking-[-0.02em]"><span class="mr-2 font-sans text-sm font-semibold text-ink-soft tabular lg:mb-0.5 lg:mr-0 lg:block">02</span>Ön görüşme</h3>
+        <p class="mt-0.5 text-[14px] leading-snug text-ink-soft lg:mt-1 lg:text-[15px]">Beklentileri ve modeli konuşalım.</p>
       </li>
-      <li class="step relative pb-14 pl-14 lg:min-h-[34vh]" data-step="Lokasyon onayı">
-        <span class="step-dot absolute left-0 top-1 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper" aria-hidden="true"></span>
-        <p class="text-sm font-semibold text-ink-soft tabular">03</p>
-        <h3 class="mt-1 font-display text-[2rem] font-semibold leading-tight tracking-[-0.025em]">Lokasyon onayı</h3>
-        <p class="mt-2 text-lg text-ink-soft">Önerdiğin yeri birlikte yerinde inceleyelim.</p>
+      <li class="step relative pl-12 lg:pl-0 lg:pt-12" style="--i:2">
+        <span class="step-dot absolute left-0 top-0.5 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper lg:top-0" aria-hidden="true"></span>
+        <h3 class="font-display text-[clamp(1.15rem,2.5svh,1.6rem)] font-semibold leading-tight tracking-[-0.02em]"><span class="mr-2 font-sans text-sm font-semibold text-ink-soft tabular lg:mb-0.5 lg:mr-0 lg:block">03</span>Lokasyon onayı</h3>
+        <p class="mt-0.5 text-[14px] leading-snug text-ink-soft lg:mt-1 lg:text-[15px]">Önerdiğin yeri birlikte yerinde inceleyelim.</p>
       </li>
-      <li class="step relative pb-14 pl-14 lg:min-h-[34vh]" data-step="Sözleşme ve ödeme">
-        <span class="step-dot absolute left-0 top-1 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper" aria-hidden="true"></span>
-        <p class="text-sm font-semibold text-ink-soft tabular">04</p>
-        <h3 class="mt-1 font-display text-[2rem] font-semibold leading-tight tracking-[-0.025em]">Sözleşme ve ödeme</h3>
-        <p class="mt-2 text-lg text-ink-soft">Resmi süreci tamamlayalım.</p>
+      <li class="step relative pl-12 lg:pl-0 lg:pt-12" style="--i:3">
+        <span class="step-dot absolute left-0 top-0.5 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper lg:top-0" aria-hidden="true"></span>
+        <h3 class="font-display text-[clamp(1.15rem,2.5svh,1.6rem)] font-semibold leading-tight tracking-[-0.02em]"><span class="mr-2 font-sans text-sm font-semibold text-ink-soft tabular lg:mb-0.5 lg:mr-0 lg:block">04</span>Sözleşme ve ödeme</h3>
+        <p class="mt-0.5 text-[14px] leading-snug text-ink-soft lg:mt-1 lg:text-[15px]">Resmi süreci tamamlayalım.</p>
       </li>
-      <li class="step relative pb-14 pl-14 lg:min-h-[34vh]" data-step="Kurulum ve eğitim">
-        <span class="step-dot absolute left-0 top-1 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper" aria-hidden="true"></span>
-        <p class="text-sm font-semibold text-ink-soft tabular">05</p>
-        <h3 class="mt-1 font-display text-[2rem] font-semibold leading-tight tracking-[-0.025em]">Kurulum ve eğitim</h3>
-        <p class="mt-2 text-lg text-ink-soft">Ekipmanlar kurulsun, eğitim başlasın.</p>
+      <li class="step relative pl-12 lg:pl-0 lg:pt-12" style="--i:4">
+        <span class="step-dot absolute left-0 top-0.5 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper lg:top-0" aria-hidden="true"></span>
+        <h3 class="font-display text-[clamp(1.15rem,2.5svh,1.6rem)] font-semibold leading-tight tracking-[-0.02em]"><span class="mr-2 font-sans text-sm font-semibold text-ink-soft tabular lg:mb-0.5 lg:mr-0 lg:block">05</span>Kurulum ve eğitim</h3>
+        <p class="mt-0.5 text-[14px] leading-snug text-ink-soft lg:mt-1 lg:text-[15px]">Ekipmanlar kurulsun, eğitim başlasın.</p>
       </li>
-      <li class="step relative pl-14" data-step="Açılış">
-        <span class="step-dot absolute left-0 top-1 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper" aria-hidden="true"></span>
-        <p class="text-sm font-semibold text-ink-soft tabular">06</p>
-        <h3 class="mt-1 font-display text-[2rem] font-semibold leading-tight tracking-[-0.025em]">Açılış</h3>
-        <p class="mt-2 text-lg text-ink-soft">İlk misafirlerini birlikte ağırlayalım.</p>
+      <li class="step relative pl-12 lg:pl-0 lg:pt-12" style="--i:5">
+        <span class="step-dot absolute left-0 top-0.5 h-[23px] w-[23px] rounded-full border-[1.5px] border-line bg-paper lg:top-0" aria-hidden="true"></span>
+        <h3 class="font-display text-[clamp(1.15rem,2.5svh,1.6rem)] font-semibold leading-tight tracking-[-0.02em]"><span class="mr-2 font-sans text-sm font-semibold text-ink-soft tabular lg:mb-0.5 lg:mr-0 lg:block">06</span>Açılış</h3>
+        <p class="mt-0.5 text-[14px] leading-snug text-ink-soft lg:mt-1 lg:text-[15px]">İlk misafirlerini birlikte ağırlayalım.</p>
       </li>
     </ol>
   </div>
 </section>
 
 <!-- Ürün -->
-<section id="urun" class="border-t border-line">
-  <div class="mx-auto grid max-w-frame items-center gap-x-16 gap-y-12 px-5 py-24 md:px-10 md:py-36 lg:grid-cols-12">
-    <figure class="slot aspect-[3/4] rounded-[28px] lg:col-span-6" data-reveal>
+<section id="urun" class="sec border-t border-line">
+  <div class="mx-auto grid w-full max-w-frame grid-cols-1 items-center gap-x-14 gap-y-[clamp(1rem,2.5svh,2.5rem)] px-5 md:px-10 lg:grid-cols-12">
+    <figure class="slot mx-auto aspect-[16/9] w-full rounded-[22px] md:aspect-[2/1] lg:col-span-5 lg:aspect-[3/4] lg:h-[min(74svh,44rem)] lg:w-auto lg:rounded-[28px]" data-reveal>
       <span class="slot-label">urun-bardak</span>
-      <img src="/gorsel/urun-bardak-1600.webp" srcset="/gorsel/urun-bardak-800.webp 800w, /gorsel/urun-bardak-1600.webp 1600w" sizes="(min-width: 1024px) 45vw, 90vw" alt="Kâğıt bardakta bubble waffle: çilek, yaban mersini, çikolata sosu ve bir top dondurma" loading="lazy" decoding="async" onerror="this.remove()">
+      <img src="/gorsel/urun-bardak-1600.webp" srcset="/gorsel/urun-bardak-800.webp 800w, /gorsel/urun-bardak-1600.webp 1600w" sizes="(min-width: 1024px) 40vw, 90vw" alt="Kâğıt bardakta bubble waffle: çilek, yaban mersini, çikolata sosu ve bir top dondurma" loading="lazy" decoding="async" onerror="this.remove()">
     </figure>
-    <div class="lg:col-span-6" data-reveal style="--d:2">
-      <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em]">Her bardak aynı tarifle.</h2>
-      <p class="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft">Standart reçeteler ve göze hitap eden sunumlar. Müşteriyi geri getiren asıl şey ürünün kalitesidir. Biz sana bu lezzeti her porsiyonda aynı şekilde hazırlamanın tarifini ve eğitimini veriyoruz.</p>
+    <div class="lg:col-span-7" data-reveal style="--d:2">
+      <h2 class="h-sec">Her bardak aynı tarifle.</h2>
+      <p class="mt-[clamp(.6rem,1.8svh,1.5rem)] max-w-xl text-[clamp(1rem,2svh,1.125rem)] leading-relaxed text-ink-soft">Standart reçeteler ve göze hitap eden sunumlar. Müşteriyi geri getiren asıl şey ürünün kalitesidir. Biz sana bu lezzeti her porsiyonda aynı şekilde hazırlamanın tarifini ve eğitimini veriyoruz.</p>
+      <ol class="swipe mt-[clamp(1rem,3svh,2.5rem)] md:mx-0 md:grid md:grid-cols-4 md:gap-4 md:overflow-visible md:px-0">
+        <li class="w-[40%] md:w-auto">
+          <figure class="slot aspect-square rounded-xl md:rounded-2xl">
+            <span class="slot-label">surec-hamur</span>
+            <img src="/gorsel/surec-hamur-800.webp" alt="Ölçü kabından dökülen waffle hamuru" loading="lazy" decoding="async" onerror="this.remove()">
+          </figure>
+          <p class="mt-2 font-display text-lg font-semibold leading-tight"><span class="mr-1.5 text-sm text-ink-soft tabular">1</span>Hamur</p>
+          <p class="mt-0.5 text-[14px] leading-snug text-ink-soft">Her seferinde aynı ölçü.</p>
+        </li>
+        <li class="w-[40%] md:w-auto">
+          <figure class="slot aspect-square rounded-xl md:rounded-2xl">
+            <span class="slot-label">surec-pisirme</span>
+            <img src="/gorsel/surec-pisirme-800.webp" alt="Makinede pişen altın renkli bubble waffle" loading="lazy" decoding="async" onerror="this.remove()">
+          </figure>
+          <p class="mt-2 font-display text-lg font-semibold leading-tight"><span class="mr-1.5 text-sm text-ink-soft tabular">2</span>Pişirme</p>
+          <p class="mt-0.5 text-[14px] leading-snug text-ink-soft">Dışı çıtır, içi yumuşak.</p>
+        </li>
+        <li class="w-[40%] md:w-auto">
+          <figure class="slot aspect-square rounded-xl md:rounded-2xl">
+            <span class="slot-label">surec-bardak</span>
+            <img src="/gorsel/surec-bardak-800.webp" alt="Pişmiş waffle'ın kâğıt bardağa yerleştirilmesi" loading="lazy" decoding="async" onerror="this.remove()">
+          </figure>
+          <p class="mt-2 font-display text-lg font-semibold leading-tight"><span class="mr-1.5 text-sm text-ink-soft tabular">3</span>Bardağa</p>
+          <p class="mt-0.5 text-[14px] leading-snug text-ink-soft">Sıcakken bardağa yerleşir.</p>
+        </li>
+        <li class="w-[40%] md:w-auto">
+          <figure class="slot aspect-square rounded-xl md:rounded-2xl">
+            <span class="slot-label">surec-susleme</span>
+            <img src="/gorsel/surec-susleme-800.webp" alt="Bardaktaki waffle'ın üstüne meyve ve sos eklenmesi" loading="lazy" decoding="async" onerror="this.remove()">
+          </figure>
+          <p class="mt-2 font-display text-lg font-semibold leading-tight"><span class="mr-1.5 text-sm text-ink-soft tabular">4</span>Süsleme</p>
+          <p class="mt-0.5 text-[14px] leading-snug text-ink-soft">Meyve, sos ve dondurma.</p>
+        </li>
+      </ol>
     </div>
-
-    <ol class="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 md:gap-6 lg:col-span-12">
-      <li data-reveal>
-        <figure class="slot aspect-square rounded-[22px]">
-          <span class="slot-label">surec-hamur</span>
-          <img src="/gorsel/surec-hamur-800.webp" alt="Ölçü kabından dökülen waffle hamuru" loading="lazy" decoding="async" onerror="this.remove()">
-        </figure>
-        <p class="mt-4 text-sm font-semibold text-ink-soft tabular">1</p>
-        <p class="font-display text-xl font-semibold">Hamur</p>
-        <p class="mt-1 text-ink-soft">Her seferinde aynı ölçü.</p>
-      </li>
-      <li data-reveal style="--d:1">
-        <figure class="slot aspect-square rounded-[22px]">
-          <span class="slot-label">surec-pisirme</span>
-          <img src="/gorsel/surec-pisirme-800.webp" alt="Makinede pişen altın renkli bubble waffle" loading="lazy" decoding="async" onerror="this.remove()">
-        </figure>
-        <p class="mt-4 text-sm font-semibold text-ink-soft tabular">2</p>
-        <p class="font-display text-xl font-semibold">Pişirme</p>
-        <p class="mt-1 text-ink-soft">Dışı çıtır, içi yumuşak.</p>
-      </li>
-      <li data-reveal style="--d:2">
-        <figure class="slot aspect-square rounded-[22px]">
-          <span class="slot-label">surec-bardak</span>
-          <img src="/gorsel/surec-bardak-800.webp" alt="Pişmiş waffle'ın kâğıt bardağa yerleştirilmesi" loading="lazy" decoding="async" onerror="this.remove()">
-        </figure>
-        <p class="mt-4 text-sm font-semibold text-ink-soft tabular">3</p>
-        <p class="font-display text-xl font-semibold">Bardağa</p>
-        <p class="mt-1 text-ink-soft">Sıcakken bardağa yerleşir.</p>
-      </li>
-      <li data-reveal style="--d:3">
-        <figure class="slot aspect-square rounded-[22px]">
-          <span class="slot-label">surec-susleme</span>
-          <img src="/gorsel/surec-susleme-800.webp" alt="Bardaktaki waffle'ın üstüne meyve ve sos eklenmesi" loading="lazy" decoding="async" onerror="this.remove()">
-        </figure>
-        <p class="mt-4 text-sm font-semibold text-ink-soft tabular">4</p>
-        <p class="font-display text-xl font-semibold">Süsleme</p>
-        <p class="mt-1 text-ink-soft">Meyve, sos ve dondurma.</p>
-      </li>
-    </ol>
   </div>
 </section>
 
 <!-- Lansman bedeli -->
-<section id="lansman" class="bg-ink text-paper">
-  <div class="mx-auto grid max-w-frame gap-x-16 gap-y-12 px-5 py-24 md:px-10 md:py-32 lg:grid-cols-12">
+<section id="lansman" class="sec bg-ink text-paper">
+  <div class="mx-auto grid w-full max-w-frame grid-cols-1 items-center gap-x-16 gap-y-[clamp(1.25rem,4svh,3rem)] px-5 md:px-10 lg:grid-cols-12">
     <div class="lg:col-span-6" data-reveal>
-      <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em]">İlk 5 ortağa lansman bedeli</h2>
+      <h2 class="h-sec">İlk 5 ortağa lansman bedeli</h2>
       <p class="mt-7 max-w-lg text-lg leading-relaxed text-[#C9D6CF]">Yeni bir markayız. İlk 5 ortağımıza lansman dönemine özel koşullar sunuyoruz.</p>
     </div>
     <div class="lg:col-span-6" data-reveal style="--d:2">
@@ -472,57 +505,57 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </section>
 
 <!-- SSS -->
-<section id="sss" class="mx-auto max-w-frame px-5 py-24 md:px-10 md:py-36">
-  <div class="grid gap-x-16 gap-y-10 lg:grid-cols-12">
+<section id="sss" class="sec">
+  <div class="mx-auto grid w-full max-w-frame grid-cols-1 gap-x-16 gap-y-[clamp(1rem,3svh,2.5rem)] px-5 md:px-10 lg:grid-cols-12">
     <div class="lg:col-span-4">
-      <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em] lg:sticky lg:top-28" data-reveal>Sıkça sorulan sorular</h2>
+      <h2 class="h-sec" data-reveal>Sıkça sorulan sorular</h2>
     </div>
     <div class="border-t border-ink lg:col-span-8">
       <div class="accordion-item border-b border-line">
-        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
-          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Franchise bedeli ne kadar?</span>
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-[clamp(.7rem,2svh,1.4rem)] text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[clamp(1.1rem,2.5svh,1.6rem)] font-medium leading-snug tracking-[-0.015em]">Franchise bedeli ne kadar?</span>
           <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
         </button>
         <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Lansman dönemine özel, ilk 5 franchise noktası için başlangıç bedelimiz 250.000 TL'dir (sonrasında 300.000 TL). Bu bedel standart ekipman ve eğitimleri kapsar.</p></div></div>
       </div>
       <div class="accordion-item border-b border-line">
-        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
-          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Bu bedele dükkân dekorasyonu dahil mi?</span>
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-[clamp(.7rem,2svh,1.4rem)] text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[clamp(1.1rem,2.5svh,1.6rem)] font-medium leading-snug tracking-[-0.015em]">Bu bedele dükkân dekorasyonu dahil mi?</span>
           <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
         </button>
         <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Hayır, pakete dükkan dekorasyonu, altyapı işleri ve kira gibi fiziki lokasyon masrafları dahil değildir. Paket, operasyonel ekipman ve eğitimi kapsar.</p></div></div>
       </div>
       <div class="accordion-item border-b border-line">
-        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
-          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Eğitim nerede veriliyor?</span>
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-[clamp(.7rem,2svh,1.4rem)] text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[clamp(1.1rem,2.5svh,1.6rem)] font-medium leading-snug tracking-[-0.015em]">Eğitim nerede veriliyor?</span>
           <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
         </button>
         <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Eğitim önce bizim yanımızda teorik olarak başlar, ardından onaylanan kendi lokasyonunuzda uygulamalı olarak tamamlanır.</p></div></div>
       </div>
       <div class="accordion-item border-b border-line">
-        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
-          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Aylık cirodan pay (royalty fee) alıyor musunuz?</span>
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-[clamp(.7rem,2svh,1.4rem)] text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[clamp(1.1rem,2.5svh,1.6rem)] font-medium leading-snug tracking-[-0.015em]">Aylık cirodan pay (royalty fee) alıyor musunuz?</span>
           <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
         </button>
         <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Detaylı finansal model ve royalty bedelleri ön görüşme aşamasında şeffaf bir şekilde paylaşılmaktadır.</p></div></div>
       </div>
       <div class="accordion-item border-b border-line">
-        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
-          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Ham maddeyi sizden mi almak zorundayım?</span>
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-[clamp(.7rem,2svh,1.4rem)] text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[clamp(1.1rem,2.5svh,1.6rem)] font-medium leading-snug tracking-[-0.015em]">Ham maddeyi sizden mi almak zorundayım?</span>
           <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
         </button>
         <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Standart kaliteyi korumak adına temel ham maddeler (özel waffle unu, çikolata sosları vb.) merkezden tedarik edilmelidir. Taze meyveler lokal olarak temin edilebilir.</p></div></div>
       </div>
       <div class="accordion-item border-b border-line">
-        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
-          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Sözleşme süresi ne kadar?</span>
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-[clamp(.7rem,2svh,1.4rem)] text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[clamp(1.1rem,2.5svh,1.6rem)] font-medium leading-snug tracking-[-0.015em]">Sözleşme süresi ne kadar?</span>
           <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
         </button>
         <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Standart franchise sözleşmemiz 5 yıllıktır. Süre bitiminde tarafların karşılıklı memnuniyeti durumunda yenilenebilir.</p></div></div>
       </div>
       <div class="accordion-item border-b border-line">
-        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-6 text-left" type="button" aria-expanded="false">
-          <span class="font-display text-[1.45rem] font-medium leading-snug tracking-[-0.015em] md:text-[1.6rem]">Lokasyon seçiminde destek oluyor musunuz?</span>
+        <button class="accordion-toggle flex w-full items-center justify-between gap-6 py-[clamp(.7rem,2svh,1.4rem)] text-left" type="button" aria-expanded="false">
+          <span class="font-display text-[clamp(1.1rem,2.5svh,1.6rem)] font-medium leading-snug tracking-[-0.015em]">Lokasyon seçiminde destek oluyor musunuz?</span>
           <svg class="ic accordion-icon !h-6 !w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
         </button>
         <div class="accordion-content"><div><p class="max-w-2xl pb-7 text-lg leading-relaxed text-ink-soft">Evet. Önerdiğiniz lokasyonu birlikte yerinde inceliyor; yaya trafiği, hedef kitle uygunluğu ve ticari potansiyel açısından değerlendirdikten sonra onaylıyoruz.</p></div></div>
@@ -532,20 +565,20 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </section>
 
 <!-- Başvuru formu -->
-<section id="iletisim" class="bg-mist">
-  <div class="mx-auto grid max-w-frame gap-x-16 gap-y-12 px-5 py-24 md:px-10 md:py-36 lg:grid-cols-12">
+<section id="iletisim" class="sec bg-mist">
+  <div class="mx-auto grid w-full max-w-frame grid-cols-1 items-center gap-x-16 gap-y-[clamp(1rem,3svh,2.5rem)] px-5 md:px-10 lg:grid-cols-12">
     <div class="lg:col-span-5" data-reveal>
-      <h2 class="font-display text-[clamp(2.5rem,5.4vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.035em]">WAFIL'i kendi şehrine taşımak ister misin?</h2>
-      <p class="mt-6 max-w-md text-lg leading-relaxed text-ink-soft">Aşağıdaki formu doldur, en kısa sürede seninle iletişime geçelim.</p>
-      <a class="link-line mt-10 text-lg text-ink" href="https://www.instagram.com/wafil.tr/" rel="noopener noreferrer" target="_blank">
+      <h2 class="h-sec">WAFIL'i kendi şehrine taşımak ister misin?</h2>
+      <p class="mt-[clamp(.5rem,1.8svh,1.5rem)] max-w-md text-[clamp(1rem,2svh,1.125rem)] leading-relaxed text-ink-soft">Aşağıdaki formu doldur, en kısa sürede seninle iletişime geçelim.</p>
+      <a class="link-line mt-[clamp(.6rem,3svh,2.5rem)] text-base text-ink md:text-lg" href="https://www.instagram.com/wafil.tr/" rel="noopener noreferrer" target="_blank">
         <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8h.01"/></svg>
         @wafil.tr
       </a>
     </div>
 
     <div class="lg:col-span-7" data-reveal style="--d:2">
-      <form class="flex flex-col gap-8" id="franchise-form" novalidate>
-        <div class="grid gap-8 md:grid-cols-2">
+      <form class="flex flex-col gap-[clamp(.75rem,2.5svh,2rem)]" id="franchise-form" novalidate>
+        <div class="grid grid-cols-2 gap-x-4 gap-y-[clamp(.75rem,2.5svh,2rem)] md:gap-x-8">
           <div>
             <label class="text-sm font-semibold text-ink-soft" for="name">Ad soyad</label>
             <input autocomplete="name" class="field" id="name" name="name" required type="text">
@@ -585,7 +618,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         </details>
 
         <button class="btn-sun w-full !py-4 text-[17px]" type="submit">Başvuruyu gönder</button>
-        <p class="text-sm leading-relaxed text-ink-soft">
+        <p class="text-xs leading-relaxed text-ink-soft md:text-sm">
           Formu göndererek <a class="underline hover:text-ink" href="/pages/kvkk.html">KVKK Aydınlatma Metni</a>'ni
           okuduğunuzu ve verilerinizin başvurunuzun değerlendirilmesi amacıyla işlenmesini kabul ettiğinizi beyan edersiniz.
         </p>

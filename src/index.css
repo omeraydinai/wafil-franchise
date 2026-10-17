@@ -247,49 +247,103 @@
 
 }
 
-/* ── Süreç ekseni ──────────────────────────────────────────────────────── */
-.axis {
-  --p: 0;
+/* ── Tam ekran bölüm ──────────────────────────────────────────────────── */
+/* Her bölüm: ekran yüksekliği eksi sabit menü; telefonda alttaki başvuru
+   çubuğunun yeri de alt boşluğa eklenir. İçerik bu alana sığacak şekilde
+   ölçeklenir (clamp + svh). */
+@layer components {
+  .sec {
+    min-height: calc(100svh - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: clamp(1.5rem, 5svh, 4.5rem);
+  }
+  @media (max-width: 767px) {
+    .sec {
+      padding-bottom: calc(clamp(1.25rem, 3svh, 2rem) + 4.75rem);
+      padding-top: clamp(1.25rem, 3svh, 2rem);
+    }
+  }
+  .h-sec {
+    font-family: theme('fontFamily.display');
+    font-weight: 600;
+    font-size: clamp(2rem, min(5.2vw, 6.6svh), 4.25rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+  }
+  .swipe {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin-inline: -1.25rem;
+    padding-inline: 1.25rem;
+  }
+  .swipe::-webkit-scrollbar {
+    display: none;
+  }
+  .swipe > * {
+    scroll-snap-align: start;
+    flex: none;
+  }
+}
+
+/* ── Süreç ekseni: bölüm ekrana girince adım adım dolar ─────────────────── */
+.axis-line {
+  position: absolute;
+  left: 11px;
+  top: 12px;
+  bottom: 12px;
+  width: 1px;
+  background: theme('colors.line');
 }
 .axis-fill {
+  position: absolute;
+  inset: 0;
+  background: theme('colors.ink');
   transform-origin: top;
-  transform: scaleY(var(--p));
-  transition: transform 0.15s linear;
+  transform: scaleY(0);
+  transition: transform 1.9s cubic-bezier(0.65, 0, 0.35, 1) 0.2s;
 }
-.step {
-  transition: opacity 0.5s ease;
+@media (min-width: 1024px) {
+  .axis-line {
+    left: 12px;
+    right: 12px;
+    top: 11px;
+    bottom: auto;
+    width: auto;
+    height: 1px;
+  }
+  .axis-fill {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+}
+.axis.is-in .axis-fill {
+  transform: none;
 }
 .js .axis .step {
-  opacity: 0.38;
+  opacity: 0.35;
+  transition: opacity 0.6s ease;
+  transition-delay: calc(0.2s + var(--i, 0) * 0.3s);
 }
-.js .axis .step.is-active,
-.js .axis .step.is-done {
+.axis.is-in .step {
   opacity: 1;
 }
 .step-dot {
   transition:
     background-color 0.4s ease,
-    border-color 0.4s ease,
-    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    border-color 0.4s ease;
+  transition-delay: calc(0.2s + var(--i, 0) * 0.3s);
 }
-.step.is-active .step-dot {
-  background: theme('colors.sun');
-  border-color: theme('colors.ink');
-  transform: scale(1.35);
-}
-.step.is-done .step-dot {
+.axis.is-in .step-dot {
   background: theme('colors.ink');
   border-color: theme('colors.ink');
 }
-.counter-digit {
-  display: inline-block;
-  transition:
-    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.6s ease;
-}
-.counter-digit.is-swap {
-  transform: translateY(-18%);
-  opacity: 0;
+.axis.is-in .step:last-child .step-dot {
+  background: theme('colors.sun');
 }
 
 /* ── SSS ───────────────────────────────────────────────────────────────── */
@@ -418,8 +472,80 @@ textarea.field:-webkit-autofill {
     animation: none;
   }
   .axis-fill,
-  .step-dot,
-  .counter-digit {
+  .step,
+  .step-dot {
     transition: none;
+  }
+}
+
+/* ── Alçak telefon ekranları (ör. iPhone SE, 667 px): bölümler yine tek ekrana sığsın ── */
+@media (max-width: 767px) and (max-height: 740px) {
+  .sec {
+    padding-top: 0.75rem;
+    padding-bottom: calc(0.75rem + 4.75rem);
+  }
+  .h-sec {
+    font-size: 1.7rem;
+  }
+  .sec .h-sec + p {
+    margin-top: 0.4rem;
+    font-size: 0.94rem;
+    line-height: 1.45;
+  }
+  h1 {
+    font-size: 2.25rem !important;
+  }
+  h1 + p {
+    font-size: 0.97rem !important;
+    margin-top: 0.75rem !important;
+  }
+  #paket .swipe > li {
+    padding: 0.85rem;
+  }
+  #paket ul.grid {
+    max-width: 15rem;
+  }
+  #model .swipe > li {
+    width: 64%;
+  }
+  #model ul.flex li {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+  }
+  #urun > div > figure.slot {
+    aspect-ratio: 5 / 2;
+  }
+  #urun .swipe > li {
+    width: 32%;
+  }
+  #urun .swipe > li p + p {
+    display: none;
+  }
+  #lansman .tabular.text-sun {
+    font-size: 2.75rem;
+  }
+  #lansman p,
+  #lansman del {
+    font-size: 0.95rem;
+  }
+  #lansman .btn-sun {
+    margin-top: 1rem;
+  }
+  #iletisim .field {
+    padding: 0.45rem 0 0.4rem;
+    font-size: 1rem;
+  }
+  #iletisim form {
+    gap: 0.55rem;
+  }
+  #iletisim .h-sec + p {
+    display: none;
+  }
+  main > section:first-child > div:first-child {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  main > section:first-child .aspect-\[480\/620\] {
+    height: 7.25rem;
   }
 }

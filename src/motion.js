@@ -45,67 +45,6 @@ function initReveal() {
   items.forEach((el) => io.observe(el))
 }
 
-// Süreç: sayaç, aktif adım ve eksen dolgusu kaydırmaya bağlı
-function initProcess() {
-  const axis = document.querySelector('[data-axis]')
-  if (!axis) return
-  const steps = [...axis.querySelectorAll('[data-step]')]
-  const digits = document.querySelector('[data-counter]')
-  const title = document.querySelector('[data-counter-title]')
-  let active = -1
-
-  const setActive = (index) => {
-    if (index === active) return
-    active = index
-    steps.forEach((step, i) => {
-      step.classList.toggle('is-active', i === index)
-      step.classList.toggle('is-done', i < index)
-    })
-    if (digits) {
-      digits.classList.add('is-swap')
-      setTimeout(() => {
-        digits.textContent = String(index + 1).padStart(2, '0')
-        if (title) title.textContent = steps[index].dataset.step
-        digits.classList.remove('is-swap')
-      }, reduceMotion ? 0 : 180)
-    }
-  }
-
-  const update = () => {
-    const rect = axis.getBoundingClientRect()
-    const mid = window.innerHeight * 0.5
-    const progress = Math.min(1, Math.max(0, (mid - rect.top) / rect.height))
-    axis.style.setProperty('--p', progress.toFixed(3))
-    let index = 0
-    steps.forEach((step, i) => {
-      if (step.getBoundingClientRect().top < mid) index = i
-    })
-    setActive(index)
-  }
-
-  let ticking = false
-  const onScroll = () => {
-    if (ticking) return
-    ticking = true
-    requestAnimationFrame(() => {
-      update()
-      ticking = false
-    })
-  }
-
-  // Yalnız bölüm ekrandayken dinle
-  const io = new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) {
-      window.addEventListener('scroll', onScroll, { passive: true })
-      update()
-    } else {
-      window.removeEventListener('scroll', onScroll)
-    }
-  })
-  io.observe(axis)
-  update()
-}
-
 // Mobil alt çubuk: başvuru formu ekrandayken çekilir
 function initDock() {
   const dock = document.querySelector('[data-dock]')
@@ -117,5 +56,4 @@ function initDock() {
 }
 
 initReveal()
-initProcess()
 initDock()

@@ -31,7 +31,7 @@ Editoryal minimal bir yatırım broşürü: açık ve ferah, sakin, açık sözl
 - **Düğme `btn-sun`:** hap biçimli, sarı, `ink` yazı, oklu SVG ikon; üzerine gelince 1px yükselir ve ok kayar.
 - **Bağlantı `link-line`:** altı çizgili, üzerine gelince çizgi silinir.
 - **Paket fişi (`ledger-row`):** ad + noktalı öncü çizgi + durum ("✓ Dahil" / "— Sana ait"). Pakette olan ve olmayan iki ayrı liste; sitenin imzası.
-- **Süreç ekseni:** dikey çizgi, kaydırdıkça dolar; adım noktaları aktifken sarı, geçince `ink`. Masaüstünde solda sabit `01/06` sayaç.
+- **Süreç ekseni:** altı adım; masaüstünde yatay, telefonda dikey. Bölüm ekrana girince çizgi dolar, adımlar sırayla belirir ve noktalar `ink` olur; son adımın (Açılış) noktası sarı.
 - **SSS:** ince çizgili liste, `+` ikonu açılınca 45° döner.
 - **Form alanı `field`:** kutusuz, yalnız alt çizgi; odakta çizgi `ink` olur.
 - **İkonlar:** elde çizilmiş SVG, tek çizgi kalınlığı (1.75), yuvarlak uçlar. İkon fontu yok.
@@ -39,10 +39,11 @@ Editoryal minimal bir yatırım broşürü: açık ve ferah, sakin, açık sözl
 
 ## Düzen
 
-- Çerçeve `max-w-frame` (1360px), yan boşluk 20px (mobil) / 40px.
-- Bölümler 12 kolon ızgara; başlık solda (çoğunlukla 5 kolon, masaüstünde sabit), içerik sağda.
-- Bölüm ritmi: `py-24` / `md:py-36`; beyaz ve `mist` bantlar sırayla, lansman `ink` ile tek dolu blok.
-- Alt bilgide sayfa genişliğinde dev "WAFIL" yazısı.
+- **Her bölüm bir ekran:**  =  (sabit menü düşülür), içerik dikeyde ortalı. Yazı ve boşluklar  ile ekran yüksekliğine göre ölçeklenir. Telefonda alt boşluğa "Hemen başvur" çubuğunun yeri (4.75rem) eklenir; alçak telefonlar (≤740 px yükseklik) için ayrı sıkılaştırma var. Kayan şerit giriş bölümünün en altında.
+- Doğrulanan ölçüler: 1440×900, 1280×720, 1024×768, 375×812, 375×667; her bölüm tam bir ekran, yatay taşma yok.
+- **Telefonda yana kaydırma ():** pakette olanlar, tezgâh + lokasyonlar ve ürün adımları kart şeritleri; kenardan kenara, snap'li, kaydırma çubuğu gizli.
+- Çerçeve  (1360px), yan boşluk 20px (mobil) / 40px. Izgaralar mobilde  (kaydırmalı şeritler sütunu genişletmesin diye şart), masaüstünde 12 kolon.
+- Bölüm başlıkları ortak  sınıfı. Beyaz ve  bantlar sırayla, lansman  ile tek dolu blok. Alt bilgide sayfa genişliğinde dev "WAFIL" yazısı.
 
 ## Hareket
 
