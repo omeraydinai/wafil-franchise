@@ -34,7 +34,7 @@ WAFIL bir franchise markasıdır: yatırımcı, büyük bir dükkân yerine tek 
 - Başvuru formu Google Apps Script web app'ine gider (`src/form.js`, `VITE_SCRIPT_URL`); bu entegrasyon korunur, yeniden yazılmaz.
 - Meta Pixel kancası hazır ama `WAFIL_PIXEL_ID` boş; dolunca `PageView` ve başarılı formda `Lead` tetiklenir.
 - Yasal sayfalar: `pages/kvkk.html`, `pages/gizlilik.html`, `pages/kullanim-kosullari.html` (taslak; ticaret unvanı/MERSİS eksik).
-- Bilgiler: lansman bedeli ilk 5 franchise noktası için 200.000 TL, sonrasında 250.000 TL. Pakette tezgâh, makine ve ekipman, ürün eğitimi (reçete, hazırlık), operasyon eğitimi (stok, hijyen, müşteri iletişimi), açılış haftası saha desteği. Pakette yok: lokasyon, kira, altyapı, dekorasyon. Sözleşme 5 yıl, süre sonunda karşılıklı memnuniyetle yenilenebilir. Royalty ve finansal model ön görüşmede paylaşılır.
+- Bilgiler: lansman bedeli ilk 5 franchise noktası için 250.000 TL, sonrasında 300.000 TL. Pakette tezgâh, makine ve ekipman, ürün eğitimi (reçete, hazırlık), operasyon eğitimi (stok, hijyen, müşteri iletişimi), açılış haftası saha desteği. Pakette yok: lokasyon, kira, altyapı, dekorasyon. Sözleşme 5 yıl, süre sonunda karşılıklı memnuniyetle yenilenebilir. Royalty ve finansal model ön görüşmede paylaşılır.
 - İlk tezgâhın yeri sitede şimdilik gösterilmiyor (2026-10-17 kararı); bilgi gelince eklenebilir.
 - **Açık:** Ticaret unvanı, MERSİS, adres (yasal sayfalar için).
 
