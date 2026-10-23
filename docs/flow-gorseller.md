@@ -14,8 +14,8 @@ Gelmeyen görselin yerinde sitede çizgili bir "Görsel bekleniyor" alanı gör�
 ## Ortak kurallar
 
 - Ürün: **kâğıt bardakta bubble waffle**. Yuvarlak küre kabarcıklar; kare petekli Belçika waffle'ı değil.
-- Üstünde meyve, çikolata sosu ve süsler var. **Dondurma yok** (2026-10-20 düzeltmesi). Her ürün promptunda `no ice cream` yazılı kalsın; Flow kendiliğinden dondurma topu eklemeye meyilli.
-- **[DOĞRULA]** Süslemenin ne olduğu belli değil (fındık, bisküvi kırığı, renkli şeker…). Öğrenilince ürün promptlarına somut olarak eklenir; o zamana kadar promptlarda yalnız meyve ve çikolata sosu var.
+- Üstünde meyve, çikolata sosu ve süsleme olarak fındık ya da ceviz kırığı var. **Dondurma yok** (2026-10-20 düzeltmesi). Her ürün promptunda `no ice cream` yazılı kalsın; Flow kendiliğinden dondurma topu eklemeye meyilli.
+- Süsleme: fındık ya da ceviz kırığı (kullanıcı, 2026-10-23). Promptlarda `crushed hazelnut or walnut pieces` olarak geçer; az olsun, meyveyi örtmesin.
 - Yazı, logo, okunur etiket, insan yüzü, neon ve fast-food estetiği yok. Bardakta logo olmasın.
 - **Tezgâh / kiosk görseli üretme.** Sitede görünen her tezgâh "bizim tezgâhımız" diye okunur; o yüzden yalnız gerçek fotoğraf olabilir.
 - Makine görseli de üretme; AI'nın çizdiği makine pakettekiyle aynı olmaz.
@@ -50,18 +50,18 @@ Gelmeyen görselin yerinde sitede çizgili bir "Görsel bekleniyor" alanı gör�
 
 ### 1. `hero-bardak` · 3:4
 ```
-Clean product photograph, vertical 3:4. One bubble waffle in a plain white paper cup, centered, seen from a slightly elevated front angle, on a pure white seamless background (#FFFFFF) that fades into white with no visible horizon. Golden round hemispherical waffle bubbles rising above the rim, the opening of the waffle generously filled with halved fresh strawberries and blueberries and a thin dark chocolate drizzle across the fruit and the bubbles. The cup fills about 70% of the frame height with even white space around it. Bright, even, soft studio daylight, only a faint soft contact shadow under the cup, crisp detail, calm and minimal. No text, no logo on the cup, no hands, no people, no props, no ice cream, no whipped cream, not fast-food style, not neon, no square Belgian waffle grid.
+Clean product photograph, vertical 3:4. One bubble waffle in a plain white paper cup, centered, seen from a slightly elevated front angle, on a pure white seamless background (#FFFFFF) that fades into white with no visible horizon. Golden round hemispherical waffle bubbles rising above the rim, the opening of the waffle generously filled with halved fresh strawberries and blueberries, a thin dark chocolate drizzle across the fruit and the bubbles and a light sprinkle of crushed hazelnut or walnut pieces. The cup fills about 70% of the frame height with even white space around it. Bright, even, soft studio daylight, only a faint soft contact shadow under the cup, crisp detail, calm and minimal. No text, no logo on the cup, no hands, no people, no props, no ice cream, no whipped cream, not fast-food style, not neon, no square Belgian waffle grid.
 ```
 
 ### 2. `urun-bardak` · 3:4
 ```
-Editorial product photograph, vertical 3:4. A single bubble waffle served in a plain white paper cup, standing on a pale sage-gray surface in front of a seamless very light gray-green backdrop (#F2F5F3). The waffle is golden with round hemispherical bubbles, folded loosely into the cup and rising above the rim, its opening generously filled with halved fresh strawberries and blueberries and a thin drizzle of dark chocolate sauce on top. Soft natural window light from the left, a gentle soft shadow, generous empty space above the cup, calm and minimal, high detail, shallow depth of field, 85mm lens. No text, no logo on the cup, no hands, no people, no props, no ice cream, no whipped cream, not fast-food style, not neon, no square Belgian waffle grid.
+Editorial product photograph, vertical 3:4. A single bubble waffle served in a plain white paper cup, standing on a pale sage-gray surface in front of a seamless very light gray-green backdrop (#F2F5F3). The waffle is golden with round hemispherical bubbles, folded loosely into the cup and rising above the rim, its opening generously filled with halved fresh strawberries and blueberries, a thin drizzle of dark chocolate sauce and a light sprinkle of crushed hazelnut or walnut pieces on top. Soft natural window light from the left, a gentle soft shadow, generous empty space above the cup, calm and minimal, high detail, shallow depth of field, 85mm lens. No text, no logo on the cup, no hands, no people, no props, no ice cream, no whipped cream, not fast-food style, not neon, no square Belgian waffle grid.
 ```
 
 ### 3. `og-paylasim` · 16:9
 Sol üçte iki boş kalmalı; başlığı ve WAFIL yazısını oraya ben eklerim (wafıl-insta/remotion → "Site-OG"; zemin `public/site/og-paylasim-zemin.jpg`).
 ```
-Wide editorial product photograph, horizontal 16:9. A single bubble waffle in a plain white paper cup placed in the right third of the frame, on a pale sage-gray surface in front of a seamless very light gray-green backdrop (#F2F5F3). The left two thirds of the frame are empty, smooth backdrop with no objects, reserved for text. Golden round hemispherical waffle bubbles above the rim, the opening filled with halved fresh strawberries and blueberries and a thin dark chocolate drizzle. Soft natural window light from the left, gentle soft shadow to the right, calm and minimal, high detail, 50mm lens. No text, no logo on the cup, no hands, no people, no props, no ice cream, no whipped cream, not fast-food style, not neon, no square Belgian waffle grid.
+Wide editorial product photograph, horizontal 16:9. A single bubble waffle in a plain white paper cup placed in the right third of the frame, on a pale sage-gray surface in front of a seamless very light gray-green backdrop (#F2F5F3). The left two thirds of the frame are empty, smooth backdrop with no objects, reserved for text. Golden round hemispherical waffle bubbles above the rim, the opening filled with halved fresh strawberries and blueberries, a thin dark chocolate drizzle and a light sprinkle of crushed hazelnut or walnut pieces. Soft natural window light from the left, gentle soft shadow to the right, calm and minimal, high detail, 50mm lens. No text, no logo on the cup, no hands, no people, no props, no ice cream, no whipped cream, not fast-food style, not neon, no square Belgian waffle grid.
 ```
 
 ## Hamurdan bardağa (4 kare, aynı ışık ve zemin)
@@ -85,7 +85,7 @@ Square editorial food photograph, 1:1. A cooked golden bubble waffle sheet being
 
 ### 7. `surec-susleme` · 1:1
 ```
-Square editorial food photograph, 1:1. A bubble waffle in a plain white paper cup being finished: a gloved hand placing a fresh strawberry on top, halved strawberries and blueberries already filling the opening of the waffle, a thin dark chocolate drizzle, on a pale sage-gray surface against a very light gray-green backdrop (#F2F5F3). Only the hand, the cup and the toppings in frame. Soft natural window light from the left, calm and minimal, crisp detail. No faces, no text, no logo on the cup, no ice cream, no whipped cream, not fast-food style, not neon, no square Belgian waffle grid.
+Square editorial food photograph, 1:1. A bubble waffle in a plain white paper cup being finished: a gloved hand placing a fresh strawberry on top, halved strawberries and blueberries already filling the opening of the waffle, a thin dark chocolate drizzle, a light sprinkle of crushed hazelnut or walnut pieces, on a pale sage-gray surface against a very light gray-green backdrop (#F2F5F3). Only the hand, the cup and the toppings in frame. Soft natural window light from the left, calm and minimal, crisp detail. No faces, no text, no logo on the cup, no ice cream, no whipped cream, not fast-food style, not neon, no square Belgian waffle grid.
 ```
 
 ## Lokasyonlar (3 kare, tezgâh YOK)
@@ -133,5 +133,5 @@ Sıfırdan üretme; mevcut `assets-src/gorsel/tezgah.jpg`'yi Flow'a referans ola
 
 Panel afişi Remotion "Site-TezgahPanel" ile `hero-bardak` görselinden basılmıştı. Yeni `hero-bardak` gelince paneli onunla yeniden basıp tezgâhı o panelle güncellemek de bir yol; aşağıdaki düzenleme daha kısa yol.
 ```
-Edit this image. Change only the bubble waffle cup printed on the white front panel of the kiosk: remove the white scoop of ice cream from the top of the waffle and fill that space with more halved fresh strawberries and blueberries under the same thin dark chocolate drizzle, so the waffle shows only fruit and chocolate. Keep the gloved hand, the cup, the waffle shape and the lighting of the print the same. Keep everything else in the image exactly as it is: the kiosk, the glowing WAFIL sign, the counter and equipment, the background, the camera angle and all text on the panel, letter for letter. No ice cream, no whipped cream, no new text, no new objects.
+Edit this image. Change only the bubble waffle cup printed on the white front panel of the kiosk: remove the white scoop of ice cream from the top of the waffle and fill that space with more halved fresh strawberries and blueberries under the same thin dark chocolate drizzle, so the waffle shows only fruit, chocolate and a light sprinkle of crushed hazelnut or walnut pieces. Keep the gloved hand, the cup, the waffle shape and the lighting of the print the same. Keep everything else in the image exactly as it is: the kiosk, the glowing WAFIL sign, the counter and equipment, the background, the camera angle and all text on the panel, letter for letter. No ice cream, no whipped cream, no new text, no new objects.
 ```
