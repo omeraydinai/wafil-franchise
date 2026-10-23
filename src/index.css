@@ -159,6 +159,17 @@
   }
 }
 
+/* Giriş fotoğrafı: zemini sayfanın beyazından bir tık gri; dört kenarı da
+   yumuşakça erittirilir ki fotoğraf kutu gibi görünmesin */
+.hero-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent),
+    linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent),
+    linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent);
+  mask-composite: intersect;
+}
+
 /* Bardak illüstrasyonu: kabarcıklar tek tek dolar, sos çizilir */
 .js .cup-rise {
   opacity: 0;

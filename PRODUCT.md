@@ -24,7 +24,8 @@ WAFIL bir franchise markasıdır: yatırımcı, büyük bir dükkân yerine tek 
 ## Operating Context
 
 - Başvuru akışı: Başvuru → Ön görüşme → Lokasyon onayı → Sözleşme ve ödeme → Kurulum ve eğitim → Açılış.
-- Eğitim: teorik kısım markanın yanında, uygulama yatırımcının onaylanan lokasyonunda.
+- Ürün: kâğıt bardakta bubble waffle; üstünde meyve, çikolata ve süsler. Dondurma yok (2026-10-20 düzeltmesi).
+- Eğitim: ayrı bir teorik eğitim yok. Açılış haftasında sahada, yatırımcının yanında veriliyor (2026-10-20 düzeltmesi).
 - Tedarik: temel ham maddeler (özel waffle unu, soslar) merkezden; taze meyve yerelden.
 - Trafik: Instagram (`@wafil.tr`) reklamları ve organik içerik; içerik aynı marka sesiyle Remotion ile üretiliyor (`../wafıl-insta`).
 
