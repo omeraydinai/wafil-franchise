@@ -1,0 +1,30 @@
+{
+  "hafta": 1,
+  "igKullanici": "17841415735570749",
+  "envDosyasi": "../wafıl-franchise/.env",
+  "medyaAdresi": "https://wafil-franchise.vercel.app/ig/h1",
+  "isler": [
+    {"id": "H1-S1", "zaman": "2026-10-19T10:30:00+03:00", "tur": "STORY", "dosyalar": ["h1-s1-1.jpg", "h1-s1-2.jpg", "h1-s1-3.jpg"]},
+    {"id": "H1-R1", "zaman": "2026-10-19T19:00:00+03:00", "tur": "REELS", "kapakMs": 2000, "dosyalar": ["h1-r1.mp4"],
+     "aciklama": "Franchise'a karar vermeden önce bu beş soruyu not al. 📌\n\nHangisini daha önce hiç düşünmemiştin? Yorumlara yaz.\n\nWafıl franchise başvurusu profildeki linkte.\n\n#franchise #franchiseyatırımı #kendiişim #girişimcilik #wafıl"},
+
+    {"id": "H1-S2", "zaman": "2026-10-20T10:30:00+03:00", "tur": "STORY", "dosyalar": ["h1-s2-1.jpg", "h1-s2-2.jpg", "h1-s2-3.jpg", "h1-s2-4.jpg"]},
+    {"id": "H1-C1", "zaman": "2026-10-20T12:30:00+03:00", "tur": "CAROUSEL", "dosyalar": ["h1-c1-1.jpg", "h1-c1-2.jpg", "h1-c1-3.jpg", "h1-c1-4.jpg", "h1-c1-5.jpg", "h1-c1-6.jpg", "h1-c1-7.jpg", "h1-c1-8.jpg"],
+     "aciklama": "Franchise'ta hataların çoğu imzadan önce yapılıyor. Listeyi kaydet, karar verirken işine yarar. 🔖\n\nWafıl franchise başvurusu profildeki linkte.\n\n#franchise #franchiseyatırımı #girişimcilik #wafıl"},
+
+    {"id": "H1-S3", "zaman": "2026-10-21T10:30:00+03:00", "tur": "STORY", "dosyalar": ["h1-s3-1.jpg", "h1-s3-2.jpg", "h1-s3-3.jpg"]},
+    {"id": "H1-R2", "zaman": "2026-10-21T19:00:00+03:00", "tur": "REELS", "kapakMs": 2000, "dosyalar": ["h1-r2.mp4"],
+     "aciklama": "Büyük bir dükkân yerine tek bir tezgâh. Pakette neyin olduğunu da, neyin olmadığını da sitede açıkça yazdık. 👇\n\nAyrıntılar profildeki linkte.\n\n#franchise #kiosk #kendiişim #girişimci #wafıl"},
+
+    {"id": "H1-S4", "zaman": "2026-10-22T10:30:00+03:00", "tur": "STORY", "dosyalar": ["h1-s4-1.jpg", "h1-s4-2.jpg", "h1-s4-3.jpg"]},
+    {"id": "H1-C2", "zaman": "2026-10-22T12:30:00+03:00", "tur": "CAROUSEL", "dosyalar": ["h1-c2-1.jpg", "h1-c2-2.jpg", "h1-c2-3.jpg", "h1-c2-4.jpg", "h1-c2-5.jpg", "h1-c2-6.jpg", "h1-c2-7.jpg", "h1-c2-8.jpg"],
+     "aciklama": "İkisi de doğru olabilir, mesele sana hangisinin uyduğu. Kaydet, ortağınla da paylaş. 🤝\n\nWafıl franchise başvurusu profildeki linkte.\n\n#franchise #kendiişim #girişimcilik #wafıl"},
+
+    {"id": "H1-S5", "zaman": "2026-10-23T10:30:00+03:00", "tur": "STORY", "dosyalar": ["h1-s5-1.jpg", "h1-s5-2.jpg", "h1-s5-3.jpg"]},
+    {"id": "H1-R3", "zaman": "2026-10-23T19:00:00+03:00", "tur": "REELS", "kapakMs": 2000, "dosyalar": ["h1-r3.mp4"],
+     "aciklama": "Bardakta bubble waffle, her seferinde aynı tarifle. 🧇\n\nMeyveli mi, çikolatalı mı? Yorumlara yaz.\n\n#bubblewaffle #bardaktawaffle #tatlı #waffle #wafıl"},
+
+    {"id": "H1-S6", "zaman": "2026-10-24T12:00:00+03:00", "tur": "STORY", "dosyalar": ["h1-s6-1.jpg", "h1-s6-2.jpg", "h1-s6-3.jpg"]},
+    {"id": "H1-S7", "zaman": "2026-10-25T12:00:00+03:00", "tur": "STORY", "dosyalar": ["h1-s7-1.jpg", "h1-s7-2.jpg", "h1-s7-3.jpg"]}
+  ]
+}
