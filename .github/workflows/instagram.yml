@@ -1,0 +1,50 @@
+# @wafil.tr paylaşımları. Plan, betik ve kayıt `instagram` dalında (README orada).
+name: Instagram paylaşım
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    inputs:
+      kuru:
+        description: 'Yalnız kontrol (token ve dosya adresleri; paylaşmaz)'
+        type: boolean
+        default: true
+
+# Aynı anda tek çalışma: iki çalışma aynı işi paylaşmasın
+concurrency:
+  group: instagram-paylasim
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  paylas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: instagram
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Zamanı gelenleri paylaş
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: node paylas.mjs ${{ inputs.kuru && '--kuru' || '' }}
+
+      # Yarıda kalsa bile o ana kadar paylaşılanlar kayda geçsin
+      - name: Kaydı dala yaz
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kayit.jsonl
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Paylaşım kaydı"
+          for i in 1 2 3; do git pull --rebase -q origin instagram && git push -q origin HEAD:instagram && exit 0; sleep 5; done
+          exit 1
