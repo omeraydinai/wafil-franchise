@@ -1,13 +1,13 @@
 // Instagram'a paylaşım (Instagram API, Instagram Login token'ı).
 //
-// Otomatik kip (GitHub Actions bunu çalıştırır):
+// Otomatik kip (VPS'teki wafil-yayin-tick zamanlayıcısı 5 dakikada bir çalıştırır):
 //   node paylas.mjs [--kuru]
 //   Bütün plan-*.json dosyalarında zamanı gelmiş ve paylaşılmamış işleri paylaşır.
 //   --kuru: token'ı ve önümüzdeki işlerin dosya adreslerini kontrol eder, paylaşmaz.
 // Tek iş kipi:
 //   node paylas.mjs <plan.json> <iş-id> [--simdi] [--kuru]
 //
-// Token: IG_ACCESS_TOKEN ortam değişkeni (bulutta GitHub secret). Yoksa planın envDosyasi'ndaki access_token.
+// Token: IG_ACCESS_TOKEN ortam değişkeni (VPS'te /opt/wafil-yayin/.env). Yoksa planın envDosyasi'ndaki access_token.
 // Token ekrana ve kayda yazılmaz. Kayıt: kayit.jsonl (paylaşılan kare/gönderi tekrar paylaşılmaz).
 import fs from 'node:fs';
 import path from 'node:path';
@@ -16,7 +16,8 @@ import {fileURLToPath} from 'node:url';
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const API = 'https://graph.instagram.com/v21.0';
 const GEC_KALMA_SINIRI_SAAT = 3; // hiç başlamamış iş bu kadar gecikirse atlanır
-const KAYIT = path.join(DIR, 'kayit.jsonl');
+// VPS'te kod salt okunur bağlanır; kayıt ayrı klasörde (KAYIT_DOSYASI)
+const KAYIT = process.env.KAYIT_DOSYASI || path.join(DIR, 'kayit.jsonl');
 
 const argv = process.argv.slice(2);
 const bayraklar = argv.filter((a) => a.startsWith('--'));

@@ -8,14 +8,19 @@ Bu dal siteye ait değildir; Vercel bu dalı yayına almaz (`vercel.json`). @waf
 
 ## Nasıl çalışıyor
 
-Main dalındaki `.github/workflows/instagram.yml` her 15 dakikada bir bu dalı açar, `node paylas.mjs` çalıştırır ve kaydı bu dala geri yazar. GitHub zamanlanmış işleri birkaç dakika, yoğunlukta 15–30 dakika geciktirebilir. Hiç başlamamış bir iş plan saatinden 3 saat sonra hâlâ paylaşılmadıysa atlanır.
+VPS'te (`/opt/wafil-yayin`) `wafil-yayin-tick.timer` 5 dakikada bir `tick.sh` çalıştırır: bu dalı `git pull` ile günceller, `node paylas.mjs`'i root olmayan, salt okunur bir container'da çalıştırır. Kurulum: `vps/kur.sh`.
 
-Token `IG_ACCESS_TOKEN` adlı GitHub secret'ında durur (repo → Settings → Secrets and variables → Actions). Instagram uzun ömürlü token'ları 60 gün geçerlidir; süresi dolunca yenisi aynı secret'a yazılır.
+- Token: `/opt/wafil-yayin/.env` → `IG_ACCESS_TOKEN=...` (root:root 600). Instagram uzun ömürlü token'ları 60 gün geçerlidir.
+- Kayıt: `/opt/wafil-yayin/veri/kayit.jsonl` (asıl kayıt). Bu daldaki `kayit.jsonl` 24 Ekim'de dondurulmuş başlangıç kopyasıdır.
+- Hiç başlamamış bir iş plan saatinden 3 saat sonra hâlâ paylaşılmadıysa atlanır.
+- Hermes supervisor kaydı salt okunur izler; atlanan ya da hatalı paylaşımı raporlar.
+
+Kontrol (paylaşmaz): `ssh … /opt/wafil-yayin/tick.sh --kuru`
 
 ## Yeni hafta eklemek
 
 1. Medya dosyalarını main'e `public/ig/hX/` olarak koy ve yayına al.
 2. `plan-hafta-XX.json` dosyasını bu dala ekle, push'la.
-3. Kontrol: GitHub → Actions → "Instagram paylaşım" → Run workflow → "Yalnız kontrol" işaretli. Token'ı ve önümüzdeki işlerin dosyalarını kontrol eder, paylaşmaz.
+3. Kontrol: VPS'te `/opt/wafil-yayin/tick.sh --kuru`. Token'ı ve önümüzdeki işlerin dosyalarını kontrol eder, paylaşmaz.
 
 Elle tek iş: `node paylas.mjs plan-hafta-01.json H1-R1 --simdi` (yerelde token `envDosyasi`'ndan okunur).

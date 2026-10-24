@@ -1,0 +1,9 @@
+[Unit]
+Description=Wafıl Instagram paylaşımı, 5 dakikada bir
+
+[Timer]
+OnCalendar=*:0/5
+Persistent=false
+
+[Install]
+WantedBy=timers.target

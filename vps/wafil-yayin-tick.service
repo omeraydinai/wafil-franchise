@@ -1,0 +1,9 @@
+[Unit]
+Description=Wafıl Instagram paylaşımı (zamanı gelen gönderiler)
+After=docker.service network-online.target
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/wafil-yayin/tick.sh
+TimeoutStartSec=25min
