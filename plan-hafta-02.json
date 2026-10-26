@@ -1,0 +1,158 @@
+{
+ "hafta": 2,
+ "igKullanici": "17841415735570749",
+ "envDosyasi": "../wafıl-franchise/.env",
+ "medyaAdresi": "https://wafil-franchise.vercel.app/ig/h2",
+ "isler": [
+  {
+   "id": "H2-S1",
+   "zaman": "2026-10-26T17:30:00+03:00",
+   "tur": "STORY",
+   "dosyalar": [
+    "h2-s1-1.jpg",
+    "h2-s1-2.jpg",
+    "h2-s1-3.jpg"
+   ]
+  },
+  {
+   "id": "H2-R1",
+   "zaman": "2026-10-26T19:00:00+03:00",
+   "tur": "REELS",
+   "kapakMs": 2000,
+   "dosyalar": [
+    "h2-r1.mp4"
+   ],
+   "aciklama": "Yer seçimi, tezgâh için verilen en önemli kararlardan biri. 📍\n\nDört maddeyi kaydet, aday yerleri gezerken aç bak. Sence hangisi en zor? Numarasını yorumlara yaz.\n\nAklındaki yeri profildeki formdan bize yazabilirsin.\n\n#franchise #lokasyon #kendiişim #girişimcilik #kiosk #wafıl"
+  },
+  {
+   "id": "H2-C1",
+   "zaman": "2026-10-27T12:30:00+03:00",
+   "tur": "CAROUSEL",
+   "dosyalar": [
+    "h2-c1-1.jpg",
+    "h2-c1-2.jpg",
+    "h2-c1-3.jpg",
+    "h2-c1-4.jpg",
+    "h2-c1-5.jpg",
+    "h2-c1-6.jpg",
+    "h2-c1-7.jpg",
+    "h2-c1-8.jpg"
+   ],
+   "aciklama": "Başvurduktan sonra ne olacağını baştan bilmek istersin. Bizde süreç altı adımda ilerliyor. 🗂️\n\nHangi adımı daha ayrıntılı anlatalım? Numarasını yorumlara yaz.\n\nİlk adım için başvuru formu profildeki linkte.\n\n#franchise #franchiseyatırımı #kendiişim #girişimcilik #wafıl"
+  },
+  {
+   "id": "H2-S2",
+   "zaman": "2026-10-27T13:00:00+03:00",
+   "tur": "STORY",
+   "dosyalar": [
+    "h2-s2-1.jpg",
+    "h2-s2-2.jpg",
+    "h2-s2-3.jpg",
+    "h2-s2-4.jpg"
+   ]
+  },
+  {
+   "id": "H2-S3",
+   "zaman": "2026-10-28T10:30:00+03:00",
+   "tur": "STORY",
+   "dosyalar": [
+    "h2-s3-1.jpg",
+    "h2-s3-2.jpg",
+    "h2-s3-3.jpg"
+   ]
+  },
+  {
+   "id": "H2-R2",
+   "zaman": "2026-10-28T19:00:00+03:00",
+   "tur": "REELS",
+   "kapakMs": 2000,
+   "dosyalar": [
+    "h2-r2.mp4"
+   ],
+   "aciklama": "Yeni bir markayız ve şu an tek bir tezgâhımız var. Bunu baştan söylemek istedik. 👋\n\nİlk beş ortağımızı arıyoruz. Aklına takılanı yorumlara yaz, cevaplayalım.\n\n#wafıl #franchise #yenimarka #bubblewaffle #kendiişim"
+  },
+  {
+   "id": "H2-C2",
+   "zaman": "2026-10-29T12:30:00+03:00",
+   "tur": "CAROUSEL",
+   "dosyalar": [
+    "h2-c2-1.jpg",
+    "h2-c2-2.jpg",
+    "h2-c2-3.jpg",
+    "h2-c2-4.jpg",
+    "h2-c2-5.jpg",
+    "h2-c2-6.jpg",
+    "h2-c2-7.jpg",
+    "h2-c2-8.jpg"
+   ],
+   "aciklama": "Kasaya giren paranın hepsi kâr değil. Arada altı kalem var. 🧾\n\nKaydet, bir işin hesabını yaparken aç bak. Listeye eklemek istediğin bir kalem var mı? Yorumlara yaz.\n\nWafıl franchise başvurusu profildeki linkte.\n\n#işletme #kendiişim #girişimcilik #esnaf #franchise #wafıl"
+  },
+  {
+   "id": "H2-S4",
+   "zaman": "2026-10-29T13:00:00+03:00",
+   "tur": "STORY",
+   "dosyalar": [
+    "h2-s4-1.jpg",
+    "h2-s4-2.jpg",
+    "h2-s4-3.jpg",
+    "h2-s4-4.jpg"
+   ]
+  },
+  {
+   "id": "H2-R3",
+   "zaman": "2026-10-29T19:00:00+03:00",
+   "tur": "REELS",
+   "kapakMs": 2000,
+   "dosyalar": [
+    "h2-r3.mp4"
+   ],
+   "aciklama": "Franchise görüşmesine gitmeden önce bu dört terimi bil. 🔖\n\nKaydet, görüşmede aç bak. Sözlüğe hangi terimi ekleyelim? Yorumlara yaz.\n\nWafıl franchise başvurusu profildeki linkte.\n\n#franchise #franchisesözlüğü #girişimcilik #kendiişim #wafıl"
+  },
+  {
+   "id": "H2-S5",
+   "zaman": "2026-10-30T10:30:00+03:00",
+   "tur": "STORY",
+   "dosyalar": [
+    "h2-s5-1.jpg",
+    "h2-s5-2.jpg",
+    "h2-s5-3.jpg"
+   ]
+  },
+  {
+   "id": "H2-R4",
+   "zaman": "2026-10-30T19:00:00+03:00",
+   "tur": "REELS",
+   "kapakMs": 2000,
+   "dosyalar": [
+    "h2-r4.mp4"
+   ],
+   "aciklama": "Bardakta bubble waffle: sıcak waffle, taze meyve, çikolata sosu, fındık ya da ceviz. 🧇\n\nBu hafta sonu kime ısmarlardın? Yorumda etiketle.\n\n#bubblewaffle #bardaktawaffle #haftasonu #tatlı #wafıl"
+  },
+  {
+   "id": "H2-C3",
+   "zaman": "2026-10-31T12:30:00+03:00",
+   "tur": "CAROUSEL",
+   "dosyalar": [
+    "h2-c3-1.jpg",
+    "h2-c3-2.jpg",
+    "h2-c3-3.jpg",
+    "h2-c3-4.jpg",
+    "h2-c3-5.jpg",
+    "h2-c3-6.jpg",
+    "h2-c3-7.jpg",
+    "h2-c3-8.jpg"
+   ],
+   "aciklama": "Yeri bulmak işin yarısı, öbür yarısı sözleşmede. İmzadan önce bu altı maddeye bak. 📝\n\nKaydet, kira görüşmesine giderken yanında olsun. Ortağınla da paylaş.\n\nAklındaki yeri profildeki formdan bize yazabilirsin.\n\n#kirasözleşmesi #işyeri #kendiişim #girişimcilik #franchise #wafıl"
+  },
+  {
+   "id": "H2-S6",
+   "zaman": "2026-10-31T13:00:00+03:00",
+   "tur": "STORY",
+   "dosyalar": [
+    "h2-s6-1.jpg",
+    "h2-s6-2.jpg",
+    "h2-s6-3.jpg"
+   ]
+  }
+ ]
+}
